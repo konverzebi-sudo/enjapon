@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FNJSFVPRM6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FNJSFVPRM6');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbt2b5o58t");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japón — Jany Dávila ✦</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+:root{
+  --bg:#F5F5EF;--card:#FFFFFF;--card2:#F0F0E8;
+  --neon:#B8F725;--neon-dim:#0A0A0A;--neon-glow:#B8F72512;
+  --white:#1A1A1A;--muted:#777;--border:#E0E0D5;--green2:#3A9A3A;
+  --gold:#B07800;--pink:#C03060;--blue:#1A5FAF;
+  --txt:#1A1A1A;--txt2:#444;
+  --lime:#B8F725;--dark:#0A0A0A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-size:14px;background:var(--bg);min-height:100vh}
+
+/* ── BRAND STRIP ── */
+.brand-strip{background:#1A1A1A;border-bottom:2px solid var(--neon);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand-logo{font-size:13px;font-weight:900;letter-spacing:.08em;color:var(--neon)}
+.brand-logo span{color:#CCCCCC;font-weight:400}
+.brand-social{display:flex;gap:8px}
+.soc-btn{font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;letter-spacing:.04em;border:1px solid}
+.soc-ig{color:#B8F725;border-color:#B8F725;background:transparent}
+.soc-tt{color:#FFFFFF;border-color:#444;background:#333}
+
+.pg{max-width:640px;margin:0 auto;padding:1rem}
+
+/* ── ALOJAMIENTOS (STAYS) ── */
+.stays-wrap{display:flex;flex-direction:column;gap:10px;margin-bottom:.6rem}
+.stay-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.stay-ico{font-size:20px;flex-shrink:0;padding-top:2px}
+.stay-fields{flex:1;min-width:180px;display:flex;flex-direction:column;gap:5px}
+.stay-input{background:transparent;border:none;border-bottom:1px solid transparent;color:#1A1A1A;font-size:13px;font-weight:700;font-family:inherit;width:100%;outline:none;padding:2px 0}
+.stay-input:focus{border-bottom-color:var(--neon)}
+.stay-input.sub{font-size:11px;color:#666;font-weight:400}
+.stay-input.link{font-size:11px;color:#1A5FAF;font-weight:600}
+.stay-input::placeholder{color:#AAA}
+.stay-actions{display:flex;flex-direction:column;align-items:flex-end;gap:4px;margin-left:auto}
+.stay-btn-row{display:flex;gap:4px}
+.stay-open{font-size:10px;padding:4px 9px;background:#E8F0FA;color:#1A5FAF;border:1px solid #B0C8E8;border-radius:8px;text-decoration:none;font-weight:700;white-space:nowrap}
+.stay-save{font-size:10px;padding:4px 9px;background:#0A0A0A;color:#B8F725;border:none;border-radius:8px;cursor:pointer;font-weight:700;font-family:inherit}
+.stay-del{font-size:10px;padding:4px 8px;background:transparent;color:#B03030;border:1px solid #E0B0B0;border-radius:8px;cursor:pointer;font-weight:700;font-family:inherit}
+.stay-save-ok{font-size:9px;color:#0A0A0A;font-weight:700;display:none}
+.add-stay-btn{width:100%;padding:9px;border-radius:10px;border:1.5px dashed #C8C8B8;background:transparent;color:#555;font-family:inherit;font-weight:700;font-size:12px;cursor:pointer;margin-bottom:1.2rem}
+.add-stay-btn:hover{border-color:#0A0A0A;color:#0A0A0A}
+
+/* ── MAIN NAV ── */
+.main-nav{display:flex;gap:5px;margin-bottom:1.2rem;border-bottom:1px solid var(--border);padding-bottom:.8rem;flex-wrap:wrap}
+.main-tab{padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:transparent;color:#333;font-family:inherit;letter-spacing:.04em;transition:all .15s}
+.main-tab:hover{color:#0A0A0A;border-color:#0A0A0A}
+.main-tab.on{background:#0A0A0A;color:#B8F725;border-color:#0A0A0A}
+.main-section{display:none}
+.main-section.on{display:block}
+
+/* ── INFO CHIPS ── */
+.chip-row{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.chip{font-size:10px;padding:3px 9px;border-radius:6px;font-weight:600;background:#1A1A1A;border:1px solid var(--border);color:#666}
+.chip.green{background:#0A0A0A;border-color:#0A0A0A;color:#B8F725}
+.chip.gold{background:#F5EDD5;border-color:#C8A840;color:#7A5000}
+.chip.blue{background:#E5EEF8;border-color:#90B8E0;color:#1A5FAF}
+
+/* ── ITINERARIO HEADER ── */
+.itin-header{background:linear-gradient(135deg,#F0F0E5,#F5F5EF);border:2px solid #0A0A0A;border-radius:14px;padding:16px;margin-bottom:1rem;position:relative;overflow:hidden}
+.itin-header::before{content:'';position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:var(--neon-glow);border-radius:50%;filter:blur(30px)}
+.itin-emoji{font-size:28px;margin-bottom:6px}
+.itin-title{font-size:20px;font-weight:900;color:#0A0A0A;letter-spacing:-.01em}
+.itin-subtitle{font-size:12px;color:#666;margin-top:4px;font-style:italic}
+
+/* ── DAY NAV ── */
+.daynav{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1rem}
+.dbt{padding:5px 11px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid var(--border);background:var(--card);color:#333;white-space:nowrap;font-family:inherit;font-weight:700;transition:all .15s}
+.dbt:hover{color:#1A1A1A;border-color:#999}
+.dbt.on{background:#0A0A0A;color:#B8F725;border-color:#0A0A0A;font-weight:700}
+
+/* ── DAY CARD ── */
+.day-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;margin-bottom:1rem;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.day-head{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+.day-badge{width:46px;height:46px;border-radius:50%;background:#0A0A0A;border:2px solid #0A0A0A;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.day-num{font-size:15px;font-weight:900;color:#B8F725;line-height:1}
+.day-lbl{font-size:8px;color:#B8F725;letter-spacing:.05em;line-height:1}
+.day-info{flex:1}
+.day-title{font-size:15px;font-weight:700;color:#1A1A1A}
+.day-sub{font-size:11px;color:#666;margin-top:3px}
+
+/* ── STOP ROW ── */
+.stop{display:grid;grid-template-columns:44px 1fr auto;gap:8px;padding:8px 0;border-bottom:1px solid #EAEAE0;align-items:start}
+.stop:last-child{border-bottom:none}
+.stop-left{display:flex;flex-direction:column;align-items:center;gap:2px}
+.stop-ico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;background:#F0F0E8}
+.stop-time{font-size:9px;color:#666;text-align:center;line-height:1.2;margin-top:2px}
+.stop-name{font-size:13px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:5px;flex-wrap:wrap;line-height:1.3}
+.stop-star{color:#7AB800;font-size:12px}
+.stop-desc{font-size:11px;color:#666;margin-top:3px;line-height:1.5}
+.stop-links{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
+.lb{font-size:10px;padding:3px 9px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:3px;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;font-weight:600}
+.lb-m{background:#E8F0FA;color:#1A5FAF;border:1px solid #B0C8E8}
+.lb-t{background:#FFF3E0;color:#B06000;border:1px solid #E0C080}
+.lb-f{background:#EEF5D0;color:#5A8A00;border:1px solid #AACE50}
+.stop-cost{font-size:12px;font-weight:700;white-space:nowrap;padding-top:2px}
+.stop-cost.free{color:var(--neon)}
+.stop-cost.paid{color:#FFA040}
+
+/* ── ROUTE BOX ── */
+.route-box{background:#F0F0E8;border:1px solid #C8C8B8;border-radius:10px;padding:9px 12px;margin-top:10px}
+.route-label{font-size:10px;font-weight:700;color:#0A0A0A;margin-bottom:5px}
+.route-steps{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.rts{font-size:10px;color:#1A1A1A;background:#FFFFFF;padding:2px 8px;border-radius:8px;border:1px solid #C8C8B8;font-weight:500}
+.rta{font-size:11px;color:#555;font-weight:700;padding:0 1px}
+
+/* ── NAV ARROWS ── */
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--border)}
+.nb{padding:7px 14px;border-radius:9px;font-size:12px;cursor:pointer;border:1px solid #C8C8B8;background:var(--card2);color:#1A1A1A;font-family:inherit;font-weight:700}
+.nb:hover:not(:disabled){border-color:#0A0A0A;color:#0A0A0A;background:#F0F0E8}
+.nb:disabled{opacity:.2;cursor:default}
+.dots{display:flex;gap:4px;align-items:center}
+.dot{width:5px;height:5px;border-radius:50%;background:#2A2A2A;transition:all .2s}
+.dot.on{background:#0A0A0A}
+
+/* ── EMPTY STATE ── */
+.empty-card{background:var(--card);border:1px dashed #C8C8B8;border-radius:14px;padding:2rem 1rem;text-align:center;color:#666;font-size:12px;line-height:1.8}
+
+/* ── TIPS ── */
+.tip-box{background:#141400;border:1px solid #3A3000;border-radius:10px;padding:10px 12px;margin-top:10px;font-size:11px;color:var(--gold);line-height:1.7}
+.tip-box b{color:#7A5000}
+
+/* ── REFERENCE ── */
+.ref-row{padding:8px 0;border-bottom:1px solid #EAEAE0}
+.ref-row:last-child{border-bottom:none}
+.ref-label{font-size:11px;font-weight:700;color:#0A0A0A;margin-bottom:2px}
+.ref-text{font-size:11px;color:#666;line-height:1.5}
+.ref-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:1rem}
+
+/* ── SECCIÓN SECTION HEADER ── */
+.section-hdr{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#555;margin-bottom:.7rem;display:flex;align-items:center;gap:8px}
+.section-hdr::after{content:'';flex:1;height:1px;background:#D0D0C0}
+
+/* ── GUARDADOS (TikTok board) ── */
+.board-intro{font-size:11px;color:#666;margin-bottom:1rem;line-height:1.6}
+.board-add{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:1rem;display:flex;flex-direction:column;gap:7px}
+.board-row{display:flex;gap:7px;flex-wrap:wrap}
+.board-input{flex:1;min-width:120px;background:#F5F5EF;border:1px solid var(--border);border-radius:8px;padding:7px 9px;font-size:12px;font-family:inherit;color:#1A1A1A;outline:none}
+.board-input:focus{border-color:#0A0A0A}
+.board-add-btn{padding:9px;border-radius:9px;border:none;background:#0A0A0A;color:#B8F725;font-weight:700;font-size:12px;cursor:pointer;font-family:inherit}
+
+.group-tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1rem}
+.group-tab{padding:6px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--card);color:#333;font-family:inherit;transition:all .15s}
+.group-tab:hover{color:#0A0A0A;border-color:#0A0A0A}
+.group-tab.on{background:var(--neon);color:#000;border-color:var(--neon)}
+
+.place-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.place-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 12px}
+.place-top{display:flex;align-items:center;gap:8px}
+.place-ico{font-size:17px;flex-shrink:0}
+.place-name{font-size:13px;font-weight:700;color:#1A1A1A;flex:1}
+.place-group{font-size:9px;color:#666;background:#F0F0E8;border-radius:6px;padding:2px 7px;font-weight:700;white-space:nowrap}
+.place-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.tag-chip{font-size:9px;padding:2px 8px;border-radius:10px;background:#EEF5D0;color:#5A8A00;border:1px solid #AACE50;font-weight:600}
+.place-actions{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap;align-items:center}
+.mini-btn{font-size:10px;padding:3px 8px;border-radius:6px;border:1px solid var(--border);background:var(--card2);color:#333;cursor:pointer;font-family:inherit;font-weight:700}
+.mini-btn:hover:not(:disabled){border-color:#0A0A0A;color:#0A0A0A}
+.mini-btn:disabled{opacity:.25;cursor:default}
+.mini-btn.danger{color:#B03030;border-color:#E0B0B0}
+.place-link{font-size:10px;padding:3px 9px;border-radius:6px;text-decoration:none;background:#FFF3E0;color:#B06000;border:1px solid #E0C080;font-weight:700}
+
+/* ── PREPARACIÓN ── */
+.prep-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1rem}
+@media(max-width:400px){.prep-grid{grid-template-columns:1fr}}
+.prep-cat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
+.prep-cat-title{font-size:10px;font-weight:700;color:#0A0A0A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.prep-item{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #EAEAE0;cursor:pointer;user-select:none}
+.prep-item:last-child{border-bottom:none}
+.prep-chk{width:16px;height:16px;border-radius:4px;border:1.5px solid #CCC;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;transition:all .15s}
+.prep-chk.on{background:#0A0A0A;border-color:#0A0A0A;color:#B8F725}
+.prep-label{font-size:12px;color:#1A1A1A;flex:1;line-height:1.3}
+.prep-label.done{text-decoration:line-through;color:#666}
+.prep-progress{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.prog-bar-wrap{flex:1;background:#E0E0D5;border-radius:6px;height:8px;overflow:hidden}
+.prog-bar{height:100%;background:#0A0A0A;border-radius:6px;transition:width .3s}
+.prog-text{font-size:12px;font-weight:700;color:#0A0A0A;white-space:nowrap}
+
+/* ── REDES ── */
+.redes-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:1rem;display:flex;gap:10px;flex-direction:column}
+.red-row{display:flex;align-items:center;gap:10px;padding:8px 10px;background:#F5F5EF;border-radius:9px;text-decoration:none;border:1px solid var(--border);transition:border-color .2s}
+.red-row:hover{border-color:var(--neon)}
+.red-ico{font-size:20px;flex-shrink:0}
+.red-info{flex:1}
+.red-name{font-size:12px;font-weight:700;color:#1A1A1A}
+.red-handle{font-size:10px;color:#666;margin-top:1px}
+.red-arrow{color:var(--neon-dim);font-size:14px;font-weight:700}
+
+/* ── MODAL ── */
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-ov.open{display:flex}
+.modal-box{background:var(--card);border:1px solid var(--neon);border-radius:14px;padding:1rem;max-width:380px;width:100%}
+.modal-title{font-size:14px;font-weight:700;margin-bottom:.75rem;display:flex;justify-content:space-between;align-items:center;color:var(--white)}
+.modal-close{cursor:pointer;font-size:20px;color:#666;background:none;border:none;padding:2px 6px}
+.modal-close:hover{color:var(--neon)}
+</style>
+</head>
+<body>
+
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+  <div class="brand-logo">JANY DÁVILA <span>· Japón</span></div>
+  <div class="brand-social">
+    <a class="soc-btn soc-ig" href="https://www.instagram.com/jany_antes_vendia_pacas?igsh=MTRvemM1eG1xODA2aQ==" target="_blank">📸 IG</a>
+    <a class="soc-btn soc-tt" href="https://www.tiktok.com/@pacasmb?_r=1&_t=ZS-97DgBOAjb2A" target="_blank">🎵 TT</a>
+  </div>
+</div>
+
+<div class="pg">
+
+<!-- ALOJAMIENTOS -->
+<div class="section-hdr" style="margin-top:0">🏠 Alojamientos</div>
+<div class="stays-wrap" id="staysWrap"></div>
+<button class="add-stay-btn" onclick="addStay()">+ Agregar alojamiento</button>
+
+<!-- MAIN NAVIGATION -->
+<div class="main-nav">
+  <button class="main-tab on" onclick="switchMain('itinerario')">🗺️ Itinerario</button>
+  <button class="main-tab" onclick="switchMain('guardados')">📌 Guardados</button>
+  <button class="main-tab" onclick="switchMain('preparacion')">🎒 Preparación</button>
+</div>
+
+<!-- ════════════ ITINERARIO ════════════ -->
+<div class="main-section on" id="sec-itinerario">
+  <div class="itin-header">
+    <div class="itin-emoji">🗾</div>
+    <div class="itin-title">Itinerario de Japón</div>
+    <div class="itin-subtitle">"Tu ruta, día por día."</div>
+    <div class="chip-row" id="itinHeaderChips"></div>
+  </div>
+  <div class="daynav" id="itinNav"></div>
+  <div id="itinView"></div>
+
+  <div class="section-hdr" style="margin-top:1.6rem">🚆 Trenes y traslados clave</div>
+  <div class="ref-card">
+    <div class="ref-row"><div class="ref-label">Narita → Shinjuku</div><div class="ref-text">Narita Express: la opción más simple con equipaje. Reservar asiento.</div></div>
+    <div class="ref-row"><div class="ref-label">Shinjuku → Hakone</div><div class="ref-text">Odakyu Romancecar directo a Hakone-Yumoto cuando el horario encaje.</div></div>
+    <div class="ref-row"><div class="ref-label">Hakone → Kioto</div><div class="ref-text">Hakone-Yumoto → Odawara; desde Odawara usar Hikari/Kodama. Nozomi no se detiene en Odawara.</div></div>
+    <div class="ref-row"><div class="ref-label">Kioto → Nara</div><div class="ref-text">Kintetsu Kyoto → Kintetsu-Nara. Muy conveniente para Nara Park/Todai-ji.</div></div>
+    <div class="ref-row"><div class="ref-label">Kioto → Osaka</div><div class="ref-text">JR Special Rapid o Shinkansen a Shin-Osaka según zona. Para Namba, Keihan/metro o JR + metro puede ser mejor.</div></div>
+    <div class="ref-row"><div class="ref-label">Katsuo-ji</div><div class="ref-text">Llegar a Minoh-Kayano y usar taxi para ahorrar tiempo; transporte en domingo puede ir lleno.</div></div>
+    <div class="ref-row"><div class="ref-label">Namba → Kishiwada</div><div class="ref-text">Nankai Main Line; revisar servicios que paren en Kishiwada.</div></div>
+    <div class="ref-row"><div class="ref-label">Kioto → Hiroshima</div><div class="ref-text">Nozomi directo desde Kyoto Station. Cambiar la reserva que actualmente inicia en Osaka.</div></div>
+    <div class="ref-row"><div class="ref-label">Hiroshima → Miyajima</div><div class="ref-text">JR Sanyo Line a Miyajimaguchi + ferry.</div></div>
+    <div class="ref-row"><div class="ref-label">Haneda → Shibuya</div><div class="ref-text">Keikyu + conexión o monorriel/JR; elegir según equipaje y hora real de llegada.</div></div>
+    <div class="ref-row"><div class="ref-label">Shibuya → Narita</div><div class="ref-text">Preferir servicio reservado (N'EX) o alternativa con menos transbordos, según horario del 26.</div></div>
+  </div>
+
+  <div class="section-hdr">🎒 Equipaje: estrategia recomendada</div>
+  <div class="ref-card">
+    <div class="ref-text">Para reducir esfuerzo: viajar a Hakone con lo necesario para una noche; desde Kioto, considerar enviar la maleta grande directamente a Shibuya (o incluso al hotel de Narita si no se necesita antes) y llevar a Hiroshima una maleta pequeña. Esto simplifica Kyoto Station, el Shinkansen, el aeropuerto de Hiroshima y Haneda.</div>
+  </div>
+
+  <div class="section-hdr">📝 Qué falta confirmar</div>
+  <div class="ref-card">
+    <div class="ref-row"><div class="ref-label">Kimono · 17 Sep</div><div class="ref-text">Nombre de la tienda y hora/política de devolución (sugerencia sin confirmar: Okamoto Higashiyama).</div></div>
+    <div class="ref-row"><div class="ref-label">Hiroshima</div><div class="ref-text">Nombre del hotel 22-24 para rutas puerta a puerta y hora exacta de salida al aeropuerto.</div></div>
+    <div class="ref-row"><div class="ref-label">Ferry · 11 Sep</div><div class="ref-text">Horario exacto Asakusa → Odaiba del 11 de septiembre.</div></div>
+    <div class="ref-row"><div class="ref-label">Hanazono · 13 Sep</div><div class="ref-text">Confirmación de flea market ese domingo.</div></div>
+    <div class="ref-row"><div class="ref-label">Kishiwada</div><div class="ref-text">Zona/asiento de observación si decides comprarlo.</div></div>
+    <div class="ref-row"><div class="ref-label">Shinkansen</div><div class="ref-text">Número exacto de tren y asiento una vez modificada/emitida cada reserva.</div></div>
+  </div>
+
+  <div class="section-hdr">📚 Fuentes y notas de verificación</div>
+  <div style="font-size:10px;color:#999;line-height:1.9;margin-bottom:1rem">
+    Los links de tickets/reservas fueron verificados por Claude en agosto 2026 contra los sitios oficiales de cada atracción, hotel y operador de transporte. Precios mostrados solo cuando pudieron confirmarse (teamLab Planets ¥3,600 adulto; Gion Corner desde ¥5,500 adulto 23+); el resto de atracciones de pago muestran "💴 ver precio" porque las tarifas cambian con frecuencia — confirma en el link oficial antes de viajar.<br><br>
+    Revisión final recomendada: 7-10 días antes del viaje, reconfirma horarios de ferries, buses, trenes especiales, clima y cualquier cierre temporal. Para Shinkansen y vuelos, la reserva real siempre manda sobre esta guía.
+  </div>
+</div><!-- /sec-itinerario -->
+
+<!-- ════════════ GUARDADOS (TikTok) ════════════ -->
+<div class="main-section" id="sec-guardados">
+  <div class="section-hdr">Lugares guardados de TikTok</div>
+  <div class="board-intro">Guarda aquí los lugares que veas en TikTok para visitar en Japón. Agrégales tags y un grupo (ciudad o categoría) para organizarlos, y usa las flechas ▲▼ para acomodarlos como quieras. 🎵📌</div>
+  <div class="board-add">
+    <div class="board-row">
+      <input class="board-input" id="np-link" placeholder="Link de TikTok">
+      <input class="board-input" id="np-name" placeholder="Nombre del lugar">
+    </div>
+    <div class="board-row">
+      <input class="board-input" id="np-group" placeholder="Grupo / ciudad (ej. Tokio, Comida...)">
+      <input class="board-input" id="np-tags" placeholder="Tags separados por coma">
+    </div>
+    <button class="board-add-btn" onclick="addPlace()">+ Guardar lugar</button>
+  </div>
+  <div class="group-tabs" id="groupTabs"></div>
+  <div class="place-grid" id="placeGrid"></div>
+</div><!-- /sec-guardados -->
+
+<!-- ════════════ PREPARACIÓN ════════════ -->
+<div class="main-section" id="sec-preparacion">
+
+  <div class="prep-progress">
+    <div style="font-size:12px;font-weight:700;color:var(--white);white-space:nowrap">Progreso</div>
+    <div class="prog-bar-wrap"><div class="prog-bar" id="PROGBAR" style="width:0%"></div></div>
+    <div class="prog-text" id="PROGTEXT">0 / 0</div>
+  </div>
+
+  <div class="section-hdr">Equipaje · Maleta</div>
+  <div class="prep-grid" id="PREPGRID"></div>
+
+  <div class="section-hdr">Redes de Jany · Sígueme</div>
+  <div class="redes-card">
+    <a class="red-row" href="https://www.instagram.com/jany_antes_vendia_pacas?igsh=MTRvemM1eG1xODA2aQ==" target="_blank">
+      <div class="red-ico">📸</div>
+      <div class="red-info">
+        <div class="red-name">Instagram</div>
+        <div class="red-handle">@jany_antes_vendia_pacas</div>
+      </div>
+      <div class="red-arrow">→</div>
+    </a>
+    <a class="red-row" href="https://www.tiktok.com/@pacasmb?_r=1&_t=ZS-97DgBOAjb2A" target="_blank">
+      <div class="red-ico">🎵</div>
+      <div class="red-info">
+        <div class="red-name">TikTok</div>
+        <div class="red-handle">@pacasmb</div>
+      </div>
+      <div class="red-arrow">→</div>
+    </a>
+  </div>
+
+</div><!-- /sec-preparacion -->
+
+</div><!-- /pg -->
+
+<!-- MODAL (edición de lugares guardados) -->
+<div class="modal-ov" id="MODAL" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <div class="modal-title"><span id="MTITLE"></span><button class="modal-close" onclick="document.getElementById('MODAL').classList.remove('open')">✕</button></div>
+    <div id="MCONT"></div>
+  </div>
+</div>
+
+<script>
+// ════════ ITINERARIO · Japón 10–26 Sep 2026 ════════
+// cost: número = precio confirmado · 0 = gratis · null = de pago pero sin precio verificado · sin campo = no aplica
+const ITINERARY = [
+{day:1, city:"Tokio", title:"Llegada a Tokio + Shinjuku", sub:"Jueves 10 Sep · día ligero por jet lag", stops:[
+  {t:"08:00", ic:"✈️", name:"Llegada a Narita", desc:"Inmigración, equipaje, IC card / efectivo.", cost:0, maps:"https://maps.google.com/?q=Narita+International+Airport"},
+  {t:"09:45–10:30", ic:"🚆", name:"Narita Express (N'EX) → Shinjuku", desc:"Elegir asiento reservado y guardar la maleta grande en el rack.", cost:null, maps:"https://maps.google.com/?q=Narita+Express", ticket:"https://www.jreast.co.jp/en/multi/nex/tickets/", star:true},
+  {t:"11:30–12:30", ic:"🏨", name:"Check-in Shinjuku Granbell Hotel", desc:"Dejar equipaje; comida ligera y descanso.", cost:0, maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", ticket:"https://en.granbellhotel.jp/shinjuku/"},
+  {t:"15:30", ic:"🗼", name:"Tokyo Metropolitan Government Building", desc:"Mirador gratuito. Si hay cansancio, moverlo al día 13.", cost:0, maps:"https://maps.google.com/?q=Tokyo+Metropolitan+Government+Building", star:true},
+  {t:"17:30", ic:"🏮", name:"Shinjuku: Kabukicho + Hanazono Shrine", desc:"Paseo por el barrio.", cost:0, maps:"https://maps.google.com/?q=Hanazono+Shrine+Tokyo"},
+  {t:"19:00", ic:"🍢", name:"Cena en Omoide Yokocho", desc:"Pedir yakitori de carne: momo/sasami; evitar kawa y vísceras.", maps:"https://maps.google.com/?q=Omoide+Yokocho+Tokyo", star:true},
+  {t:"20:30", ic:"🍶", name:"Golden Gai", desc:"Paseo corto y 1 bar si apetece. Regreso caminando al hotel.", maps:"https://maps.google.com/?q=Golden+Gai+Tokyo"},
+], route:["Narita","→","Shinjuku (N'EX)","→","Granbell Hotel","→","Tocho","→","Omoide Yokocho","→","Golden Gai"],
+  tips:[{label:"Ritmo",text:"Día deliberadamente ligero por jet lag."},{label:"Foto",text:"Mirador 30-45 min antes del atardecer; Omoide/Golden Gai después de encender faroles."},{label:"Plan lluvia",text:"Mantener mirador, cafés y callejones cubiertos/semicubiertos; reducir paseo exterior."}]},
+
+{day:2, city:"Tokio", title:"Asakusa + Odaiba + teamLab", sub:"Viernes 11 Sep", stops:[
+  {t:"07:30", ic:"🚇", name:"Salida hacia Asakusa", desc:"Metro vía Higashi-Shinjuku / conexión según tráfico.", maps:"https://maps.google.com/?q=Asakusa+Tokyo"},
+  {t:"08:30–11:00", ic:"⛩️", name:"Senso-ji + Nakamise + Kaminarimon", desc:"Templo temprano, calle comercial y paseo junto al río Sumida.", cost:0, maps:"https://maps.google.com/?q=Senso-ji+Temple", star:true},
+  {t:"11:15", ic:"🍜", name:"Comida temprana en Asakusa", desc:"", maps:"https://maps.google.com/?q=Asakusa+restaurants"},
+  {t:"12:30–14:00", ic:"⛴️", name:"Ferry/Water Bus a Odaiba", desc:"Si el horario del día encaja; si no, metro/Yurikamome (≈50-70 min). Reconfirmar 7-10 días antes.", maps:"https://maps.google.com/?q=Tokyo+Water+Bus+Asakusa"},
+  {t:"14:00–16:10", ic:"🌉", name:"Odaiba: bahía + Rainbow Bridge", desc:"Paseo visual sin intentar abarcar todo.", cost:0, maps:"https://maps.google.com/?q=Odaiba+Tokyo", star:true},
+  {t:"16:15", ic:"🚊", name:"Yurikamome → Shin-Toyosu", desc:"Llegar a teamLab con margen.", maps:"https://maps.google.com/?q=Shin-Toyosu+Station"},
+  {t:"17:30–19:30", ic:"🎨", name:"teamLab Planets", desc:"Reserva fija 17:30. A 1 min a pie de Shin-Toyosu. Llevar calcetines fáciles de quitar/poner.", cost:3600, maps:"https://maps.google.com/?q=teamLab+Planets+Tokyo", ticket:"https://teamlabplanets.dmm.com/en", star:true},
+  {t:"19:45", ic:"🍽️", name:"Cena en Toyosu o regreso a Shinjuku", desc:"", maps:"https://maps.google.com/?q=Toyosu+Tokyo"},
+], route:["Asakusa","→","Water Bus/Odaiba","→","Shin-Toyosu","→","teamLab Planets","→","Shinjuku"],
+  tips:[{label:"Reserva fija",text:"teamLab Planets 17:30 — no comprometer esta hora."},{label:"Ferry",text:"El Water Bus depende de horario/operación; reconfirmar 7-10 días antes."},{label:"Consejo",text:"Llevar calcetines fáciles de quitar/poner y ropa cómoda para teamLab."}]},
+
+{day:3, city:"Tokio", title:"Ryogoku + Kuramae + Akasaka + Tokyo Tower", sub:"Sábado 12 Sep", stops:[
+  {t:"08:15", ic:"🚇", name:"Salida a Ryogoku", desc:"", maps:"https://maps.google.com/?q=Ryogoku+Tokyo"},
+  {t:"09:00–10:15", ic:"🤼", name:"Barrio del sumo", desc:"Exteriores del Kokugikan y paseo breve por la zona (sin torneo).", cost:0, maps:"https://maps.google.com/?q=Ryogoku+Kokugikan"},
+  {t:"10:30–12:30", ic:"🛍️", name:"Kuramae: tiendas artesanales", desc:"Búsqueda de bolsa de piel — bloque real de tiempo, no parada rápida.", maps:"https://maps.google.com/?q=Kuramae+Tokyo", star:true},
+  {t:"12:45", ic:"🍱", name:"Comida por Kuramae/Asakusa sur", desc:"", maps:"https://maps.google.com/?q=Kuramae+Tokyo+restaurants"},
+  {t:"14:15", ic:"🚕", name:"Traslado a Akasaka", desc:"", maps:"https://maps.google.com/?q=Akasaka+Tokyo"},
+  {t:"15:00–16:30", ic:"⚡", name:"Harry Potter Cafe Akasaka", desc:"Reservar si el sistema lo exige.", maps:"https://maps.google.com/?q=Harry+Potter+Cafe+Akasaka", star:true},
+  {t:"17:30–19:00", ic:"🗼", name:"Tokyo Tower al atardecer/noche", desc:"Funciona mejor desde hora azul a noche.", cost:null, maps:"https://maps.google.com/?q=Tokyo+Tower", ticket:"https://en.tokyotower.co.jp/ticket/", star:true},
+  {t:"19:15", ic:"🍽️", name:"Cena en Daimon/Hamamatsucho", desc:"O regreso a Shinjuku.", maps:"https://maps.google.com/?q=Daimon+Tokyo"},
+], route:["Ryogoku","→","Kuramae","→","Akasaka","→","Tokyo Tower","→","Shinjuku"],
+  tips:[{label:"Compra",text:"Kuramae recibe un bloque real de tiempo; no se trata como parada rápida."},{label:"Foto",text:"Tokyo Tower funciona mejor desde hora azul a noche."},{label:"Ritmo",text:"Si Kuramae resulta especialmente bueno para compras, acortar Ryogoku."}]},
+
+{day:4, city:"Tokio", title:"Hanazono + Shibamata + mirador flexible", sub:"Domingo 13 Sep · día con margen", stops:[
+  {t:"08:00", ic:"⛩️", name:"Hanazono Shrine", desc:"Buscar flea market SOLO si está confirmado ese domingo — no basar el día en esto.", cost:0, maps:"https://maps.google.com/?q=Hanazono+Shrine+Tokyo"},
+  {t:"09:15", ic:"🚇", name:"Traslado a Shibamata", desc:"", maps:"https://maps.google.com/?q=Shibamata+Tokyo"},
+  {t:"10:30–13:30", ic:"🏮", name:"Shibamata: Taishakuten + calle tradicional", desc:"Paseo tranquilo, ambiente de barrio antiguo.", cost:0, maps:"https://maps.google.com/?q=Taishakuten+Shibamata", star:true},
+  {t:"13:30", ic:"🍽️", name:"Comida en Shibamata", desc:"", maps:"https://maps.google.com/?q=Shibamata+restaurants"},
+  {t:"15:00", ic:"🚇", name:"Regreso hacia Shinjuku", desc:"", maps:"https://maps.google.com/?q=Shinjuku+Station"},
+  {t:"16:30–18:00", ic:"🗼", name:"Mirador del Gobierno Metropolitano (si no se hizo el día 10)", desc:"Alternativa: descanso/café.", cost:0, maps:"https://maps.google.com/?q=Tokyo+Metropolitan+Government+Building"},
+  {t:"19:00", ic:"🍽️", name:"Cena libre en Shinjuku", desc:"", maps:"https://maps.google.com/?q=Shinjuku+restaurants"},
+], route:["Hanazono Shrine","→","Shibamata","→","Shinjuku"],
+  tips:[{label:"Importante",text:"El flea market de Hanazono queda 'por confirmar'; no basar todo el día en él."},{label:"Opción",text:"Si no hay mercado, salir antes a Shibamata y terminar más temprano."},{label:"Energía",text:"Este día deja margen antes de Kamakura, que será más largo."}]},
+
+{day:5, city:"Kamakura", title:"Kamakura completo", sub:"Lunes 14 Sep · dinero, Buda, bambú y festival", stops:[
+  {t:"06:30", ic:"🚆", name:"Salida hacia Kamakura", desc:"JR Shonan-Shinjuku Line; directo ≈60-70 min cuando coincida.", maps:"https://maps.google.com/?q=Kamakura+Station"},
+  {t:"08:00–09:00", ic:"💰", name:"Zeniarai Benten", desc:"Primera visita — ritual de lavado de dinero.", cost:0, maps:"https://maps.google.com/?q=Zeniarai+Benten+Kamakura", star:true},
+  {t:"09:15–10:15", ic:"🗿", name:"Kotoku-in · Gran Buda", desc:"Uno de los símbolos de Kamakura.", cost:null, maps:"https://maps.google.com/?q=Kotoku-in+Kamakura", ticket:"https://kotoku-in.jp/en/", star:true},
+  {t:"10:30", ic:"🚕", name:"Taxi a Hokoku-ji", desc:"Recomendado para ahorrar conexiones.", maps:"https://maps.google.com/?q=Hokokuji+Temple+Kamakura"},
+  {t:"11:00–12:15", ic:"🎋", name:"Hokoku-ji: bosque de bambú + matcha", desc:"Matcha si está disponible.", maps:"https://maps.google.com/?q=Hokokuji+Temple+Kamakura", star:true},
+  {t:"12:30–13:30", ic:"🍽️", name:"Comida cerca del centro de Kamakura", desc:"", maps:"https://maps.google.com/?q=Kamakura+restaurants"},
+  {t:"13:45–15:30", ic:"🛍️", name:"Komachi Street", desc:"Paseo y compras sin prisas.", cost:0, maps:"https://maps.google.com/?q=Komachi+Street+Kamakura"},
+  {t:"16:00–18:45", ic:"⛩️", name:"Tsurugaoka Hachimangu + ceremonia Yomiya-sai", desc:"Esperar la ceremonia de las 18:00. El yabusame es otro día.", cost:0, maps:"https://maps.google.com/?q=Tsurugaoka+Hachimangu", ticket:"https://www.hachimangu.or.jp/en/", star:true},
+  {t:"19:00", ic:"🚆", name:"Regreso Kamakura → Shinjuku", desc:"≈65-75 min.", maps:"https://maps.google.com/?q=Kamakura+Station"},
+], route:["Zeniarai Benten","→","Kotoku-in (Gran Buda)","→","Hokoku-ji (bambú)","→","Komachi","→","Tsurugaoka"],
+  tips:[{label:"Prioridad",text:"No añadir Enoshima: haría el día demasiado pesado."},{label:"Taxi",text:"Kotoku-in → Hokoku-ji es el taxi con mejor relación tiempo/esfuerzo del día."},{label:"Foto",text:"Bosque de bambú antes del mediodía; Tsurugaoka con luz de tarde y ceremonia al anochecer."}]},
+
+{day:6, city:"Hakone", title:"Hakone: circuito panorámico + ryokan", sub:"Martes 15 Sep", stops:[
+  {t:"07:15", ic:"🧳", name:"Check-out Granbell", desc:"Traslado a Shinjuku Station.", maps:"https://maps.google.com/?q=Shinjuku+Station"},
+  {t:"08:00", ic:"🚆", name:"Odakyu Romancecar → Hakone-Yumoto", desc:"Reservar asiento con anticipación.", cost:null, maps:"https://maps.google.com/?q=Hakone-Yumoto+Station", ticket:"https://www.web-odakyu.com/e-romancecar/?language=en", star:true},
+  {t:"09:45", ic:"🎒", name:"Enviar/dejar equipaje", desc:"Para no cargarlo durante el circuito.", maps:"https://maps.google.com/?q=Hakone-Yumoto+Station"},
+  {t:"10:15–12:00", ic:"🚡", name:"Hakone-Yumoto → Gora → Sounzan", desc:"≈1h45 con conexiones.", maps:"https://maps.google.com/?q=Sounzan+Station+Hakone"},
+  {t:"12:00–13:00", ic:"♨️", name:"Owakudani", desc:"Mirador, paseo corto, comida/snack (huevos negros).", maps:"https://maps.google.com/?q=Owakudani+Hakone", star:true},
+  {t:"13:15–14:00", ic:"🚡", name:"Ropeway a Togendai", desc:"", cost:null, maps:"https://maps.google.com/?q=Togendai+Hakone", ticket:"https://www.hakonenavi.jp/hakone-ropeway/"},
+  {t:"14:00–14:45", ic:"⛴️", name:"Crucero por el Lago Ashi", desc:"Hacia Motohakone/Hakone-machi.", cost:null, maps:"https://maps.google.com/?q=Lake+Ashi+Hakone", ticket:"https://www.hakonenavi.jp/international/en/transportation/hakone-kankosen", star:true},
+  {t:"15:00–16:00", ic:"⛩️", name:"Hakone Shrine + torii en el lago", desc:"Según fila y energía.", cost:0, maps:"https://maps.google.com/?q=Hakone+Shrine", star:true},
+  {t:"16:15–17:00", ic:"🚕", name:"Bus/taxi a Ichinoyu Honkan", desc:"Check-in, onsen, yukata.", maps:"https://maps.google.com/?q=Ichinoyu+Honkan+Hakone", ticket:"https://www.hakonenavi.jp/international/en/spot/272"},
+  {t:"18:00+", ic:"🍽️", name:"Cena y noche de ryokan", desc:""},
+], route:["Shinjuku","→","Hakone-Yumoto","→","Gora/Sounzan","→","Owakudani","→","Lago Ashi","→","Ichinoyu Honkan"],
+  tips:[{label:"Equipaje",text:"Prioridad: no hacer el circuito con maletas."},{label:"Clima",text:"Si ropeway o crucero se suspende por clima, hacer Hakone Open-Air Museum + ryokan temprano."},{label:"Ritmo",text:"No perseguir todos los miradores; elegir paisaje + experiencia de ryokan."}]},
+
+{day:7, city:"Kioto", title:"Hakone → Kioto + primera tarde en Gion", sub:"Miércoles 16 Sep", stops:[
+  {t:"08:00", ic:"🍳", name:"Desayuno y mañana tranquila en ryokan", desc:""},
+  {t:"09:30", ic:"🚕", name:"Salida hacia Hakone-Yumoto / Odawara", desc:"", maps:"https://maps.google.com/?q=Odawara+Station"},
+  {t:"10:45–11:30", ic:"🚄", name:"Hikari/Kodama Odawara → Kyoto", desc:"Nozomi no para en Odawara. Reservar asiento y espacio de equipaje.", cost:null, maps:"https://maps.google.com/?q=Kyoto+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
+  {t:"13:00–14:00", ic:"🏨", name:"Llegada a Kioto + check-in Hotel SUI", desc:"Dejar equipaje.", cost:0, maps:"https://maps.google.com/?q=Hotel+SUI+Kyoto+Kiyomizu", ticket:"https://hotel-sui.com/kyoto/en/"},
+  {t:"15:30", ic:"⛩️", name:"Yasaka Shrine + Maruyama Park", desc:"", cost:0, maps:"https://maps.google.com/?q=Yasaka+Shrine+Kyoto", star:true},
+  {t:"16:45–18:00", ic:"🏘️", name:"Gion / Shirakawa", desc:"Calles tradicionales.", cost:0, maps:"https://maps.google.com/?q=Gion+Shirakawa+Kyoto", star:true},
+  {t:"18:30", ic:"🍽️", name:"Cena en Pontocho", desc:"", maps:"https://maps.google.com/?q=Pontocho+Kyoto"},
+], route:["Ichinoyu","→","Odawara","→","Kyoto Station","→","Hotel SUI","→","Gion/Pontocho"],
+  tips:[{label:"Tren",text:"Nozomi no para en Odawara; usar Hikari/Kodama hacia Kyoto."},{label:"Objetivo",text:"Tarde ligera: aclimatarse a Kioto sin intentar hacer templos lejanos."},{label:"Equipaje",text:"Si se puede, reservar asiento con espacio para equipaje sobredimensionado."}]},
+
+{day:8, city:"Kioto", title:"Kimono + Higashiyama/Gion + Gion Corner", sub:"Jueves 17 Sep", stops:[
+  {t:"07:30", ic:"🍳", name:"Desayuno tranquilo", desc:""},
+  {t:"08:30", ic:"🚶", name:"Salida hacia tienda de kimono", desc:"", maps:"https://maps.google.com/?q=Higashiyama+Kyoto"},
+  {t:"09:00–10:00", ic:"👘", name:"Renta de kimono — reserva fija", desc:"Sugerencia sin confirmar: Okamoto Kimono Rental (Kiyomizu/Higashiyama) — buena ubicación y atención en inglés.", cost:null, maps:"https://maps.google.com/?q=Okamoto+Kimono+Rental+Higashiyama", ticket:"https://www.okamoto-kimono-en.com/storeinfo/higashiyama.html", star:true},
+  {t:"10:15–12:15", ic:"🏯", name:"Yasaka Pagoda + Ninenzaka/Sannenzaka", desc:"Fotos.", cost:0, maps:"https://maps.google.com/?q=Sannenzaka+Kyoto", star:true},
+  {t:"12:15–13:15", ic:"🍽️", name:"Comida sentada y descanso", desc:"", maps:"https://maps.google.com/?q=Higashiyama+Kyoto+restaurants"},
+  {t:"13:30–15:00", ic:"⛩️", name:"Kodaiji / Yasaka / Gion", desc:"Según ubicación de la tienda y calzado.", maps:"https://maps.google.com/?q=Kodaiji+Temple+Kyoto"},
+  {t:"15:00–16:30", ic:"🏮", name:"Gion Shirakawa / Hanamikoji + café", desc:"", cost:0, maps:"https://maps.google.com/?q=Hanamikoji+Street+Kyoto", star:true},
+  {t:"16:30–17:30", ic:"👘", name:"Devolución de kimono", desc:"Si la tienda no permite devolución tardía; si permite día siguiente, conservarlo."},
+  {t:"19:00", ic:"🎭", name:"Gion Corner — reserva fija", desc:"Danza, té, koto, kyogen y más en 1 hora.", cost:5500, maps:"https://maps.google.com/?q=Gion+Corner+Kyoto", ticket:"https://www.kyoto-gioncorner.com/global/en.html", star:true},
+  {t:"20:15", ic:"🍽️", name:"Cena ligera en Gion", desc:"Y regreso al hotel.", maps:"https://maps.google.com/?q=Gion+Kyoto+restaurants"},
+], route:["Tienda kimono","→","Higashiyama","→","Gion","→","Gion Corner"],
+  tips:[{label:"No Kiyomizu formal",text:"Ese día priorizamos fotos con kimono; la visita formal a Kiyomizu será otro amanecer."},{label:"Pendiente",text:"Añadir nombre de tienda y política de devolución en cuanto se confirme."},{label:"Calzado",text:"Con kimono, usar taxi corto si hay cansancio o calor."}]},
+
+{day:9, city:"Kioto", title:"Fushimi Inari al amanecer + Kyoto clásico", sub:"Viernes 18 Sep", stops:[
+  {t:"05:15", ic:"🚕", name:"Salida del hotel", desc:""},
+  {t:"05:45–07:30", ic:"⛩️", name:"Fushimi Inari: Senbon Torii", desc:"No hace falta subir a la cima. Antes de las 07:00 es la prioridad visual.", cost:0, maps:"https://maps.google.com/?q=Fushimi+Inari+Taisha", ticket:"https://inari.jp/en/", star:true},
+  {t:"08:00–09:15", ic:"🍳", name:"Regreso, desayuno y descanso", desc:""},
+  {t:"10:15", ic:"🚕", name:"Traslado a Kinkaku-ji", desc:"Taxi/bus.", maps:"https://maps.google.com/?q=Kinkaku-ji"},
+  {t:"11:00–12:00", ic:"🏯", name:"Kinkaku-ji · Pabellón Dorado", desc:"", cost:null, maps:"https://maps.google.com/?q=Kinkaku-ji", ticket:"https://www.shokoku-ji.jp/en/kinkakuji/", star:true},
+  {t:"12:15–13:15", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Kyoto+restaurants"},
+  {t:"13:30–16:30", ic:"🚶", name:"Ginkaku-ji → Philosopher's Path → Honen-in → Eikan-do / Nanzen-ji", desc:"Recortar si hay calor: elegir Eikan-do o Nanzen-ji, no ambos.", maps:"https://maps.google.com/?q=Philosophers+Path+Kyoto", star:true},
+  {t:"17:30", ic:"🛌", name:"Regreso / descanso", desc:""},
+  {t:"19:00", ic:"🍽️", name:"Pontocho o cena libre", desc:"", maps:"https://maps.google.com/?q=Pontocho+Kyoto"},
+], route:["Fushimi Inari","→","Hotel","→","Kinkaku-ji","→","Kyoto Este"],
+  tips:[{label:"Foto",text:"Fushimi Inari antes de 07:00 es la prioridad visual."},{label:"Taxi útil",text:"Hotel → Kinkaku-ji ahorra transbordos y caminata."},{label:"Ritmo",text:"Si hace mucho calor, elegir Eikan-do o Nanzen-ji, no ambos."}]},
+
+{day:10, city:"Kioto", title:"Kiyomizu a las 06:00 + excursión a Nara", sub:"Sábado 19 Sep", stops:[
+  {t:"05:35", ic:"🚶", name:"Salida caminando/taxi corto a Kiyomizu", desc:"", maps:"https://maps.google.com/?q=Kiyomizu-dera"},
+  {t:"06:00–07:15", ic:"🏯", name:"Kiyomizu-dera prácticamente al abrir", desc:"Abre habitualmente a las 06:00 (el cierre varía por temporada).", cost:null, maps:"https://maps.google.com/?q=Kiyomizu-dera", ticket:"https://www.kiyomizudera.or.jp/en/", star:true},
+  {t:"07:30–08:30", ic:"🍳", name:"Regreso, desayuno y preparar salida", desc:""},
+  {t:"08:45", ic:"🚶", name:"Hotel → Kyoto Station", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
+  {t:"09:15", ic:"🚆", name:"Kintetsu Kyoto → Kintetsu-Nara", desc:"Limited Express si conviene.", maps:"https://maps.google.com/?q=Kintetsu+Nara+Station"},
+  {t:"10:15–12:30", ic:"🦌", name:"Todai-ji + Nara Park", desc:"Ciervos y el gran Buda.", cost:null, maps:"https://maps.google.com/?q=Todai-ji+Nara", ticket:"https://www.todaiji.or.jp/en/", star:true},
+  {t:"12:30–13:30", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Nara+restaurants"},
+  {t:"13:45–15:15", ic:"🏮", name:"Kasuga Taisha y senderos con faroles", desc:"Los senderos y el acceso son de entrada libre.", cost:0, maps:"https://maps.google.com/?q=Kasuga+Taisha", ticket:"https://www.kasugataisha.or.jp/", star:true},
+  {t:"15:30–16:30", ic:"🍵", name:"Naramachi / café o compras", desc:"", maps:"https://maps.google.com/?q=Naramachi"},
+  {t:"17:00", ic:"🚆", name:"Regreso a Kyoto", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
+], route:["Kiyomizu","→","Kyoto Station","→","Kintetsu-Nara","→","Kyoto"],
+  tips:[{label:"Ventaja",text:"Kiyomizu temprano aprovecha que Hotel SUI está en la zona y no roba el día de Nara."},{label:"Transporte",text:"Kintetsu-Nara deja más cerca de Nara Park que JR Nara."},{label:"Calor",text:"Llevar agua; priorizar Todai-ji y Kasuga si hay que recortar."}]},
+
+{day:11, city:"Kioto", title:"Katsuo-ji + Kishiwada Danjiri", sub:"Domingo 20 Sep · el día más largo del viaje", stops:[
+  {t:"05:50", ic:"🚶", name:"Salida a Kyoto Station", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
+  {t:"06:25", ic:"🚄", name:"Kyoto → Shin-Osaka", desc:"JR rápido o Shinkansen, según mejor conexión.", maps:"https://maps.google.com/?q=Shin-Osaka+Station", ticket:"https://smart-ex.jp/en/lp/app/"},
+  {t:"07:00", ic:"🚇", name:"Shin-Osaka → Minoh-Kayano", desc:"Por Midosuji/Kita-Osaka Kyuko.", maps:"https://maps.google.com/?q=Minoh-Kayano+Station"},
+  {t:"07:35", ic:"🚕", name:"Taxi a Katsuo-ji", desc:"Recomendado.", maps:"https://maps.google.com/?q=Katsuoji+Temple"},
+  {t:"08:00–10:00", ic:"🪆", name:"Katsuo-ji: darumas, templo y fotos", desc:"Domingos/festivos 08:00–17:00, última admisión 16:30.", cost:null, maps:"https://maps.google.com/?q=Katsuoji+Temple", ticket:"https://katsuo-ji-temple.or.jp/", star:true},
+  {t:"10:15", ic:"🚕", name:"Taxi de regreso a Minoh-Kayano", desc:"", maps:"https://maps.google.com/?q=Minoh-Kayano+Station"},
+  {t:"10:45–12:30", ic:"🚇", name:"Metro hacia Namba + comida temprana", desc:"", maps:"https://maps.google.com/?q=Namba+Osaka"},
+  {t:"12:45–13:20", ic:"🚆", name:"Nankai Namba → Kishiwada", desc:"", maps:"https://maps.google.com/?q=Kishiwada+Station"},
+  {t:"13:30–18:00", ic:"🎆", name:"Kishiwada Danjiri Matsuri", desc:"Ver carrozas y yarimawashi desde zona segura. Festival oficial 19–20 Sep 2026: este es el segundo día.", cost:0, maps:"https://maps.google.com/?q=Kishiwada+Castle", ticket:"https://www.japan.travel/en/spot/27/", star:true},
+  {t:"18:00–19:45", ic:"🏮", name:"Ambiente de faroles/atardecer", desc:"Si la operación del festival lo permite.", cost:0, maps:"https://maps.google.com/?q=Kishiwada+Castle"},
+  {t:"20:00", ic:"🚆", name:"Kishiwada → Namba/Osaka → Kyoto", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
+], route:["Kyoto","→","Minoh-Kayano","→","Katsuo-ji","→","Namba","→","Kishiwada","→","Kyoto"],
+  tips:[{label:"Día largo",text:"Es el día más exigente del viaje, pero sin maletas y regresando al mismo hotel."},{label:"Taxi clave",text:"Minoh-Kayano ↔ Katsuo-ji: mejor inversión del día para mantener ritmo medio."},{label:"Seguridad",text:"No intentar perseguir carrozas entre calles. Elegir una zona de observación y moverse con calma."}]},
+
+{day:12, city:"Osaka", title:"Osaka completo + Hozenji Yokocho", sub:"Lunes 21 Sep", stops:[
+  {t:"07:45", ic:"🚆", name:"Salida a Osaka", desc:"", maps:"https://maps.google.com/?q=Osaka+Station"},
+  {t:"09:00–10:30", ic:"🏯", name:"Osaka Castle Park", desc:"Exterior/castillo según interés. Si hay fila grande, priorizar el parque.", cost:null, maps:"https://maps.google.com/?q=Osaka+Castle", ticket:"https://osaka-castle.org/", star:true},
+  {t:"11:00–12:30", ic:"🐟", name:"Kuromon Market / Nippombashi", desc:"Paseo y comida temprana.", maps:"https://maps.google.com/?q=Kuromon+Ichiba+Market", star:true},
+  {t:"13:00–14:30", ic:"🗼", name:"Shinsekai / Tsutenkaku", desc:"Mirador opcional.", maps:"https://maps.google.com/?q=Shinsekai+Osaka"},
+  {t:"15:00–17:00", ic:"🛍️", name:"Namba + Dotonbori", desc:"Compras y el letrero de Glico.", maps:"https://maps.google.com/?q=Dotonbori+Osaka", star:true},
+  {t:"17:15–17:45", ic:"⛩️", name:"Hozenji Temple / Mizukake Fudo", desc:"", cost:0, maps:"https://maps.google.com/?q=Hozenji+Temple+Osaka"},
+  {t:"18:00–19:45", ic:"🥩", name:"Cena en Hozenji Yokocho", desc:"Prioridad: Matsusaka beef/yakiniku o cocina de Osaka.", maps:"https://maps.google.com/?q=Hozenji+Yokocho", star:true},
+  {t:"20:00", ic:"🚆", name:"Regreso a Kioto", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
+], route:["Osaka Castle","→","Kuromon","→","Shinsekai","→","Dotonbori","→","Hozenji Yokocho","→","Kyoto"],
+  tips:[{label:"Imprescindible",text:"Hozenji Yokocho al final del día, con faroles y cena."},{label:"Cena",text:"Reservar si eliges un restaurante popular de Matsusaka beef."},{label:"Mejora",text:"No añadir Umeda Sky Building: haría zigzag y quitaría tiempo a Hozenji/Dotonbori."}]},
+
+{day:13, city:"Hiroshima", title:"Kioto → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stops:[
+  {t:"07:30", ic:"🧳", name:"Desayuno y check-out Hotel SUI", desc:""},
+  {t:"08:15", ic:"🚶", name:"Traslado a Kyoto Station", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
+  {t:"09:00", ic:"🚄", name:"Nozomi Kyoto → Hiroshima", desc:"Asiento reservado. Modificar el Shinkansen para salir desde Kyoto, no Shin-Osaka.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
+  {t:"10:45–11:30", ic:"🏨", name:"Llegada; dejar equipaje en hotel/locker", desc:""},
+  {t:"12:00–13:00", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Hiroshima+restaurants"},
+  {t:"13:15–16:30", ic:"🕊️", name:"Peace Memorial Park + A-Bomb Dome + museo", desc:"Ritmo tranquilo — puede ser intenso emocionalmente.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Peace+Memorial+Park", ticket:"https://hpmmuseum.jp/", star:true},
+  {t:"16:45–17:45", ic:"🏯", name:"Hiroshima Castle / Gokoku Shrine", desc:"Si hay energía; si no, paseo junto al río.", maps:"https://maps.google.com/?q=Hiroshima+Castle"},
+  {t:"18:30", ic:"🍽️", name:"Cena de okonomiyaki estilo Hiroshima", desc:"", maps:"https://maps.google.com/?q=okonomiyaki+Hiroshima", star:true},
+], route:["Kyoto Station","→","Hiroshima Station","→","Peace Park","→","centro"],
+  tips:[{label:"Cambio de boleto",text:"Modificar el Shinkansen para salir desde Kyoto, no Shin-Osaka."},{label:"Equipaje",text:"Considerar enviar maleta grande desde Kioto a Shibuya/Narita y viajar ligero a Hiroshima."},{label:"Ritmo emocional",text:"El museo puede ser intenso; no programar una noche cargada después."}]},
+
+{day:14, city:"Miyajima", title:"Miyajima / Itsukushima", sub:"Miércoles 23 Sep", stops:[
+  {t:"07:15", ic:"🚶", name:"Salida hacia Hiroshima Station", desc:""},
+  {t:"07:45", ic:"🚆", name:"JR Sanyo Line → Miyajimaguchi", desc:"", maps:"https://maps.google.com/?q=Miyajimaguchi+Station"},
+  {t:"08:20", ic:"⛴️", name:"Ferry a Miyajima", desc:"", maps:"https://maps.google.com/?q=Miyajima+Ferry"},
+  {t:"08:45–10:15", ic:"⛩️", name:"Itsukushima Shrine + gran torii", desc:"La experiencia cambia con la marea; revisar tabla de mareas.", cost:null, maps:"https://maps.google.com/?q=Itsukushima+Shrine", ticket:"https://www.itsukushimajinja.jp/en/", star:true},
+  {t:"10:30–12:00", ic:"🏯", name:"Daisho-in y calles tradicionales", desc:"", cost:0, maps:"https://maps.google.com/?q=Daisho-in+Miyajima", star:true},
+  {t:"12:00–13:00", ic:"🍽️", name:"Comida", desc:"Prueba el anago (anguila) o las ostras de Miyajima.", maps:"https://maps.google.com/?q=Miyajima+restaurants"},
+  {t:"13:15–15:30", ic:"🚡", name:"Omotesando / paseo costero", desc:"Ropeway a Mt. Misen solo si clima y energía son buenos (opcional).", maps:"https://maps.google.com/?q=Miyajima+Ropeway"},
+  {t:"16:00", ic:"⛴️", name:"Ferry de regreso + tren a Hiroshima", desc:"", maps:"https://maps.google.com/?q=Hiroshima+Station"},
+  {t:"17:15–18:30", ic:"🛌", name:"Pendientes de Hiroshima / descanso", desc:""},
+], route:["Hiroshima","→","Miyajimaguchi","→","ferry","→","Miyajima","→","Hiroshima"],
+  tips:[{label:"Torii",text:"La experiencia cambia con la marea; revisar tabla de mareas para ajustar el orden dentro de la isla."},{label:"Ritmo",text:"Mt. Misen es opcional; no sacrificar Itsukushima/Daisho-in por subir con prisa."},{label:"Foto",text:"Mañana temprano para menos gente; segunda oportunidad al regresar hacia el ferry."}]},
+
+{day:15, city:"Tokio", title:"Vuelo a Haneda + tarde de compras en Shibuya", sub:"Jueves 24 Sep", stops:[
+  {t:"07:30", ic:"🧳", name:"Check-out / traslado al aeropuerto de Hiroshima", desc:"Con margen (60-90 min según hotel).", maps:"https://maps.google.com/?q=Hiroshima+Airport"},
+  {t:"10:30", ic:"✈️", name:"Vuelo Hiroshima → Haneda", desc:"Reserva fija. ≈1h20–1h30.", maps:"https://maps.google.com/?q=Haneda+Airport"},
+  {t:"12:00–13:30", ic:"🚆", name:"Llegada, equipaje y traslado a Shibuya", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
+  {t:"13:30–14:00", ic:"🏨", name:"Dejar maletas en Shibuya Granbell", desc:"", cost:0, maps:"https://maps.google.com/?q=Shibuya+Granbell+Hotel", ticket:"https://en.granbellhotel.jp/shibuya/"},
+  {t:"14:00–16:00", ic:"🛍️", name:"Shibuya PARCO + Disney Store", desc:"Tiendas específicas.", maps:"https://maps.google.com/?q=Shibuya+PARCO", star:true},
+  {t:"16:00–18:00", ic:"🔌", name:"Tokyu Hands + Bic Camera", desc:"Electrónica y artículos de hogar.", maps:"https://maps.google.com/?q=Bic+Camera+Shibuya"},
+  {t:"18:00–19:00", ic:"🍽️", name:"Cena corta", desc:"", maps:"https://maps.google.com/?q=Shibuya+restaurants"},
+  {t:"19:00–21:30", ic:"🛒", name:"Uniqlo / Matsumoto Kiyoshi / Don Quijote", desc:"Compras finales — Mega Don Quijote al final.", maps:"https://maps.google.com/?q=Don+Quijote+Shibuya", star:true},
+], route:["Hiroshima Airport","→","Haneda","→","Shibuya"],
+  tips:[{label:"Estrategia",text:"Comprar primero lo específico; Don Quijote al final para no cargar todo el día."},{label:"Equipaje",text:"Si ya enviamos maleta desde Kioto, recogerla en Shibuya este día o al 25 según entrega."},{label:"Ritmo",text:"No añadir turismo importante: compras son la prioridad real del 24."}]},
+
+{day:16, city:"Tokio", title:"Nezu + Yanaka + Kagurazaka", sub:"Viernes 25 Sep · Tokio tradicional", stops:[
+  {t:"07:00", ic:"🚇", name:"Salida de Shibuya", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
+  {t:"08:00–09:15", ic:"⛩️", name:"Nezu Shrine", desc:"Corredor de torii rojos y Otome Inari. Temprano: mejor para el corredor de torii.", cost:0, maps:"https://maps.google.com/?q=Nezu+Shrine", star:true},
+  {t:"09:30–11:30", ic:"🏘️", name:"Yanaka", desc:"Calles tranquilas, cementerio/templos según interés.", cost:0, maps:"https://maps.google.com/?q=Yanaka+Tokyo", star:true},
+  {t:"11:45–12:45", ic:"🍡", name:"Yanaka Ginza / comida", desc:"", maps:"https://maps.google.com/?q=Yanaka+Ginza"},
+  {t:"13:15–14:00", ic:"🚕", name:"Traslado a Kagurazaka", desc:"", maps:"https://maps.google.com/?q=Kagurazaka"},
+  {t:"14:00–16:30", ic:"🏮", name:"Kagurazaka", desc:"Callejones, cafés y ambiente tradicional.", cost:0, maps:"https://maps.google.com/?q=Kagurazaka", star:true},
+  {t:"17:00", ic:"🚇", name:"Regreso a Shibuya; descanso", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
+  {t:"19:00", ic:"🍽️", name:"Cena o compras pendientes cerca del hotel", desc:""},
+], route:["Shibuya","→","Nezu","→","Yanaka","→","Kagurazaka","→","Shibuya"],
+  tips:[{label:"Foto",text:"Nezu temprano: mejor para el corredor de torii."},{label:"Mejora",text:"No mezclar Nezu con Harajuku: están en lados distintos de Tokio."},{label:"Flex",text:"Si Kuramae quedó pendiente el 12, puede sustituir parte de Yanaka."}]},
+
+{day:17, city:"Tokio → Narita", title:"Harajuku/Omotesando + traslado a Narita", sub:"Sábado 26 Sep · último día", stops:[
+  {t:"08:30", ic:"🧳", name:"Check-out Shibuya Granbell", desc:"Dejar equipaje."},
+  {t:"09:00–10:00", ic:"⛩️", name:"Meiji Jingu temprano", desc:"", cost:0, maps:"https://maps.google.com/?q=Meiji+Jingu", ticket:"https://www.meijijingu.or.jp/en/", star:true},
+  {t:"10:15–11:30", ic:"🛍️", name:"Takeshita Street", desc:"Al comenzar a abrir tiendas.", maps:"https://maps.google.com/?q=Takeshita+Street+Harajuku", star:true},
+  {t:"11:30–13:30", ic:"🛍️", name:"Omotesando + Cat Street", desc:"", maps:"https://maps.google.com/?q=Omotesando+Tokyo", star:true},
+  {t:"13:30–14:30", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Omotesando+restaurants"},
+  {t:"14:30–16:00", ic:"🛒", name:"Últimas compras en Shibuya / recoger equipaje", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
+  {t:"16:00–17:30", ic:"🚆", name:"Traslado Shibuya → Narita", desc:"Preferir tren reservado (N'EX).", cost:null, maps:"https://maps.google.com/?q=Narita+Airport", ticket:"https://www.jreast.co.jp/en/multi/nex/tickets/", star:true},
+  {t:"18:00", ic:"🏨", name:"Check-in Narita Tobu Hotel Airport", desc:"Cena y preparar vuelo.", cost:0, maps:"https://maps.google.com/?q=Narita+Tobu+Hotel+Airport", ticket:"https://www.tobuhotel.co.jp/narita/en/index.html"},
+], route:["Meiji Jingu","→","Takeshita","→","Omotesando","→","Shibuya","→","Narita"],
+  tips:[{label:"Nocturno",text:"Nada importante por la noche: la meta es dormir ya junto a Narita."},{label:"Equipaje",text:"Agrupar compras y pesar maletas antes de salir de Shibuya si es posible."},{label:"Vuelo 27",text:"Usar shuttle del hotel al aeropuerto según terminal y horario confirmado."}]},
+];
+
+// ════════ PREP DATA (ajustado a Japón) ════════
+const PREP_CATS = [
+  {title:"🎒 Accesorios viaje", items:["Adaptador de corriente tipo A/B (Japón)","Power bank (batería extra)","Audífonos / noise cancelling","Mochila o cangurera","Porta pasaporte","Pasaporte vigente","Paraguas plegable / impermeable ligero","Zapatos cómodos para caminar mucho"]},
+  {title:"🧴 Neceser", items:["Shampoo (bote pequeño)","Acondicionador (bote pequeño)","Crema corporal (bote pequeño)","Bolsas con cierre hermético","Bolsas para comprimir ropa"]},
+  {title:"📱 Apps esenciales", items:["eSIM (Holafly / Ubigi / Airalo)","Google Maps offline","Google Translate (modo cámara)","Japan Transit Planner / Navitime","Suica / Pasmo digital (Apple Pay / app)","GO (taxis en Japón)"]},
+  {title:"💳 Documentos y dinero", items:["Efectivo en yenes (Japón usa mucho cash)","Tarjeta sin comisiones internacionales","JR Pass o IC Card recargable","Seguro de viaje","Copia digital del pasaporte","Reservas confirmadas en email"]},
+];
+
+// ════════ STATE ════════
+let STAYS=[];
+let SAVED=[];
+let curGroup='all';
+let editId=null;
+let curDay=0;
+
+function esc(str){return (str==null?'':String(str)).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+// ════════ INIT ════════
+function init(){
+  loadStays();
+  buildPrep();
+  loadPrep();
+  loadSaved();
+  renderItin();
+}
+
+// ════════ MAIN NAV ════════
+function switchMain(sec){
+  document.querySelectorAll('.main-tab').forEach((t,i)=>{
+    t.classList.toggle('on',['itinerario','guardados','preparacion'][i]===sec);
+  });
+  document.querySelectorAll('.main-section').forEach(s=>s.classList.remove('on'));
+  document.getElementById('sec-'+sec).classList.add('on');
+}
+
+// ════════ ALOJAMIENTOS (STAYS) ════════
+const DEFAULT_STAYS=[
+  {city:"Tokio · Shinjuku (10–15 Sep)", title:"Shinjuku Granbell Hotel", sub:"5 noches · check-in 10 Sep, salida 15 Sep hacia Hakone", link:"https://en.granbellhotel.jp/shinjuku/"},
+  {city:"Hakone (15–16 Sep)", title:"Ichinoyu Honkan (ryokan)", sub:"1 noche · onsen + yukata · Tonosawa", link:"https://www.hakonenavi.jp/international/en/spot/272"},
+  {city:"Kioto (16–22 Sep)", title:"Hotel SUI Kyoto Kiyomizu — ¡agotado!", sub:"6 noches · ya no hay disponibilidad para estas fechas · ver 4 alternativas abajo", link:"https://hotel-sui.com/kyoto/en/"},
+  {city:"Kioto · opción A", title:"NOHGA HOTEL KIYOMIZU KYOTO", sub:"7 min a pie de Kiyomizu-Gojo · rooftop bar · 9.3/10 · tier similar al SUI", link:"https://www.nohgahotel.com/kiyomizu/en/"},
+  {city:"Kioto · opción B", title:"Granbell Hotel Kyoto (Gion-Shijo)", sub:"2 min a pie de Gion-Shijo · mismo grupo que Shinjuku/Shibuya Granbell · baño público con patio", link:"https://en.granbellhotel.jp/kyoto/"},
+  {city:"Kioto · opción C", title:"Hotel The Celestine Kyoto Gion", sub:"9.2/10 · en pleno Higashiyama, cerca de Yasaka Shrine y Gion Corner", link:"https://www.celestinehotels.jp/en/kyoto-gion/"},
+  {city:"Kioto · opción D", title:"The Hotel Higashiyama Kyoto Tokyu (Pan Pacific)", sub:"Marca internacional Pan Pacific · Higashiyama · buena valoración", link:"https://www.tokyuhotels.co.jp/en/higashiyama-h/index.html"},
+  {city:"Hiroshima (22–24 Sep)", title:"(Por confirmar)", sub:"2 noches · pendiente elegir y reservar", link:""},
+  {city:"Tokio · Shibuya (24–26 Sep)", title:"Shibuya Granbell Hotel", sub:"2 noches · zona de compras", link:"https://en.granbellhotel.jp/shibuya/"},
+  {city:"Narita (26 Sep)", title:"Narita Tobu Hotel Airport", sub:"1 noche junto al aeropuerto antes del vuelo", link:"https://www.tobuhotel.co.jp/narita/en/index.html"},
+];
+function loadStays(){
+  const saved=localStorage.getItem('jd_jp_stays');
+  STAYS = saved ? JSON.parse(saved) : DEFAULT_STAYS.slice();
+  if(!saved)localStorage.setItem('jd_jp_stays',JSON.stringify(STAYS));
+  renderStays();
+}
+function renderStays(){
+  const wrap=document.getElementById('staysWrap');
+  if(STAYS.length===0){
+    wrap.innerHTML='<div class="empty-card">Agrega tu primer alojamiento (Tokio, Kioto, Osaka...) con el botón de abajo y pega el link de Airbnb.</div>';
+    return;
+  }
+  wrap.innerHTML=STAYS.map((s,i)=>`
+    <div class="stay-card">
+      <div class="stay-ico">🏠</div>
+      <div class="stay-fields">
+        <input class="stay-input" id="stay-city-${i}" placeholder="Ciudad (ej. Tokio)" maxlength="40" value="${esc(s.city)}">
+        <input class="stay-input" id="stay-title-${i}" placeholder="Nombre / dirección del alojamiento..." maxlength="80" value="${esc(s.title)}">
+        <input class="stay-input sub" id="stay-sub-${i}" placeholder="Barrio · referencias · tips..." maxlength="120" value="${esc(s.sub)}">
+        <input class="stay-input link" id="stay-link-${i}" placeholder="Link de Airbnb / Booking..." value="${esc(s.link)}">
+      </div>
+      <div class="stay-actions">
+        <div class="stay-btn-row">
+          ${s.link?`<a class="stay-open" href="${esc(s.link)}" target="_blank">🔗 Abrir</a>`:''}
+          <button class="stay-save" onclick="saveStay(${i})">💾</button>
+          <button class="stay-del" onclick="removeStay(${i})">🗑</button>
+        </div>
+        <span class="stay-save-ok" id="stay-ok-${i}">✓ Guardado</span>
+      </div>
+    </div>
+  `).join('');
+}
+function addStay(){
+  STAYS.push({city:'',title:'',sub:'',link:''});
+  localStorage.setItem('jd_jp_stays',JSON.stringify(STAYS));
+  renderStays();
+}
+function saveStay(i){
+  STAYS[i]={
+    city:document.getElementById(`stay-city-${i}`).value,
+    title:document.getElementById(`stay-title-${i}`).value,
+    sub:document.getElementById(`stay-sub-${i}`).value,
+    link:document.getElementById(`stay-link-${i}`).value,
+  };
+  localStorage.setItem('jd_jp_stays',JSON.stringify(STAYS));
+  renderStays();
+  const ok=document.getElementById(`stay-ok-${i}`);
+  if(ok){ok.style.display='inline';setTimeout(()=>ok.style.display='none',2000);}
+}
+function removeStay(i){
+  STAYS.splice(i,1);
+  localStorage.setItem('jd_jp_stays',JSON.stringify(STAYS));
+  renderStays();
+}
+
+// ════════ ITINERARIO (día por día) ════════
+function renderItin(){
+  const nav=document.getElementById('itinNav');
+  const dv=document.getElementById('itinView');
+  const header=document.getElementById('itinHeaderChips');
+  if(ITINERARY.length===0){
+    nav.innerHTML='';
+    header.innerHTML='<span class="chip">Sin días cargados aún</span>';
+    dv.innerHTML='<div class="empty-card">Aún no hay itinerario cargado.<br>Comparte tus días y actividades y los agrego aquí, con links de Maps y tickets incluidos. 🗾</div>';
+    return;
+  }
+  if(curDay>=ITINERARY.length)curDay=0;
+  const cities=new Set(ITINERARY.map(d=>d.city).filter(Boolean));
+  const totalCost=ITINERARY.reduce((s,d)=>s+d.stops.reduce((s2,x)=>s2+(typeof x.cost==='number'?x.cost:0),0),0);
+  header.innerHTML=`<span class="chip green">${ITINERARY.length} días</span><span class="chip blue">${cities.size} ciudades</span><span class="chip gold">~¥${totalCost.toLocaleString()}</span>`;
+  nav.innerHTML=ITINERARY.map((d,i)=>`<button class="dbt ${i===curDay?'on':''}" onclick="goDayI(${i})">Día ${d.day}${d.city?' · '+esc(d.city):''}</button>`).join('');
+  renderDayI(curDay);
+}
+function goDayI(i){
+  curDay=i;
+  document.querySelectorAll('#itinNav .dbt').forEach((b,j)=>b.classList.toggle('on',j===i));
+  renderDayI(i);
+}
+function renderDayI(idx){
+  const d=ITINERARY[idx];
+  const dv=document.getElementById('itinView');
+  const stops=d.stops.map(s=>{
+    const costHtml = s.cost===0 ? `<div class="stop-cost free">Gratis</div>`
+      : typeof s.cost==='number' ? `<div class="stop-cost paid">¥${s.cost.toLocaleString()}</div>`
+      : s.cost===null ? `<div class="stop-cost" style="color:#B0A060;font-size:9px">💴 ver precio</div>`
+      : '';
+    const links=[
+      s.maps?`<a class="lb lb-m" href="${s.maps}" target="_blank">📍 Maps</a>`:'',
+      s.ticket?`<a class="lb lb-t" href="${s.ticket}" target="_blank">🎟️ Tickets</a>`:'',
+    ].filter(Boolean).join('');
+    return`<div class="stop">
+      <div class="stop-left"><div class="stop-ico">${s.ic}</div>${s.t?`<div class="stop-time">${s.t}</div>`:''}</div>
+      <div>
+        <div class="stop-name">${s.star?'<span class="stop-star">⭐</span>':''}${s.name}</div>
+        <div class="stop-desc">${s.desc}</div>
+        ${links?`<div class="stop-links">${links}</div>`:''}
+      </div>
+      ${costHtml}
+    </div>`;
+  }).join('');
+  const route=d.route?`<div class="route-box"><div class="route-label">🗺️ Ruta del día</div><div class="route-steps">${d.route.map(r=>r==='→'?`<span class="rta">→</span>`:`<span class="rts">${r}</span>`).join('')}</div></div>`:'';
+  const tips=d.tips?`<div class="tip-box">${d.tips.map(t=>`🤫 <b>${t.label}:</b> ${t.text}`).join('<br>')}</div>`:'';
+  const dots=ITINERARY.map((_,j)=>`<div class="dot ${j===idx?'on':''}"></div>`).join('');
+  const nav=`<div class="nav-row"><button class="nb" onclick="goDayI(${idx-1})" ${idx===0?'disabled':''}>← Anterior</button><div class="dots">${dots}</div><button class="nb" onclick="goDayI(${idx+1})" ${idx===ITINERARY.length-1?'disabled':''}>Siguiente →</button></div>`;
+  const tot=d.stops.reduce((s,x)=>s+(typeof x.cost==='number'?x.cost:0),0);
+  const free=d.stops.filter(x=>x.cost===0).length;
+  dv.innerHTML=`<div class="day-card">
+    <div class="day-head">
+      <div class="day-badge"><div class="day-num">${d.day}</div><div class="day-lbl">DÍA</div></div>
+      <div class="day-info">
+        <div class="day-title">${d.title}${d.city?` · ${d.city}`:''}</div>
+        <div class="day-sub">${d.sub||''}</div>
+      </div>
+      <div style="text-align:right"><div style="font-size:9px;color:#666">${free} gratis</div><div style="font-size:16px;font-weight:700;color:#FFA040">¥${tot.toLocaleString()}</div></div>
+    </div>
+    ${stops}
+    ${tips}
+    ${route}
+    ${nav}
+  </div>`;
+}
+
+// ════════ GUARDADOS (TikTok board) ════════
+function loadSaved(){
+  SAVED=JSON.parse(localStorage.getItem('jd_jp_saved')||'[]');
+  renderGroupTabs();
+  renderBoard();
+}
+function persistSaved(){localStorage.setItem('jd_jp_saved',JSON.stringify(SAVED));}
+
+function addPlace(){
+  const link=document.getElementById('np-link').value.trim();
+  const name=document.getElementById('np-name').value.trim();
+  const group=document.getElementById('np-group').value.trim()||'Sin grupo';
+  const tags=document.getElementById('np-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  if(!link&&!name)return;
+  const maxOrder=SAVED.reduce((m,p)=>Math.max(m,p.order||0),0);
+  SAVED.push({id:Date.now(),link,name:name||'Lugar sin nombre',group,tags,order:maxOrder+1});
+  persistSaved();
+  document.getElementById('np-link').value='';
+  document.getElementById('np-name').value='';
+  document.getElementById('np-group').value='';
+  document.getElementById('np-tags').value='';
+  renderGroupTabs();
+  renderBoard();
+}
+
+function renderGroupTabs(){
+  const groups=['all',...new Set(SAVED.map(p=>p.group||'Sin grupo'))];
+  if(!groups.includes(curGroup))curGroup='all';
+  const wrap=document.getElementById('groupTabs');
+  wrap.innerHTML=groups.map(g=>`<button class="group-tab ${g===curGroup?'on':''}" onclick="switchGroup(this.dataset.g)" data-g="${esc(g)}">${g==='all'?'Todos':esc(g)}</button>`).join('');
+}
+function switchGroup(g){curGroup=g;renderGroupTabs();renderBoard();}
+
+function currentList(){
+  let list=curGroup==='all'?[...SAVED]:SAVED.filter(p=>(p.group||'Sin grupo')===curGroup);
+  return list.sort((a,b)=>(a.order||0)-(b.order||0));
+}
+
+function renderBoard(){
+  const list=currentList();
+  const grid=document.getElementById('placeGrid');
+  if(list.length===0){grid.innerHTML='<div class="empty-card">Aún no guardas lugares. Pega un link de TikTok arriba y empieza tu lista. 📌</div>';return;}
+  grid.innerHTML=list.map((p,i)=>`
+    <div class="place-card">
+      <div class="place-top">
+        <div class="place-ico">🎵</div>
+        <div class="place-name">${esc(p.name)}</div>
+        <div class="place-group">${esc(p.group||'Sin grupo')}</div>
+      </div>
+      ${p.tags&&p.tags.length?`<div class="place-tags">${p.tags.map(t=>`<span class="tag-chip">#${esc(t)}</span>`).join('')}</div>`:''}
+      <div class="place-actions">
+        ${p.link?`<a class="place-link" href="${esc(p.link)}" target="_blank">🎵 Ver en TikTok</a>`:''}
+        <button class="mini-btn" onclick="moveItem(${p.id},-1)" ${i===0?'disabled':''}>▲</button>
+        <button class="mini-btn" onclick="moveItem(${p.id},1)" ${i===list.length-1?'disabled':''}>▼</button>
+        <button class="mini-btn" onclick="openEdit(${p.id})">✏️ Editar</button>
+        <button class="mini-btn danger" onclick="deletePlace(${p.id})">🗑</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function moveItem(id,dir){
+  const list=currentList();
+  const idx=list.findIndex(p=>p.id===id);
+  const swapIdx=idx+dir;
+  if(swapIdx<0||swapIdx>=list.length)return;
+  const a=list[idx],b=list[swapIdx];
+  const tmp=a.order;a.order=b.order;b.order=tmp;
+  persistSaved();
+  renderBoard();
+}
+
+function deletePlace(id){
+  SAVED=SAVED.filter(p=>p.id!==id);
+  persistSaved();
+  renderGroupTabs();
+  renderBoard();
+}
+
+function openEdit(id){
+  editId=id;
+  const p=SAVED.find(x=>x.id===id);
+  document.getElementById('MTITLE').textContent='Editar lugar';
+  document.getElementById('MCONT').innerHTML=`
+    <div style="display:flex;flex-direction:column;gap:7px">
+      <input class="board-input" id="ed-name" placeholder="Nombre del lugar" value="${esc(p.name)}">
+      <input class="board-input" id="ed-link" placeholder="Link de TikTok" value="${esc(p.link)}">
+      <input class="board-input" id="ed-group" placeholder="Grupo / ciudad" value="${esc(p.group)}">
+      <input class="board-input" id="ed-tags" placeholder="Tags separados por coma" value="${esc((p.tags||[]).join(', '))}">
+      <button class="board-add-btn" onclick="saveEdit()">💾 Guardar cambios</button>
+    </div>`;
+  document.getElementById('MODAL').classList.add('open');
+}
+function saveEdit(){
+  const p=SAVED.find(x=>x.id===editId);
+  p.name=document.getElementById('ed-name').value.trim()||'Lugar sin nombre';
+  p.link=document.getElementById('ed-link').value.trim();
+  p.group=document.getElementById('ed-group').value.trim()||'Sin grupo';
+  p.tags=document.getElementById('ed-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  persistSaved();
+  document.getElementById('MODAL').classList.remove('open');
+  renderGroupTabs();
+  renderBoard();
+}
+
+// ════════ PREP ════════
+function buildPrep(){
+  const grid=document.getElementById('PREPGRID');
+  grid.innerHTML=PREP_CATS.map((cat,ci)=>`
+    <div class="prep-cat">
+      <div class="prep-cat-title">${cat.title}</div>
+      ${cat.items.map((item,ii)=>`
+        <div class="prep-item" onclick="togglePrep(${ci},${ii})">
+          <div class="prep-chk" id="chk-${ci}-${ii}"></div>
+          <div class="prep-label" id="lbl-${ci}-${ii}">${item}</div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+function loadPrep(){
+  const saved=JSON.parse(localStorage.getItem('jd_jp_prep')||'{}');
+  PREP_CATS.forEach((cat,ci)=>{
+    cat.items.forEach((_,ii)=>{
+      if(saved[`${ci}-${ii}`])applyPrep(ci,ii,true);
+    });
+  });
+  updateProgress();
+}
+
+function togglePrep(ci,ii){
+  const key=`${ci}-${ii}`;
+  const saved=JSON.parse(localStorage.getItem('jd_jp_prep')||'{}');
+  const now=!saved[key];
+  saved[key]=now||undefined;
+  if(!now)delete saved[key];
+  localStorage.setItem('jd_jp_prep',JSON.stringify(saved));
+  applyPrep(ci,ii,now);
+  updateProgress();
+}
+
+function applyPrep(ci,ii,on){
+  const chk=document.getElementById(`chk-${ci}-${ii}`);
+  const lbl=document.getElementById(`lbl-${ci}-${ii}`);
+  if(!chk)return;
+  chk.classList.toggle('on',on);
+  chk.textContent=on?'✓':'';
+  lbl.classList.toggle('done',on);
+}
+
+function updateProgress(){
+  const saved=JSON.parse(localStorage.getItem('jd_jp_prep')||'{}');
+  const total=PREP_CATS.reduce((s,c)=>s+c.items.length,0);
+  const done=Object.keys(saved).filter(k=>saved[k]).length;
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById('PROGBAR').style.width=pct+'%';
+  document.getElementById('PROGTEXT').textContent=`${done} / ${total}`;
+}
+
+// ════════ CLICK TRACKING ════════
+document.addEventListener('click', function(e){
+  const link = e.target.closest('a.lb-m, a.lb-t');
+  if(!link) return;
+  const stop = link.closest('.stop');
+  const nameEl = stop ? stop.querySelector('.stop-name') : null;
+  const placeName = nameEl ? nameEl.textContent.trim() : link.textContent.trim();
+  const linkType = link.classList.contains('lb-m') ? 'maps' : 'ticket';
+  if (typeof gtag === 'function') {
+    gtag('event', 'click_link', {
+      link_type: linkType,
+      place_name: placeName,
+      link_url: link.href
+    });
+  }
+});
+
+init();
+</script>
+</body>
+</html>
