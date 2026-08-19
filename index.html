@@ -310,6 +310,18 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
 <!-- ════════════ PREPARACIÓN ════════════ -->
 <div class="main-section" id="sec-preparacion">
 
+  <div class="section-hdr" style="margin-top:0">💴 Conversor de moneda</div>
+  <div class="ref-card">
+    <div class="board-row" style="margin-bottom:8px;align-items:center">
+      <input type="number" class="board-input" id="cv-amount" value="1000" min="0" style="max-width:120px;flex:none">
+      <select class="board-input" id="cv-from" style="max-width:100px;flex:none"></select>
+      <span style="font-size:14px;font-weight:700;color:#666">→</span>
+      <select class="board-input" id="cv-to" style="max-width:100px;flex:none"></select>
+    </div>
+    <div id="cv-result" style="font-size:22px;font-weight:900;color:#0A0A0A">—</div>
+    <div id="cv-note" style="font-size:10px;color:#999;margin-top:6px">Cargando tipo de cambio...</div>
+  </div>
+
   <div class="prep-progress">
     <div style="font-size:12px;font-weight:700;color:var(--white);white-space:nowrap">Progreso</div>
     <div class="prog-bar-wrap"><div class="prog-bar" id="PROGBAR" style="width:0%"></div></div>
@@ -342,18 +354,6 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
       </div>
       <div class="red-arrow">→</div>
     </a>
-  </div>
-
-  <div class="section-hdr">💴 Conversor de moneda</div>
-  <div class="ref-card">
-    <div class="board-row" style="margin-bottom:8px;align-items:center">
-      <input type="number" class="board-input" id="cv-amount" value="1000" min="0" style="max-width:120px;flex:none">
-      <select class="board-input" id="cv-from" style="max-width:100px;flex:none"></select>
-      <span style="font-size:14px;font-weight:700;color:#666">→</span>
-      <select class="board-input" id="cv-to" style="max-width:100px;flex:none"></select>
-    </div>
-    <div id="cv-result" style="font-size:22px;font-weight:900;color:#0A0A0A">—</div>
-    <div id="cv-note" style="font-size:10px;color:#999;margin-top:6px">Cargando tipo de cambio...</div>
   </div>
 
 </div><!-- /sec-preparacion -->
