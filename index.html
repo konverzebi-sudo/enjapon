@@ -100,12 +100,6 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
 .day-title{font-size:15px;font-weight:700;color:#1A1A1A}
 .day-sub{font-size:11px;color:#666;margin-top:3px}
 
-/* ── DAY STAY ── */
-.day-stay{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:11px;color:#666;background:#F5F5EF;border:1px solid var(--border);border-radius:9px;padding:7px 10px;margin-bottom:.9rem}
-.day-stay b{color:#1A1A1A;font-weight:700}
-.day-stay a{color:#1A5FAF;text-decoration:none}
-.day-stay a:hover{text-decoration:underline}
-
 /* ── STOP ROW ── */
 .stop{display:grid;grid-template-columns:44px 1fr auto;gap:8px;padding:8px 0;border-bottom:1px solid #EAEAE0;align-items:start}
 .stop:last-child{border-bottom:none}
@@ -729,7 +723,14 @@ function renderDayI(idx){
   const nav=`<div class="nav-row"><button class="nb" onclick="goDayI(${idx-1})" ${idx===0?'disabled':''}>← Anterior</button><div class="dots">${dots}</div><button class="nb" onclick="goDayI(${idx+1})" ${idx===ITINERARY.length-1?'disabled':''}>Siguiente →</button></div>`;
   const tot=d.stops.reduce((s,x)=>s+(typeof x.cost==='number'?x.cost:0),0);
   const free=d.stops.filter(x=>x.cost===0).length;
-  const stayHtml=d.stay?`<div class="day-stay">🏠 <span>Duermes en:</span> <b>${d.stay.link?`<a href="${d.stay.link}" target="_blank">${d.stay.name}</a>`:d.stay.name}</b>${d.stay.maps?`<a class="lb lb-m" href="${d.stay.maps}" target="_blank">📍 Maps</a>`:''}</div>`:'';
+  const stayStop=d.stay?`<div class="stop">
+      <div class="stop-left"><div class="stop-ico">🏠</div><div class="stop-time">Hoy duermes</div></div>
+      <div>
+        <div class="stop-name">${d.stay.link?`<a href="${d.stay.link}" target="_blank" style="color:inherit;text-decoration:none">${d.stay.name}</a>`:d.stay.name}</div>
+        ${d.stay.maps?`<div class="stop-links"><a class="lb lb-m" href="${d.stay.maps}" target="_blank">📍 Maps</a>${d.stay.link?`<a class="lb lb-t" href="${d.stay.link}" target="_blank">🔗 Ver hotel</a>`:''}</div>`:''}
+      </div>
+      <div></div>
+    </div>`:'';
   dv.innerHTML=`<div class="day-card">
     <div class="day-head">
       <div class="day-badge"><div class="day-num">${d.day}</div><div class="day-lbl">DÍA</div></div>
@@ -739,7 +740,7 @@ function renderDayI(idx){
       </div>
       <div style="text-align:right"><div style="font-size:9px;color:#666">${free} gratis</div><div style="font-size:16px;font-weight:700;color:#FFA040">¥${tot.toLocaleString()}</div></div>
     </div>
-    ${stayHtml}
+    ${stayStop}
     ${stops}
     ${tips}
     ${route}
