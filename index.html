@@ -736,11 +736,13 @@ function renderDayI(idx){
   const nav=`<div class="nav-row"><button class="nb" onclick="goDayI(${idx-1})" ${idx===0?'disabled':''}>← Anterior</button><div class="dots">${dots}</div><button class="nb" onclick="goDayI(${idx+1})" ${idx===ITINERARY.length-1?'disabled':''}>Siguiente →</button></div>`;
   const tot=d.stops.reduce((s,x)=>s+(typeof x.cost==='number'?x.cost:0),0);
   const free=d.stops.filter(x=>x.cost===0).length;
+  const stayId=`d${d.day}-stay`;
+  const stayExtra=(STOPLINKS[stayId]||[]).map(l=>`<a class="lb lb-x" href="${esc(l.url)}" target="_blank">🔗 ${esc(l.label)}</a>`).join('');
   const stayStop=d.stay?`<div class="stop">
       <div class="stop-left"><div class="stop-ico">🏠</div><div class="stop-time">Hoy duermes</div></div>
       <div>
         <div class="stop-name">${d.stay.link?`<a href="${d.stay.link}" target="_blank" style="color:inherit;text-decoration:none">${d.stay.name}</a>`:d.stay.name}</div>
-        ${d.stay.maps?`<div class="stop-links"><a class="lb lb-m" href="${d.stay.maps}" target="_blank">📍 Maps</a>${d.stay.link?`<a class="lb lb-t" href="${d.stay.link}" target="_blank">🔗 Ver hotel</a>`:''}</div>`:''}
+        <div class="stop-links">${d.stay.maps?`<a class="lb lb-m" href="${d.stay.maps}" target="_blank">📍 Maps</a>`:''}${d.stay.link?`<a class="lb lb-t" href="${d.stay.link}" target="_blank">🔗 Ver hotel</a>`:''}${stayExtra}<button class="lb lb-add" type="button" onclick="openStopLinkModal('${stayId}','${esc(d.stay.name).replace(/'/g,"\\'")}')">+ link</button></div>
       </div>
       <div></div>
     </div>`:'';
