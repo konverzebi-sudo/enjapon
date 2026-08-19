@@ -114,6 +114,9 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
 .lb-m{background:#E8F0FA;color:#1A5FAF;border:1px solid #B0C8E8}
 .lb-t{background:#FFF3E0;color:#B06000;border:1px solid #E0C080}
 .lb-f{background:#EEF5D0;color:#5A8A00;border:1px solid #AACE50}
+.lb-x{background:#F5E8FA;color:#8030A0;border:1px solid #D8A8E8}
+.lb-add{background:transparent;color:#999;border:1px dashed #C8C8B8}
+.lb-add:hover{color:#0A0A0A;border-color:#0A0A0A}
 .stop-cost{font-size:12px;font-weight:700;white-space:nowrap;padding-top:2px}
 .stop-cost.free{color:var(--neon)}
 .stop-cost.paid{color:#FFA040}
@@ -582,6 +585,9 @@ const PREP_CATS = [
 // ════════ STATE ════════
 let STAYS=[];
 let SAVED=[];
+let STOPLINKS={};
+let curStopId=null;
+let curStopName='';
 let curGroup='all';
 let editId=null;
 let curDay=0;
@@ -594,6 +600,7 @@ function init(){
   buildPrep();
   loadPrep();
   loadSaved();
+  loadStopLinks();
   renderItin();
 }
 
@@ -700,21 +707,25 @@ function goDayI(i){
 function renderDayI(idx){
   const d=ITINERARY[idx];
   const dv=document.getElementById('itinView');
-  const stops=d.stops.map(s=>{
+  const stops=d.stops.map((s,si)=>{
     const costHtml = s.cost===0 ? `<div class="stop-cost free">Gratis</div>`
       : typeof s.cost==='number' ? `<div class="stop-cost paid">¥${s.cost.toLocaleString()}</div>`
       : s.cost===null ? `<div class="stop-cost" style="color:#B0A060;font-size:9px">💴 ver precio</div>`
       : '';
+    const stopId=`d${d.day}-s${si}`;
+    const extra=(STOPLINKS[stopId]||[]).map((l,li)=>`<a class="lb lb-x" href="${esc(l.url)}" target="_blank">🔗 ${esc(l.label)}</a>`).join('');
     const links=[
       s.maps?`<a class="lb lb-m" href="${s.maps}" target="_blank">📍 Maps</a>`:'',
       s.ticket?`<a class="lb lb-t" href="${s.ticket}" target="_blank">🎟️ Tickets</a>`:'',
+      extra,
+      `<button class="lb lb-add" type="button" onclick="openStopLinkModal('${stopId}','${esc(s.name).replace(/'/g,"\\'")}')">+ link</button>`,
     ].filter(Boolean).join('');
     return`<div class="stop">
       <div class="stop-left"><div class="stop-ico">${s.ic}</div>${s.t?`<div class="stop-time">${s.t}</div>`:''}</div>
       <div>
         <div class="stop-name">${s.star?'<span class="stop-star">⭐</span>':''}${s.name}</div>
         <div class="stop-desc">${s.desc}</div>
-        ${links?`<div class="stop-links">${links}</div>`:''}
+        <div class="stop-links">${links}</div>
       </div>
       ${costHtml}
     </div>`;
@@ -853,6 +864,53 @@ function saveEdit(){
   document.getElementById('MODAL').classList.remove('open');
   renderGroupTabs();
   renderBoard();
+}
+
+// ════════ LINKS EXTRA POR PARADA ════════
+function loadStopLinks(){
+  STOPLINKS=JSON.parse(localStorage.getItem('jd_jp_stoplinks')||'{}');
+}
+function persistStopLinks(){
+  localStorage.setItem('jd_jp_stoplinks',JSON.stringify(STOPLINKS));
+}
+function stopLinkModalBody(stopId,stopName){
+  const list=STOPLINKS[stopId]||[];
+  const rows=list.map((l,li)=>`
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #2A2A2A">
+      <div style="flex:1;font-size:11px;color:#DDD;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">🔗 <b>${esc(l.label)}</b> — <a href="${esc(l.url)}" target="_blank" style="color:#8FB8E8">${esc(l.url)}</a></div>
+      <button class="mini-btn danger" onclick="removeStopLinkEntry('${stopId}',${li})">🗑</button>
+    </div>`).join('') || `<div style="font-size:11px;color:#888;padding:6px 0">Aún no hay links extra aquí.</div>`;
+  return `
+    <div style="font-size:11px;color:#999;margin-bottom:8px">${esc(stopName)}</div>
+    ${rows}
+    <div class="board-add" style="padding:0;border:none;margin-top:10px">
+      <input class="board-input" id="sl-label" placeholder="Etiqueta (ej. TikTok, Blog, Reseña...)">
+      <input class="board-input" id="sl-url" placeholder="Pega el link aquí">
+      <button class="board-add-btn" onclick="addStopLinkEntry('${stopId}')">+ Agregar link</button>
+    </div>`;
+}
+function openStopLinkModal(stopId,stopName){
+  curStopId=stopId;
+  curStopName=stopName;
+  document.getElementById('MTITLE').textContent='Links extra';
+  document.getElementById('MCONT').innerHTML=stopLinkModalBody(stopId,stopName);
+  document.getElementById('MODAL').classList.add('open');
+}
+function addStopLinkEntry(stopId){
+  const label=document.getElementById('sl-label').value.trim();
+  const url=document.getElementById('sl-url').value.trim();
+  if(!url)return;
+  if(!STOPLINKS[stopId])STOPLINKS[stopId]=[];
+  STOPLINKS[stopId].push({label:label||'Link',url});
+  persistStopLinks();
+  document.getElementById('MCONT').innerHTML=stopLinkModalBody(stopId,curStopName);
+  renderDayI(curDay);
+}
+function removeStopLinkEntry(stopId,idx){
+  STOPLINKS[stopId].splice(idx,1);
+  persistStopLinks();
+  document.getElementById('MCONT').innerHTML=stopLinkModalBody(stopId,curStopName);
+  renderDayI(curDay);
 }
 
 // ════════ PREP ════════
