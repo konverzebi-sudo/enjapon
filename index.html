@@ -344,6 +344,18 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
     </a>
   </div>
 
+  <div class="section-hdr">💴 Conversor de moneda</div>
+  <div class="ref-card">
+    <div class="board-row" style="margin-bottom:8px;align-items:center">
+      <input type="number" class="board-input" id="cv-amount" value="1000" min="0" style="max-width:120px;flex:none">
+      <select class="board-input" id="cv-from" style="max-width:100px;flex:none"></select>
+      <span style="font-size:14px;font-weight:700;color:#666">→</span>
+      <select class="board-input" id="cv-to" style="max-width:100px;flex:none"></select>
+    </div>
+    <div id="cv-result" style="font-size:22px;font-weight:900;color:#0A0A0A">—</div>
+    <div id="cv-note" style="font-size:10px;color:#999;margin-top:6px">Cargando tipo de cambio...</div>
+  </div>
+
 </div><!-- /sec-preparacion -->
 
 </div><!-- /pg -->
@@ -602,6 +614,7 @@ function init(){
   loadSaved();
   loadStopLinks();
   renderItin();
+  initConverter();
 }
 
 // ════════ MAIN NAV ════════
@@ -968,6 +981,58 @@ function updateProgress(){
   const pct=total?Math.round(done/total*100):0;
   document.getElementById('PROGBAR').style.width=pct+'%';
   document.getElementById('PROGTEXT').textContent=`${done} / ${total}`;
+}
+
+// ════════ CONVERSOR DE MONEDA ════════
+const CV_CURR=['JPY','MXN','USD','EUR'];
+let cvRates=null;
+function initConverter(){
+  const from=document.getElementById('cv-from'), to=document.getElementById('cv-to');
+  if(!from||!to)return;
+  CV_CURR.forEach(c=>{
+    from.innerHTML+=`<option value="${c}">${c}</option>`;
+    to.innerHTML+=`<option value="${c}">${c}</option>`;
+  });
+  from.value='JPY'; to.value='MXN';
+  document.getElementById('cv-amount').addEventListener('input',updateConversion);
+  from.addEventListener('change',fetchRate);
+  to.addEventListener('change',fetchRate);
+  fetchRate();
+}
+async function fetchRate(){
+  const from=document.getElementById('cv-from').value;
+  const to=document.getElementById('cv-to').value;
+  const note=document.getElementById('cv-note');
+  if(from===to){ cvRates={base:from,rates:{[to]:1},date:'—'}; updateConversion(); note.textContent='Misma moneda.'; return; }
+  note.textContent='Actualizando tipo de cambio...';
+  const cacheKey='jd_jp_cvrate_'+from+to;
+  try{
+    const res=await fetch(`https://api.frankfurter.dev/v1/latest?from=${from}&to=${to}`);
+    const data=await res.json();
+    cvRates={base:from,rates:data.rates,date:data.date};
+    localStorage.setItem(cacheKey,JSON.stringify(cvRates));
+    updateConversion();
+  }catch(e){
+    const cached=localStorage.getItem(cacheKey);
+    if(cached){
+      cvRates=JSON.parse(cached);
+      updateConversion();
+      note.textContent=`Sin conexión — usando el último tipo de cambio guardado (${cvRates.date}).`;
+    }else{
+      document.getElementById('cv-result').textContent='—';
+      note.textContent='No se pudo obtener el tipo de cambio. Revisa tu conexión.';
+    }
+  }
+}
+function updateConversion(){
+  if(!cvRates)return;
+  const amount=parseFloat(document.getElementById('cv-amount').value)||0;
+  const to=document.getElementById('cv-to').value;
+  const rate=cvRates.rates[to];
+  if(rate==null)return;
+  const result=amount*rate;
+  document.getElementById('cv-result').textContent=`${amount.toLocaleString()} ${cvRates.base} ≈ ${result.toLocaleString(undefined,{maximumFractionDigits:2})} ${to}`;
+  document.getElementById('cv-note').textContent=`1 ${cvRates.base} = ${rate} ${to} · tipo de cambio del ${cvRates.date}`;
 }
 
 // ════════ CLICK TRACKING ════════
