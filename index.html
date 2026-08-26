@@ -888,20 +888,24 @@ function loadStopLinks(){
 function persistStopLinks(){
   localStorage.setItem('jd_jp_stoplinks',JSON.stringify(STOPLINKS));
 }
-function stopLinkModalBody(stopId,stopName){
+function stopLinkModalBody(stopId,stopName,editIdx){
   const list=STOPLINKS[stopId]||[];
   const rows=list.map((l,li)=>`
     <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #2A2A2A">
       <div style="flex:1;font-size:11px;color:#DDD;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">🔗 <b>${esc(l.label)}</b> — <a href="${esc(l.url)}" target="_blank" style="color:#8FB8E8">${esc(l.url)}</a></div>
+      <button class="mini-btn" onclick="editStopLinkEntry('${stopId}',${li})">✏️</button>
       <button class="mini-btn danger" onclick="removeStopLinkEntry('${stopId}',${li})">🗑</button>
     </div>`).join('') || `<div style="font-size:11px;color:#888;padding:6px 0">Aún no hay links extra aquí.</div>`;
+  const editing=editIdx!=null && list[editIdx];
   return `
     <div style="font-size:11px;color:#999;margin-bottom:8px">${esc(stopName)}</div>
     ${rows}
     <div class="board-add" style="padding:0;border:none;margin-top:10px">
-      <input class="board-input" id="sl-label" placeholder="Etiqueta (ej. TikTok, Blog, Reseña...)">
-      <input class="board-input" id="sl-url" placeholder="Pega el link aquí">
-      <button class="board-add-btn" onclick="addStopLinkEntry('${stopId}')">+ Agregar link</button>
+      <input class="board-input" id="sl-label" placeholder="Etiqueta (ej. TikTok, Blog, Reseña...)" value="${editing?esc(list[editIdx].label):''}">
+      <input class="board-input" id="sl-url" placeholder="Pega el link aquí" value="${editing?esc(list[editIdx].url):''}">
+      ${editing
+        ? `<button class="board-add-btn" onclick="saveStopLinkEdit('${stopId}',${editIdx})">💾 Guardar cambios</button><button class="mini-btn" style="align-self:flex-start" onclick="openStopLinkModal(curStopId,curStopName)">Cancelar edición</button>`
+        : `<button class="board-add-btn" onclick="addStopLinkEntry('${stopId}')">+ Agregar link</button>`}
     </div>`;
 }
 function openStopLinkModal(stopId,stopName){
@@ -917,6 +921,18 @@ function addStopLinkEntry(stopId){
   if(!url)return;
   if(!STOPLINKS[stopId])STOPLINKS[stopId]=[];
   STOPLINKS[stopId].push({label:label||'Link',url});
+  persistStopLinks();
+  document.getElementById('MCONT').innerHTML=stopLinkModalBody(stopId,curStopName);
+  renderDayI(curDay);
+}
+function editStopLinkEntry(stopId,idx){
+  document.getElementById('MCONT').innerHTML=stopLinkModalBody(stopId,curStopName,idx);
+}
+function saveStopLinkEdit(stopId,idx){
+  const label=document.getElementById('sl-label').value.trim();
+  const url=document.getElementById('sl-url').value.trim();
+  if(!url)return;
+  STOPLINKS[stopId][idx]={label:label||'Link',url};
   persistStopLinks();
   document.getElementById('MCONT').innerHTML=stopLinkModalBody(stopId,curStopName);
   renderDayI(curDay);
