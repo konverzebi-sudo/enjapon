@@ -463,7 +463,7 @@ const ITINERARY = [
 ], route:["Shinjuku","→","Hakone-Yumoto","→","Open-Air Museum","→","Gora/Sounzan","→","Owakudani","→","Lago Ashi","→","Hakone Shrine","→","Ichinoyu Honkan"],
   tips:[{label:"Equipaje",text:"Prioridad: no hacer el circuito con maletas."},{label:"Clima",text:"Si ropeway o crucero se suspende por clima, hacer Hakone Open-Air Museum + ryokan temprano."},{label:"Ritmo",text:"No perseguir todos los miradores; elegir paisaje + experiencia de ryokan."},{icon:"🌙",label:"Mañana",text:"Hakone → Kioto. Ojo: desde Odawara usa Hikari/Kodama — el Nozomi no para ahí."},{icon:"🧳",label:"Maleta",text:"Prepara todo esta noche — mañana hay check-out del ryokan hacia Kioto."}]},
 
-{day:7, city:"Kioto", title:"Hakone → Kioto + primera tarde en Gion", sub:"Miércoles 16 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, transit:{from:"Hakone", to:"Kioto", time:"~2h30", note:"Tren local a Odawara + Shinkansen (Hikari/Kodama, no Nozomi). Reservar asiento con espacio de equipaje."}, stops:[
+{day:7, city:"Kioto", title:"Hakone → Kioto + primera tarde en Gion", sub:"Miércoles 16 Sep", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, transit:{from:"Hakone", to:"Kioto", time:"~2h30", note:"Tren local a Odawara + Shinkansen (Hikari/Kodama, no Nozomi). Reservar asiento con espacio de equipaje."}, stops:[
   {t:"08:00", ic:"🍳", name:"Desayuno y mañana tranquila en ryokan", desc:""},
   {t:"08:30–09:15", ic:"⛩️", name:"Hakone Shrine + torii en el lago (por si no se hizo ayer)", desc:"Fallback del día 6 — solo si no alcanzaron a verlo. Si ya lo vieron, saltar directo a la salida.", cost:0, maps:"https://maps.google.com/?q=Hakone+Shrine"},
   {t:"09:30", ic:"🚕", name:"Salida hacia Hakone-Yumoto / Odawara", desc:"", maps:"https://maps.google.com/?q=Odawara+Station"},
@@ -477,7 +477,7 @@ const ITINERARY = [
 ], route:["Ichinoyu","→","Odawara","→","Kyoto Station","→","Hotel SUI","→","My Only","→","Minamiza","→","Gion/Pontocho"],
   tips:[{label:"Tren",text:"Nozomi no para en Odawara; usar Hikari/Kodama hacia Kyoto."},{label:"Objetivo",text:"Tarde ligera: aclimatarse a Kioto sin intentar hacer templos lejanos."},{label:"Equipaje",text:"Si se puede, reservar asiento con espacio para equipaje sobredimensionado."}]},
 
-{day:8, city:"Kioto", title:"Kimono + Higashiyama/Gion + Gion Corner", sub:"Jueves 17 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
+{day:8, city:"Kioto", title:"Kimono + Higashiyama/Gion + Gion Corner", sub:"Jueves 17 Sep", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, stops:[
   {t:"07:00–08:15", ic:"🏯", name:"Kiyomizu-dera", desc:"Visita temprano, antes del kimono, para evitar multitudes.", cost:null, maps:"https://maps.google.com/?q=Kiyomizu-dera", ticket:"https://www.kiyomizudera.or.jp/en/", star:true},
   {t:"08:15–08:45", ic:"🍳", name:"Desayuno rápido", desc:"", maps:"https://maps.google.com/?q=Higashiyama+Kyoto+breakfast"},
   {t:"09:00–10:00", ic:"👘", name:"Renta de kimono — reserva fija", desc:"Sugerencia sin confirmar: Okamoto Kimono Rental (Kiyomizu/Higashiyama) — buena ubicación y atención en inglés.", cost:null, maps:"https://maps.google.com/?q=Okamoto+Kimono+Rental+Higashiyama", ticket:"https://www.okamoto-kimono-en.com/storeinfo/higashiyama.html", star:true},
@@ -491,7 +491,7 @@ const ITINERARY = [
 ], route:["Kiyomizu-dera","→","Tienda kimono","→","Higashiyama","→","Gion","→","Gion Corner"],
   tips:[{label:"Kiyomizu temprano",text:"Ahora se visita a las 7am, antes del kimono — llega con margen para verlo casi sin gente."},{label:"Pendiente",text:"Añadir nombre de tienda y política de devolución en cuanto se confirme."},{label:"Calzado",text:"Con kimono, usar taxi corto si hay cansancio o calor."}]},
 
-{day:9, city:"Kioto", title:"Fushimi Inari al amanecer + Kyoto clásico", sub:"Viernes 18 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
+{day:9, city:"Kioto", title:"Fushimi Inari al amanecer + Kyoto clásico", sub:"Viernes 18 Sep", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, stops:[
   {t:"05:15", ic:"🚕", name:"Salida del hotel", desc:""},
   {t:"05:45–07:30", ic:"⛩️", name:"Fushimi Inari: Senbon Torii", desc:"No hace falta subir a la cima. Antes de las 07:00 es la prioridad visual.", cost:0, maps:"https://maps.google.com/?q=Fushimi+Inari+Taisha", ticket:"https://inari.jp/en/", star:true},
   {t:"08:00–09:15", ic:"🍳", name:"Regreso, desayuno y descanso", desc:""},
@@ -499,11 +499,12 @@ const ITINERARY = [
   {t:"11:30–12:15", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Kyoto+restaurants"},
   {t:"12:30–16:30", ic:"🚶", name:"Ginkaku-ji → Philosopher's Path → Honen-in → Eikan-do / Nanzen-ji", desc:"Recortar si hay calor: elegir Eikan-do o Nanzen-ji, no ambos. Heian Jingu está de camino al inicio del Philosopher's Path.", maps:"https://maps.google.com/?q=Philosophers+Path+Kyoto", star:true},
   {t:"17:30", ic:"🛌", name:"Regreso / descanso", desc:""},
-  {t:"19:00", ic:"🍽️", name:"Pontocho o cena libre", desc:"", maps:"https://maps.google.com/?q=Pontocho+Kyoto"},
-], route:["Fushimi Inari","→","Hotel","→","Heian Jingu","→","Philosopher's Path","→","Kyoto Este"],
+  {t:"19:00", ic:"🎭", name:"Gion Corner (por si no se hizo el día 8)", desc:"Fallback — solo si no alcanzaron a verlo ayer. Si ya lo vieron, ir directo a cenar.", cost:5500, maps:"https://maps.google.com/?q=Gion+Corner+Kyoto", ticket:"https://www.kyoto-gioncorner.com/global/en.html"},
+  {t:"20:15", ic:"🍽️", name:"Pontocho o cena libre", desc:"", maps:"https://maps.google.com/?q=Pontocho+Kyoto"},
+], route:["Fushimi Inari","→","Hotel","→","Heian Jingu","→","Philosopher's Path","→","Gion Corner (fallback)","→","Kyoto Este"],
   tips:[{label:"Foto",text:"Fushimi Inari antes de 07:00 es la prioridad visual."},{label:"Cambio",text:"Se quitó Kinkaku-ji (queda lejos, solo se ve por fuera) — Heian Jingu está en la misma zona que el paseo de la tarde."},{label:"Ritmo",text:"Si hace mucho calor, elegir Eikan-do o Nanzen-ji, no ambos."},{icon:"🌙",label:"Mañana",text:"Excursión a Nara vía Kintetsu-Nara — sales muy temprano (05:35) para alcanzar Kiyomizu antes."}]},
 
-{day:10, city:"Kioto", title:"Kiyomizu a las 06:00 + excursión a Nara", sub:"Sábado 19 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
+{day:10, city:"Kioto", title:"Kiyomizu a las 06:00 + excursión a Nara", sub:"Sábado 19 Sep", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, stops:[
   {t:"05:35", ic:"🚶", name:"Salida caminando/taxi corto a Kiyomizu", desc:"", maps:"https://maps.google.com/?q=Kiyomizu-dera"},
   {t:"06:00–07:15", ic:"🏯", name:"Kiyomizu-dera prácticamente al abrir", desc:"Abre habitualmente a las 06:00 (el cierre varía por temporada).", cost:null, maps:"https://maps.google.com/?q=Kiyomizu-dera", ticket:"https://www.kiyomizudera.or.jp/en/", star:true},
   {t:"07:30–08:30", ic:"🍳", name:"Regreso, desayuno y preparar salida", desc:""},
@@ -517,7 +518,7 @@ const ITINERARY = [
 ], route:["Kiyomizu","→","Kyoto Station","→","Kintetsu-Nara","→","Kyoto"],
   tips:[{label:"Ventaja",text:"Kiyomizu temprano aprovecha que Hotel SUI está en la zona y no roba el día de Nara."},{label:"Transporte",text:"Kintetsu-Nara deja más cerca de Nara Park que JR Nara."},{label:"Calor",text:"Llevar agua; priorizar Todai-ji y Kasuga si hay que recortar."},{icon:"🌙",label:"Mañana",text:"El día más largo del viaje — Katsuo-ji + Kishiwada Danjiri. Sales a las 05:50."}]},
 
-{day:11, city:"Kioto", title:"Katsuo-ji + Kishiwada Danjiri", sub:"Domingo 20 Sep · el día más largo del viaje", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
+{day:11, city:"Kioto", title:"Katsuo-ji + Kishiwada Danjiri", sub:"Domingo 20 Sep · el día más largo del viaje", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, stops:[
   {t:"05:50", ic:"🚶", name:"Salida a Kyoto Station", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
   {t:"06:25", ic:"🚄", name:"Kyoto → Shin-Osaka", desc:"JR rápido o Shinkansen, según mejor conexión.", maps:"https://maps.google.com/?q=Shin-Osaka+Station", ticket:"https://smart-ex.jp/en/lp/app/"},
   {t:"07:00", ic:"🚇", name:"Shin-Osaka → Minoh-Kayano", desc:"Por Midosuji/Kita-Osaka Kyuko.", maps:"https://maps.google.com/?q=Minoh-Kayano+Station"},
@@ -532,7 +533,7 @@ const ITINERARY = [
 ], route:["Kyoto","→","Minoh-Kayano","→","Katsuo-ji","→","Namba","→","Kishiwada","→","Kyoto"],
   tips:[{label:"Día largo",text:"Es el día más exigente del viaje, pero sin maletas y regresando al mismo hotel."},{label:"Taxi clave",text:"Minoh-Kayano ↔ Katsuo-ji: mejor inversión del día para mantener ritmo medio."},{label:"Seguridad",text:"No intentar perseguir carrozas entre calles. Elegir una zona de observación y moverse con calma."}]},
 
-{day:12, city:"Osaka", title:"Osaka completo + Hozenji Yokocho", sub:"Lunes 21 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
+{day:12, city:"Osaka", title:"Osaka completo + Hozenji Yokocho", sub:"Lunes 21 Sep", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, stops:[
   {t:"07:45", ic:"🚆", name:"Salida a Osaka", desc:"", maps:"https://maps.google.com/?q=Osaka+Station"},
   {t:"09:00–10:30", ic:"🏯", name:"Osaka Castle Park", desc:"Exterior/castillo según interés. Si hay fila grande, priorizar el parque.", cost:null, maps:"https://maps.google.com/?q=Osaka+Castle", ticket:"https://osaka-castle.org/", star:true},
   {t:"11:00–12:30", ic:"🐟", name:"Kuromon Market / Nippombashi", desc:"Paseo y comida temprana.", maps:"https://maps.google.com/?q=Kuromon+Ichiba+Market", star:true},
@@ -652,7 +653,7 @@ function switchMain(sec){
 const DEFAULT_STAYS=[
   {city:"Tokio · Shinjuku (10–15 Sep)", title:"Shinjuku Granbell Hotel", sub:"5 noches · check-in 10 Sep, salida 15 Sep hacia Hakone", link:"https://en.granbellhotel.jp/shinjuku/"},
   {city:"Hakone (15–16 Sep)", title:"Ichinoyu Honkan (ryokan)", sub:"1 noche · onsen + yukata · Tonosawa", link:"https://www.hakonenavi.jp/international/en/spot/272"},
-  {city:"Kioto (16–22 Sep)", title:"Hotel SUI Kyoto Kiyomizu — ¡agotado!", sub:"6 noches · ya no hay disponibilidad para estas fechas · ver 4 alternativas abajo", link:"https://hotel-sui.com/kyoto/en/"},
+  {city:"Kioto (16–22 Sep)", title:"Hotel SUI Kyoto Kiyomizu", sub:"6 noches · confirmado", link:"https://hotel-sui.com/kyoto/en/"},
   {city:"Kioto · opción A", title:"NOHGA HOTEL KIYOMIZU KYOTO", sub:"7 min a pie de Kiyomizu-Gojo · rooftop bar · 9.3/10 · tier similar al SUI", link:"https://www.nohgahotel.com/kiyomizu/en/"},
   {city:"Kioto · opción B", title:"Granbell Hotel Kyoto (Gion-Shijo)", sub:"2 min a pie de Gion-Shijo · mismo grupo que Shinjuku/Shibuya Granbell · baño público con patio", link:"https://en.granbellhotel.jp/kyoto/"},
   {city:"Kioto · opción C", title:"Hotel The Celestine Kyoto Gion", sub:"9.2/10 · en pleno Higashiyama, cerca de Yasaka Shrine y Gion Corner", link:"https://www.celestinehotels.jp/en/kyoto-gion/"},
