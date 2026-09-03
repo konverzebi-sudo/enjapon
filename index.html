@@ -376,11 +376,12 @@ const ITINERARY = [
   {t:"08:00", ic:"✈️", name:"Llegada a Narita", desc:"Inmigración, equipaje, IC card / efectivo.", cost:0, maps:"https://maps.google.com/?q=Narita+International+Airport"},
   {t:"09:45–10:30", ic:"🚆", name:"Narita Express (N'EX) → Shinjuku", desc:"Elegir asiento reservado y guardar la maleta grande en el rack.", cost:null, maps:"https://maps.google.com/?q=Narita+Express", ticket:"https://www.jreast.co.jp/en/multi/nex/tickets/", star:true},
   {t:"11:30–12:30", ic:"🏨", name:"Check-in Shinjuku Granbell Hotel", desc:"Dejar equipaje; comida ligera y descanso.", cost:0, maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", ticket:"https://en.granbellhotel.jp/shinjuku/"},
-  {t:"15:30", ic:"🗼", name:"Tokyo Metropolitan Government Building", desc:"Mirador gratuito. Si hay cansancio, moverlo al día 13.", cost:0, maps:"https://maps.google.com/?q=Tokyo+Metropolitan+Government+Building", star:true},
+  {t:"15:30", ic:"🗼", name:"Tokyo Metropolitan Government Building", desc:"Mirador gratuito.", cost:0, maps:"https://maps.google.com/?q=Tokyo+Metropolitan+Government+Building", star:true},
   {t:"17:30", ic:"🏮", name:"Shinjuku: Kabukicho + Hanazono Shrine", desc:"Paseo por el barrio.", cost:0, maps:"https://maps.google.com/?q=Hanazono+Shrine+Tokyo"},
   {t:"19:00", ic:"🍢", name:"Cena en Omoide Yokocho", desc:"Pedir yakitori de carne: momo/sasami; evitar kawa y vísceras.", maps:"https://maps.google.com/?q=Omoide+Yokocho+Tokyo", star:true},
+  {t:"19:45", ic:"🌆", name:"Shin-Okubo Alleys", desc:"El Koreatown de Tokio, a un paso de Omoide Yokocho — callejones de tiendas K-pop, cosméticos y snacks.", maps:"https://maps.google.com/?q=Shin-Okubo+Tokyo", star:true},
   {t:"20:30", ic:"🍶", name:"Golden Gai", desc:"Paseo corto y 1 bar si apetece. Regreso caminando al hotel.", maps:"https://maps.google.com/?q=Golden+Gai+Tokyo"},
-], route:["Narita","→","Shinjuku (N'EX)","→","Granbell Hotel","→","Tocho","→","Omoide Yokocho","→","Golden Gai"],
+], route:["Narita","→","Shinjuku (N'EX)","→","Granbell Hotel","→","Tocho","→","Omoide Yokocho","→","Shin-Okubo","→","Golden Gai"],
   tips:[{label:"Ritmo",text:"Día deliberadamente ligero por jet lag."},{label:"Foto",text:"Mirador 30-45 min antes del atardecer; Omoide/Golden Gai después de encender faroles."},{label:"Plan lluvia",text:"Mantener mirador, cafés y callejones cubiertos/semicubiertos; reducir paseo exterior."}]},
 
 {day:2, city:"Tokio", title:"Asakusa + Odaiba + teamLab", sub:"Viernes 11 Sep", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
@@ -407,16 +408,15 @@ const ITINERARY = [
 ], route:["Ryogoku","→","Kuramae","→","Akasaka","→","Tokyo Tower","→","Shinjuku"],
   tips:[{label:"Compra",text:"Kuramae recibe un bloque real de tiempo; no se trata como parada rápida."},{label:"Foto",text:"Tokyo Tower funciona mejor desde hora azul a noche."},{label:"Ritmo",text:"Si Kuramae resulta especialmente bueno para compras, acortar Ryogoku."}]},
 
-{day:4, city:"Tokio", title:"Hanazono + Shibamata + mirador flexible", sub:"Domingo 13 Sep · día con margen", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
-  {t:"08:00", ic:"⛩️", name:"Hanazono Shrine", desc:"Buscar flea market SOLO si está confirmado ese domingo — no basar el día en esto.", cost:0, maps:"https://maps.google.com/?q=Hanazono+Shrine+Tokyo"},
-  {t:"09:15", ic:"🚇", name:"Traslado a Shibamata", desc:"", maps:"https://maps.google.com/?q=Shibamata+Tokyo"},
-  {t:"10:30–13:30", ic:"🏮", name:"Shibamata: Taishakuten + calle tradicional", desc:"Paseo tranquilo, ambiente de barrio antiguo.", cost:0, maps:"https://maps.google.com/?q=Taishakuten+Shibamata", star:true},
-  {t:"13:30", ic:"🍽️", name:"Comida en Shibamata", desc:"", maps:"https://maps.google.com/?q=Shibamata+restaurants"},
-  {t:"15:00", ic:"🚇", name:"Regreso hacia Shinjuku", desc:"", maps:"https://maps.google.com/?q=Shinjuku+Station"},
-  {t:"16:30–18:00", ic:"🗼", name:"Mirador del Gobierno Metropolitano (si no se hizo el día 10)", desc:"Alternativa: descanso/café.", cost:0, maps:"https://maps.google.com/?q=Tokyo+Metropolitan+Government+Building"},
-  {t:"19:00", ic:"🍽️", name:"Cena libre en Shinjuku", desc:"", maps:"https://maps.google.com/?q=Shinjuku+restaurants"},
-], route:["Hanazono Shrine","→","Shibamata","→","Shinjuku"],
-  tips:[{label:"Importante",text:"El flea market de Hanazono queda 'por confirmar'; no basar todo el día en él."},{label:"Opción",text:"Si no hay mercado, salir antes a Shibamata y terminar más temprano."},{label:"Energía",text:"Este día deja margen antes de Kamakura, que será más largo."}]},
+{day:4, city:"Tokio", title:"Kichijoji: café 2D + festival + Musashino Hachimangu", sub:"Domingo 13 Sep · Ueno/Akihabara opcional", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
+  {t:"11:00", ic:"☕", name:"Café 2D", desc:"Llegar cerca de las 11am para evitar filas.", maps:"https://maps.google.com/?q=Kichijoji+Tokyo"},
+  {t:"12:00–13:30", ic:"🌳", name:"Inokashira Park", desc:"El parque y el lago de Kichijoji — paseo tranquilo, botes de remo si hay tiempo.", cost:0, maps:"https://maps.google.com/?q=Inokashira+Park", star:true},
+  {t:"13:30–15:00", ic:"🎏", name:"Festival Kichijoji · mikoshi", desc:"Procesión de mikoshi por las calles de Kichijoji.", cost:0, maps:"https://maps.google.com/?q=Kichijoji+Tokyo", star:true},
+  {t:"15:15–16:00", ic:"⛩️", name:"Santuario Musashino Hachimangu", desc:"Santuario tranquilo, a poca distancia de la zona del festival.", cost:0, maps:"https://maps.google.com/?q=Musashino+Hachimangu"},
+  {t:"17:00–18:30", ic:"🌸", name:"Parque Ueno", desc:"Se acomoda según el tiempo que quede del día.", cost:0, maps:"https://maps.google.com/?q=Ueno+Park+Tokyo", star:true},
+  {t:"19:00", ic:"🎮", name:"Akihabara (opcional)", desc:"Si queda energía — tiendas de electrónica, anime y arcades.", maps:"https://maps.google.com/?q=Akihabara+Tokyo"},
+], route:["Café 2D","→","Inokashira Park","→","Festival Kichijoji","→","Musashino Hachimangu","→","Ueno","→","Akihabara (opcional)"],
+  tips:[{label:"Filas",text:"Café 2D cerca de las 11am para evitar fila."},{label:"Ritmo",text:"Ueno y Akihabara están lejos de Kichijoji (zona oeste vs. centro-este) — van al final del día según energía, no son obligatorios."}]},
 
 {day:5, city:"Kamakura", title:"Kamakura completo", sub:"Lunes 14 Sep · dinero, Buda, bambú y festival", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
   {t:"06:30", ic:"🚆", name:"Salida hacia Kamakura", desc:"JR Shonan-Shinjuku Line; directo ≈60-70 min cuando coincida.", maps:"https://maps.google.com/?q=Kamakura+Station"},
@@ -433,7 +433,7 @@ const ITINERARY = [
 
 {day:6, city:"Hakone", title:"Hakone: circuito panorámico + ryokan", sub:"Martes 15 Sep", stay:{name:"Ichinoyu Honkan (ryokan)", maps:"https://maps.google.com/?q=Ichinoyu+Honkan+Hakone", link:"https://www.hakonenavi.jp/international/en/spot/272"}, stops:[
   {t:"07:15", ic:"🧳", name:"Check-out Granbell", desc:"Traslado a Shinjuku Station.", maps:"https://maps.google.com/?q=Shinjuku+Station"},
-  {t:"08:00", ic:"🚆", name:"Odakyu Romancecar → Hakone-Yumoto", desc:"Reservar asiento con anticipación.", cost:null, maps:"https://maps.google.com/?q=Hakone-Yumoto+Station", ticket:"https://www.web-odakyu.com/e-romancecar/?language=en", star:true},
+  {t:"08:00", ic:"🚆", name:"Romancecar Sagami 91 · Shinjuku → Odawara", desc:"Confirmado: vagón Observation Deck, coche 1, asientos 2C y 2D. Desde Odawara, tren local a Hakone-Yumoto.", cost:null, maps:"https://maps.google.com/?q=Odawara+Station", ticket:"https://www.web-odakyu.com/e-romancecar/?language=en", star:true},
   {t:"09:45", ic:"🎒", name:"Enviar/dejar equipaje", desc:"Para no cargarlo durante el circuito.", maps:"https://maps.google.com/?q=Hakone-Yumoto+Station"},
   {t:"10:15–12:00", ic:"🚡", name:"Hakone-Yumoto → Gora → Sounzan", desc:"≈1h45 con conexiones.", maps:"https://maps.google.com/?q=Sounzan+Station+Hakone"},
   {t:"12:00–13:00", ic:"♨️", name:"Owakudani", desc:"Mirador, paseo corto, comida/snack (huevos negros).", maps:"https://maps.google.com/?q=Owakudani+Hakone", star:true},
@@ -448,17 +448,19 @@ const ITINERARY = [
 {day:7, city:"Kioto", title:"Hakone → Kioto + primera tarde en Gion", sub:"Miércoles 16 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
   {t:"08:00", ic:"🍳", name:"Desayuno y mañana tranquila en ryokan", desc:""},
   {t:"09:30", ic:"🚕", name:"Salida hacia Hakone-Yumoto / Odawara", desc:"", maps:"https://maps.google.com/?q=Odawara+Station"},
-  {t:"10:45–11:30", ic:"🚄", name:"Hikari/Kodama Odawara → Kyoto", desc:"Nozomi no para en Odawara. Reservar asiento y espacio de equipaje.", cost:null, maps:"https://maps.google.com/?q=Kyoto+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
+  {t:"10:45–11:30", ic:"🚄", name:"Hikari 637 · Odawara → Kyoto", desc:"Confirmado: coche 12, asientos 1D y 1E. Nozomi no para en Odawara.", cost:null, maps:"https://maps.google.com/?q=Kyoto+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
   {t:"13:00–14:00", ic:"🏨", name:"Llegada a Kioto + check-in Hotel SUI", desc:"Dejar equipaje.", cost:0, maps:"https://maps.google.com/?q=Hotel+SUI+Kyoto+Kiyomizu", ticket:"https://hotel-sui.com/kyoto/en/"},
   {t:"15:30", ic:"⛩️", name:"Yasaka Shrine + Maruyama Park", desc:"", cost:0, maps:"https://maps.google.com/?q=Yasaka+Shrine+Kyoto", star:true},
-  {t:"16:45–18:00", ic:"🏘️", name:"Gion / Shirakawa", desc:"Calles tradicionales.", cost:0, maps:"https://maps.google.com/?q=Gion+Shirakawa+Kyoto", star:true},
+  {t:"16:15", ic:"🌸", name:"My Only", desc:"Tienda de fragancias, de camino a Shirakawa Lane.", maps:"https://maps.google.com/?q=My+Only+Kyoto"},
+  {t:"16:30", ic:"🎭", name:"Teatro Minamiza (exterior)", desc:"El teatro de kabuki más antiguo de Japón — de paso hacia Shirakawa Lane, solo exterior.", cost:0, maps:"https://maps.google.com/?q=Minamiza+Theater+Kyoto"},
+  {t:"16:45–18:00", ic:"🏘️", name:"Gion / Shirakawa", desc:"Tarde dorada en Higashiyama, hasta Shijo Ohashi sobre el río Kamogawa.", cost:0, maps:"https://maps.google.com/?q=Gion+Shirakawa+Kyoto", star:true},
   {t:"18:30", ic:"🍽️", name:"Cena en Pontocho", desc:"", maps:"https://maps.google.com/?q=Pontocho+Kyoto"},
-], route:["Ichinoyu","→","Odawara","→","Kyoto Station","→","Hotel SUI","→","Gion/Pontocho"],
+], route:["Ichinoyu","→","Odawara","→","Kyoto Station","→","Hotel SUI","→","My Only","→","Minamiza","→","Gion/Pontocho"],
   tips:[{label:"Tren",text:"Nozomi no para en Odawara; usar Hikari/Kodama hacia Kyoto."},{label:"Objetivo",text:"Tarde ligera: aclimatarse a Kioto sin intentar hacer templos lejanos."},{label:"Equipaje",text:"Si se puede, reservar asiento con espacio para equipaje sobredimensionado."}]},
 
 {day:8, city:"Kioto", title:"Kimono + Higashiyama/Gion + Gion Corner", sub:"Jueves 17 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
-  {t:"07:30", ic:"🍳", name:"Desayuno tranquilo", desc:""},
-  {t:"08:30", ic:"🚶", name:"Salida hacia tienda de kimono", desc:"", maps:"https://maps.google.com/?q=Higashiyama+Kyoto"},
+  {t:"07:00–08:15", ic:"🏯", name:"Kiyomizu-dera", desc:"Visita temprano, antes del kimono, para evitar multitudes.", cost:null, maps:"https://maps.google.com/?q=Kiyomizu-dera", ticket:"https://www.kiyomizudera.or.jp/en/", star:true},
+  {t:"08:15–08:45", ic:"🍳", name:"Desayuno rápido", desc:"", maps:"https://maps.google.com/?q=Higashiyama+Kyoto+breakfast"},
   {t:"09:00–10:00", ic:"👘", name:"Renta de kimono — reserva fija", desc:"Sugerencia sin confirmar: Okamoto Kimono Rental (Kiyomizu/Higashiyama) — buena ubicación y atención en inglés.", cost:null, maps:"https://maps.google.com/?q=Okamoto+Kimono+Rental+Higashiyama", ticket:"https://www.okamoto-kimono-en.com/storeinfo/higashiyama.html", star:true},
   {t:"10:15–12:15", ic:"🏯", name:"Yasaka Pagoda + Ninenzaka/Sannenzaka", desc:"Fotos.", cost:0, maps:"https://maps.google.com/?q=Sannenzaka+Kyoto", star:true},
   {t:"12:15–13:15", ic:"🍽️", name:"Comida sentada y descanso", desc:"", maps:"https://maps.google.com/?q=Higashiyama+Kyoto+restaurants"},
@@ -467,21 +469,20 @@ const ITINERARY = [
   {t:"16:30–17:30", ic:"👘", name:"Devolución de kimono", desc:"Si la tienda no permite devolución tardía; si permite día siguiente, conservarlo."},
   {t:"19:00", ic:"🎭", name:"Gion Corner — reserva fija", desc:"Danza, té, koto, kyogen y más en 1 hora.", cost:5500, maps:"https://maps.google.com/?q=Gion+Corner+Kyoto", ticket:"https://www.kyoto-gioncorner.com/global/en.html", star:true},
   {t:"20:15", ic:"🍽️", name:"Cena ligera en Gion", desc:"Y regreso al hotel.", maps:"https://maps.google.com/?q=Gion+Kyoto+restaurants"},
-], route:["Tienda kimono","→","Higashiyama","→","Gion","→","Gion Corner"],
-  tips:[{label:"No Kiyomizu formal",text:"Ese día priorizamos fotos con kimono; la visita formal a Kiyomizu será otro amanecer."},{label:"Pendiente",text:"Añadir nombre de tienda y política de devolución en cuanto se confirme."},{label:"Calzado",text:"Con kimono, usar taxi corto si hay cansancio o calor."}]},
+], route:["Kiyomizu-dera","→","Tienda kimono","→","Higashiyama","→","Gion","→","Gion Corner"],
+  tips:[{label:"Kiyomizu temprano",text:"Ahora se visita a las 7am, antes del kimono — llega con margen para verlo casi sin gente."},{label:"Pendiente",text:"Añadir nombre de tienda y política de devolución en cuanto se confirme."},{label:"Calzado",text:"Con kimono, usar taxi corto si hay cansancio o calor."}]},
 
 {day:9, city:"Kioto", title:"Fushimi Inari al amanecer + Kyoto clásico", sub:"Viernes 18 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
   {t:"05:15", ic:"🚕", name:"Salida del hotel", desc:""},
   {t:"05:45–07:30", ic:"⛩️", name:"Fushimi Inari: Senbon Torii", desc:"No hace falta subir a la cima. Antes de las 07:00 es la prioridad visual.", cost:0, maps:"https://maps.google.com/?q=Fushimi+Inari+Taisha", ticket:"https://inari.jp/en/", star:true},
   {t:"08:00–09:15", ic:"🍳", name:"Regreso, desayuno y descanso", desc:""},
-  {t:"10:15", ic:"🚕", name:"Traslado a Kinkaku-ji", desc:"Taxi/bus.", maps:"https://maps.google.com/?q=Kinkaku-ji"},
-  {t:"11:00–12:00", ic:"🏯", name:"Kinkaku-ji · Pabellón Dorado", desc:"", cost:null, maps:"https://maps.google.com/?q=Kinkaku-ji", ticket:"https://www.shokoku-ji.jp/en/kinkakuji/", star:true},
-  {t:"12:15–13:15", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Kyoto+restaurants"},
-  {t:"13:30–16:30", ic:"🚶", name:"Ginkaku-ji → Philosopher's Path → Honen-in → Eikan-do / Nanzen-ji", desc:"Recortar si hay calor: elegir Eikan-do o Nanzen-ji, no ambos.", maps:"https://maps.google.com/?q=Philosophers+Path+Kyoto", star:true},
+  {t:"10:15–11:15", ic:"⛩️", name:"Heian Jingu", desc:"Torii gigante y jardines — reemplaza a Kinkaku-ji, que queda lejos y solo se ve por fuera.", cost:0, maps:"https://maps.google.com/?q=Heian+Shrine+Kyoto", star:true},
+  {t:"11:30–12:15", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Kyoto+restaurants"},
+  {t:"12:30–16:30", ic:"🚶", name:"Ginkaku-ji → Philosopher's Path → Honen-in → Eikan-do / Nanzen-ji", desc:"Recortar si hay calor: elegir Eikan-do o Nanzen-ji, no ambos. Heian Jingu está de camino al inicio del Philosopher's Path.", maps:"https://maps.google.com/?q=Philosophers+Path+Kyoto", star:true},
   {t:"17:30", ic:"🛌", name:"Regreso / descanso", desc:""},
   {t:"19:00", ic:"🍽️", name:"Pontocho o cena libre", desc:"", maps:"https://maps.google.com/?q=Pontocho+Kyoto"},
-], route:["Fushimi Inari","→","Hotel","→","Kinkaku-ji","→","Kyoto Este"],
-  tips:[{label:"Foto",text:"Fushimi Inari antes de 07:00 es la prioridad visual."},{label:"Taxi útil",text:"Hotel → Kinkaku-ji ahorra transbordos y caminata."},{label:"Ritmo",text:"Si hace mucho calor, elegir Eikan-do o Nanzen-ji, no ambos."},{icon:"🌙",label:"Mañana",text:"Excursión a Nara vía Kintetsu-Nara — sales muy temprano (05:35) para alcanzar Kiyomizu antes."}]},
+], route:["Fushimi Inari","→","Hotel","→","Heian Jingu","→","Philosopher's Path","→","Kyoto Este"],
+  tips:[{label:"Foto",text:"Fushimi Inari antes de 07:00 es la prioridad visual."},{label:"Cambio",text:"Se quitó Kinkaku-ji (queda lejos, solo se ve por fuera) — Heian Jingu está en la misma zona que el paseo de la tarde."},{label:"Ritmo",text:"Si hace mucho calor, elegir Eikan-do o Nanzen-ji, no ambos."},{icon:"🌙",label:"Mañana",text:"Excursión a Nara vía Kintetsu-Nara — sales muy temprano (05:35) para alcanzar Kiyomizu antes."}]},
 
 {day:10, city:"Kioto", title:"Kiyomizu a las 06:00 + excursión a Nara", sub:"Sábado 19 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
   {t:"05:35", ic:"🚶", name:"Salida caminando/taxi corto a Kiyomizu", desc:"", maps:"https://maps.google.com/?q=Kiyomizu-dera"},
