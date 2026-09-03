@@ -144,6 +144,12 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
 /* ── EMPTY STATE ── */
 .empty-card{background:var(--card);border:1px dashed #C8C8B8;border-radius:14px;padding:2rem 1rem;text-align:center;color:#666;font-size:12px;line-height:1.8}
 
+/* ── VARIANT TABS (opciones del día) ── */
+.variant-tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:.9rem}
+.variant-tab{padding:6px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--card);color:#333;font-family:inherit;transition:all .15s}
+.variant-tab:hover{color:#0A0A0A;border-color:#0A0A0A}
+.variant-tab.on{background:#0A0A0A;color:#B8F725;border-color:#0A0A0A}
+
 /* ── TRANSIT BANNER ── */
 .transit-banner{background:#E5EEF8;border:1.5px solid #1A5FAF;border-radius:10px;padding:10px 12px;margin-bottom:.9rem;font-size:12px;color:#0A3A6B}
 .transit-banner b{color:#0A3A6B}
@@ -516,44 +522,48 @@ const ITINERARY = [
 ], route:["Kyoto Station","→","Osaka (Thunderbird)","→","Sumiyoshi Taisha","→","Namba Yasaka","→","Osaka Castle","→","Shitenno-ji","→","Umeda Sky","→","Dotonbori","→","Hozenji Yokocho"],
   tips:[{label:"Equipaje",text:"Salen de Kioto con maletas — es cambio de hotel definitivo a Osaka."},{label:"Ritmo",text:"Día largo y con mucho traslado interno en Osaka — prioriza Osaka Castle y Dotonbori/Hozenji si hay que recortar."}]},
 
-{day:11, city:"Kioto", title:"Katsuo-ji + Kishiwada Danjiri", sub:"Domingo 20 Sep · el día más largo del viaje", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, stops:[
-  {t:"05:50", ic:"🚶", name:"Salida a Kyoto Station", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
-  {t:"06:25", ic:"🚄", name:"Kyoto → Shin-Osaka", desc:"JR rápido o Shinkansen, según mejor conexión.", maps:"https://maps.google.com/?q=Shin-Osaka+Station", ticket:"https://smart-ex.jp/en/lp/app/"},
-  {t:"07:00", ic:"🚇", name:"Shin-Osaka → Minoh-Kayano", desc:"Por Midosuji/Kita-Osaka Kyuko.", maps:"https://maps.google.com/?q=Minoh-Kayano+Station"},
-  {t:"07:35", ic:"🚕", name:"Taxi a Katsuo-ji", desc:"Recomendado.", maps:"https://maps.google.com/?q=Katsuoji+Temple"},
+{day:11, city:"Osaka", title:"Katsuo-ji + Kishiwada Danjiri", sub:"Domingo 20 Sep · el día más largo del viaje", stay:{name:"Hotel Forza Osaka Namba Dotonbori", maps:"https://maps.app.goo.gl/MkHbYKyxiMr5HUBH9", link:"https://maps.app.goo.gl/MkHbYKyxiMr5HUBH9"}, stops:[
+  {t:"06:30", ic:"🚶", name:"Salida del hotel (Namba)", desc:"Ya no hace falta ir a Kyoto Station — salen directo desde Osaka.", maps:"https://maps.google.com/?q=Namba+Osaka"},
+  {t:"06:45–07:45", ic:"🚇", name:"Namba → Minoh-Kayano", desc:"Midosuji Line + Kita-Osaka Kyuko, directo desde Osaka.", maps:"https://maps.google.com/?q=Minoh-Kayano+Station"},
+  {t:"07:50", ic:"🚕", name:"Taxi a Katsuo-ji", desc:"Recomendado.", maps:"https://maps.google.com/?q=Katsuoji+Temple"},
   {t:"08:00–10:00", ic:"🪆", name:"Katsuo-ji: darumas, templo y fotos", desc:"Domingos/festivos 08:00–17:00, última admisión 16:30.", cost:null, maps:"https://maps.google.com/?q=Katsuoji+Temple", ticket:"https://katsuo-ji-temple.or.jp/", star:true},
   {t:"10:15", ic:"🚕", name:"Taxi de regreso a Minoh-Kayano", desc:"", maps:"https://maps.google.com/?q=Minoh-Kayano+Station"},
   {t:"10:45–12:30", ic:"🚇", name:"Metro hacia Namba + comida temprana", desc:"", maps:"https://maps.google.com/?q=Namba+Osaka"},
   {t:"12:45–13:20", ic:"🚆", name:"Nankai Namba → Kishiwada", desc:"", maps:"https://maps.google.com/?q=Kishiwada+Station"},
   {t:"13:30–18:00", ic:"🎆", name:"Kishiwada Danjiri Matsuri", desc:"Ver carrozas y yarimawashi desde zona segura. Festival oficial 19–20 Sep 2026: este es el segundo día.", cost:0, maps:"https://maps.google.com/?q=Kishiwada+Castle", ticket:"https://www.japan.travel/en/spot/27/", star:true},
   {t:"18:00–19:45", ic:"🏮", name:"Ambiente de faroles/atardecer", desc:"Si la operación del festival lo permite.", cost:0, maps:"https://maps.google.com/?q=Kishiwada+Castle"},
-  {t:"20:00", ic:"🚆", name:"Kishiwada → Namba/Osaka → Kyoto", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
-], route:["Kyoto","→","Minoh-Kayano","→","Katsuo-ji","→","Namba","→","Kishiwada","→","Kyoto"],
-  tips:[{label:"Día largo",text:"Es el día más exigente del viaje, pero sin maletas y regresando al mismo hotel."},{label:"Taxi clave",text:"Minoh-Kayano ↔ Katsuo-ji: mejor inversión del día para mantener ritmo medio."},{label:"Seguridad",text:"No intentar perseguir carrozas entre calles. Elegir una zona de observación y moverse con calma."}]},
+  {t:"20:00", ic:"🚆", name:"Kishiwada → Namba (regreso al hotel)", desc:"Ya no es necesario volver a Kioto.", maps:"https://maps.google.com/?q=Namba+Osaka"},
+], route:["Namba (hotel)","→","Minoh-Kayano","→","Katsuo-ji","→","Namba","→","Kishiwada","→","Namba (hotel)"],
+  tips:[{label:"Día largo",text:"Es el día más exigente del viaje, pero sin maletas y regresando al mismo hotel en Osaka."},{label:"Taxi clave",text:"Minoh-Kayano ↔ Katsuo-ji: mejor inversión del día para mantener ritmo medio."},{label:"Seguridad",text:"No intentar perseguir carrozas entre calles. Elegir una zona de observación y moverse con calma."}]},
 
-{day:12, city:"Osaka", title:"Osaka completo + Hozenji Yokocho", sub:"Lunes 21 Sep", stay:{name:"Hotel SUI Kyoto Kiyomizu", maps:"https://maps.app.goo.gl/h1WqS8ddM9N5SCRQA", link:"https://hotel-sui.com/kyoto/en/"}, stops:[
-  {t:"07:45", ic:"🚆", name:"Salida a Osaka", desc:"", maps:"https://maps.google.com/?q=Osaka+Station"},
-  {t:"09:00–10:30", ic:"🏯", name:"Osaka Castle Park", desc:"Exterior/castillo según interés. Si hay fila grande, priorizar el parque.", cost:null, maps:"https://maps.google.com/?q=Osaka+Castle", ticket:"https://osaka-castle.org/", star:true},
-  {t:"11:00–12:30", ic:"🐟", name:"Kuromon Market / Nippombashi", desc:"Paseo y comida temprana.", maps:"https://maps.google.com/?q=Kuromon+Ichiba+Market", star:true},
-  {t:"13:00–14:30", ic:"🗼", name:"Shinsekai / Tsutenkaku", desc:"Mirador opcional.", maps:"https://maps.google.com/?q=Shinsekai+Osaka"},
-  {t:"15:00–17:00", ic:"🛍️", name:"Namba + Dotonbori", desc:"Compras y el letrero de Glico.", maps:"https://maps.google.com/?q=Dotonbori+Osaka", star:true},
-  {t:"17:15–17:45", ic:"⛩️", name:"Hozenji Temple / Mizukake Fudo", desc:"", cost:0, maps:"https://maps.google.com/?q=Hozenji+Temple+Osaka"},
-  {t:"18:00–19:45", ic:"🥩", name:"Cena en Hozenji Yokocho", desc:"Prioridad: Matsusaka beef/yakiniku o cocina de Osaka.", maps:"https://maps.google.com/?q=Hozenji+Yokocho", star:true},
-  {t:"20:00", ic:"🚆", name:"Regreso a Kioto", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
-], route:["Osaka Castle","→","Kuromon","→","Shinsekai","→","Dotonbori","→","Hozenji Yokocho","→","Kyoto"],
-  tips:[{label:"Imprescindible",text:"Hozenji Yokocho al final del día, con faroles y cena."},{label:"Cena",text:"Reservar si eliges un restaurante popular de Matsusaka beef."},{label:"Mejora",text:"No añadir Umeda Sky Building: haría zigzag y quitaría tiempo a Hozenji/Dotonbori."},{icon:"🌙",label:"Mañana",text:"Te vas a Hiroshima — cambia la reserva del Shinkansen para que salga desde Kyoto Station, no Shin-Osaka."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Kioto. Considera enviar la maleta grande a Shibuya/Narita y llevar una pequeña a Hiroshima."}]},
+{day:12, city:"Osaka", title:"Último día en Osaka · 2 opciones", sub:"Lunes 21 Sep", stay:{name:"Hotel Forza Osaka Namba Dotonbori", maps:"https://maps.app.goo.gl/MkHbYKyxiMr5HUBH9", link:"https://maps.app.goo.gl/MkHbYKyxiMr5HUBH9"}, variants:[
+    {key:"tranqui", label:"🧘 Opción 1: Osaka tranqui", stops:[
+      {t:"11:00–13:00", ic:"🗼", name:"Shinsekai + Tsutenkaku", desc:"Mañana tranquila — recomendada si hay cansancio acumulado.", maps:"https://maps.google.com/?q=Shinsekai+Osaka", star:true},
+      {t:"13:00–19:00", ic:"🛍️", name:"Shinsaibashi / Amerikamura", desc:"Tarde libre de compras.", maps:"https://maps.google.com/?q=Shinsaibashi+Osaka", star:true},
+      {t:"19:30", ic:"🥩", name:"Matsusakagyu Yakiniku (M Hozenji)", desc:"Cena de despedida de Osaka.", maps:"https://maps.google.com/?q=Matsusakagyu+Yakiniku+M+Hozenji", star:true},
+      {t:"20:00", ic:"🏮", name:"Hozenji Yokocho · despedida", desc:"A 20 min caminando del restaurante, mismo callejón — el hotel queda a solo 3 min de aquí.", cost:0, maps:"https://maps.google.com/?q=Hozenji+Yokocho", star:true},
+    ], route:["Shinsekai/Tsutenkaku","→","Shinsaibashi/Amerikamura","→","Matsusakagyu Yakiniku","→","Hozenji Yokocho"]},
+    {key:"nara", label:"🦌 Opción 2: Nara Express", stops:[
+      {t:"07:00", ic:"🚆", name:"Salida hacia Nara", desc:"Osaka → Nara vía Kintetsu/JR.", maps:"https://maps.google.com/?q=Nara+Station"},
+      {t:"08:00–12:30", ic:"🦌", name:"Todai-ji + ciervos + mochi Nakatanidou", desc:"El gran Buda, el parque de los ciervos y el famoso mochi machacado a mazazos de Nakatanidou.", cost:null, maps:"https://maps.google.com/?q=Todai-ji+Nara", ticket:"https://www.todaiji.or.jp/en/", star:true},
+      {t:"13:00", ic:"🚆", name:"Regreso a Osaka", desc:"", maps:"https://maps.google.com/?q=Osaka+Station"},
+      {t:"15:00", ic:"🛍️", name:"Shinsaibashi · última compra", desc:"", maps:"https://maps.google.com/?q=Shinsaibashi+Osaka", star:true},
+      {t:"19:30", ic:"🥩", name:"Matsusakagyu Yakiniku (M Hozenji) · despedida", desc:"Misma cena de despedida — a 3 min del hotel.", maps:"https://maps.google.com/?q=Matsusakagyu+Yakiniku+M+Hozenji", star:true},
+    ], route:["Nara (Todai-ji)","→","Osaka","→","Shinsaibashi","→","Matsusakagyu Yakiniku despedida"]},
+  ],
+  tips:[{label:"Opciones",text:"Elige según energía: 'Osaka tranqui' es más ligera; 'Nara Express' recupera Nara pero es más pesado."},{icon:"🌙",label:"Mañana",text:"Te vas a Hiroshima — el Shinkansen ahora sale desde Shin-Osaka, no Kyoto."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Osaka."}]},
 
-{day:13, city:"Hiroshima", title:"Kioto → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stay:{name:"Hotel de Hiroshima (por confirmar)", maps:"", link:""}, transit:{from:"Kioto", to:"Hiroshima", time:"~1h40", note:"Shinkansen Nozomi directo desde Kyoto Station. Considera enviar la maleta grande a Shibuya/Narita y viajar ligero."}, stops:[
-  {t:"07:30", ic:"🧳", name:"Desayuno y check-out Hotel SUI", desc:""},
-  {t:"08:15", ic:"🚶", name:"Traslado a Kyoto Station", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
-  {t:"09:00", ic:"🚄", name:"Nozomi Kyoto → Hiroshima", desc:"Asiento reservado. Modificar el Shinkansen para salir desde Kyoto, no Shin-Osaka.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
-  {t:"10:45–11:30", ic:"🏨", name:"Llegada; dejar equipaje en hotel/locker", desc:""},
+{day:13, city:"Hiroshima", title:"Osaka → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stay:{name:"Hotel de Hiroshima (por confirmar)", maps:"", link:""}, transit:{from:"Osaka", to:"Hiroshima", time:"~1h20", note:"Shinkansen Nozomi directo desde Shin-Osaka. Considera enviar la maleta grande a Shibuya/Narita y viajar ligero."}, stops:[
+  {t:"07:30", ic:"🧳", name:"Desayuno y check-out Hotel Forza", desc:""},
+  {t:"08:15", ic:"🚶", name:"Traslado a Shin-Osaka Station", desc:"", maps:"https://maps.google.com/?q=Shin-Osaka+Station"},
+  {t:"09:00", ic:"🚄", name:"Nozomi Shin-Osaka → Hiroshima", desc:"Asiento reservado.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
+  {t:"10:20–11:00", ic:"🏨", name:"Llegada; dejar equipaje en hotel/locker", desc:""},
   {t:"12:00–13:00", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Hiroshima+restaurants"},
   {t:"13:15–16:30", ic:"🕊️", name:"Peace Memorial Park + A-Bomb Dome + museo", desc:"Ritmo tranquilo — puede ser intenso emocionalmente.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Peace+Memorial+Park", ticket:"https://hpmmuseum.jp/", star:true},
   {t:"16:45–17:45", ic:"🏯", name:"Hiroshima Castle / Gokoku Shrine", desc:"Si hay energía; si no, paseo junto al río.", maps:"https://maps.google.com/?q=Hiroshima+Castle"},
   {t:"18:30", ic:"🍽️", name:"Cena de okonomiyaki estilo Hiroshima", desc:"", maps:"https://maps.google.com/?q=okonomiyaki+Hiroshima", star:true},
-], route:["Kyoto Station","→","Hiroshima Station","→","Peace Park","→","centro"],
-  tips:[{label:"Cambio de boleto",text:"Modificar el Shinkansen para salir desde Kyoto, no Shin-Osaka."},{label:"Equipaje",text:"Considerar enviar maleta grande desde Kioto a Shibuya/Narita y viajar ligero a Hiroshima."},{label:"Ritmo emocional",text:"El museo puede ser intenso; no programar una noche cargada después."},{icon:"🌙",label:"Mañana",text:"Excursión a Miyajima — sales temprano hacia Hiroshima Station."}]},
+], route:["Shin-Osaka Station","→","Hiroshima Station","→","Peace Park","→","centro"],
+  tips:[{label:"Cambio de boleto",text:"El Shinkansen ahora sale desde Shin-Osaka, ya no desde Kyoto."},{label:"Equipaje",text:"Considerar enviar maleta grande desde Osaka a Shibuya/Narita y viajar ligero a Hiroshima."},{label:"Ritmo emocional",text:"El museo puede ser intenso; no programar una noche cargada después."},{icon:"🌙",label:"Mañana",text:"Excursión a Miyajima — sales temprano hacia Hiroshima Station."}]},
 
 {day:14, city:"Miyajima", title:"Miyajima / Itsukushima", sub:"Miércoles 23 Sep", stay:{name:"Hotel de Hiroshima (por confirmar)", maps:"", link:""}, stops:[
   {t:"07:15", ic:"🚶", name:"Salida hacia Hiroshima Station", desc:""},
@@ -728,7 +738,7 @@ function renderItin(){
   }
   if(curDay>=ITINERARY.length)curDay=0;
   const cities=new Set(ITINERARY.map(d=>d.city).filter(Boolean));
-  const totalCost=ITINERARY.reduce((s,d)=>s+d.stops.reduce((s2,x)=>s2+(typeof x.cost==='number'?x.cost:0),0),0);
+  const totalCost=ITINERARY.reduce((s,d)=>s+(d.variants?d.variants[0].stops:d.stops).reduce((s2,x)=>s2+(typeof x.cost==='number'?x.cost:0),0),0);
   header.innerHTML=`<span class="chip green">${ITINERARY.length} días</span><span class="chip blue">${cities.size} ciudades</span><span class="chip gold">~¥${totalCost.toLocaleString()}</span>`;
   nav.innerHTML=ITINERARY.map((d,i)=>`<button class="dbt ${i===curDay?'on':''}" onclick="goDayI(${i})">Día ${d.day}${d.city?' · '+esc(d.city):''}</button>`).join('');
   renderDayI(curDay);
@@ -741,7 +751,16 @@ function goDayI(i){
 function renderDayI(idx){
   const d=ITINERARY[idx];
   const dv=document.getElementById('itinView');
-  const stops=d.stops.map((s,si)=>{
+  let curStops=d.stops, curRoute=d.route, variantTabs='';
+  if(d.variants){
+    const saved=localStorage.getItem(`jd_jp_variant_d${d.day}`);
+    const activeKey=(saved && d.variants.some(v=>v.key===saved))?saved:d.variants[0].key;
+    const activeVariant=d.variants.find(v=>v.key===activeKey);
+    curStops=activeVariant.stops;
+    curRoute=activeVariant.route;
+    variantTabs=`<div class="variant-tabs">${d.variants.map(v=>`<button class="variant-tab ${v.key===activeKey?'on':''}" onclick="switchVariant(${d.day},'${v.key}')">${esc(v.label)}</button>`).join('')}</div>`;
+  }
+  const stops=curStops.map((s,si)=>{
     const costHtml = s.cost===0 ? `<div class="stop-cost free">Gratis</div>`
       : typeof s.cost==='number' ? `<div class="stop-cost paid">¥${s.cost.toLocaleString()}</div>`
       : s.cost===null ? `<div class="stop-cost" style="color:#B0A060;font-size:9px">💴 ver precio</div>`
@@ -765,12 +784,12 @@ function renderDayI(idx){
       ${costHtml}
     </div>`;
   }).join('');
-  const route=d.route?`<div class="route-box"><div class="route-label">🗺️ Ruta del día</div><div class="route-steps">${d.route.map(r=>r==='→'?`<span class="rta">→</span>`:`<span class="rts">${r}</span>`).join('')}</div></div>`:'';
+  const route=curRoute?`<div class="route-box"><div class="route-label">🗺️ Ruta del día</div><div class="route-steps">${curRoute.map(r=>r==='→'?`<span class="rta">→</span>`:`<span class="rts">${r}</span>`).join('')}</div></div>`:'';
   const tips=d.tips?`<div class="tip-box">${d.tips.map(t=>`${t.icon||'🤫'} <b>${t.label}:</b> ${t.text}`).join('<br>')}</div>`:'';
   const dots=ITINERARY.map((_,j)=>`<div class="dot ${j===idx?'on':''}"></div>`).join('');
   const nav=`<div class="nav-row"><button class="nb" onclick="goDayI(${idx-1})" ${idx===0?'disabled':''}>← Anterior</button><div class="dots">${dots}</div><button class="nb" onclick="goDayI(${idx+1})" ${idx===ITINERARY.length-1?'disabled':''}>Siguiente →</button></div>`;
-  const tot=d.stops.reduce((s,x)=>s+(typeof x.cost==='number'?x.cost:0),0);
-  const free=d.stops.filter(x=>x.cost===0).length;
+  const tot=curStops.reduce((s,x)=>s+(typeof x.cost==='number'?x.cost:0),0);
+  const free=curStops.filter(x=>x.cost===0).length;
   const stayId=`d${d.day}-stay`;
   const stayExtra=(STOPLINKS[stayId]||[]).map(l=>`<a class="lb lb-x" href="${esc(l.url)}" target="_blank">🔗 ${esc(l.label)}</a>`).join('');
   const stayStop=d.stay?`<div class="stop">
@@ -793,11 +812,16 @@ function renderDayI(idx){
     </div>
     ${transitBanner}
     ${stayStop}
+    ${variantTabs}
     ${stops}
     ${tips}
     ${route}
     ${nav}
   </div>`;
+}
+function switchVariant(day,key){
+  localStorage.setItem(`jd_jp_variant_d${day}`,key);
+  renderDayI(curDay);
 }
 
 // ════════ GUARDADOS (TikTok board) ════════
