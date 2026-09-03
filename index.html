@@ -109,6 +109,10 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
 .stop-name{font-size:13px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:5px;flex-wrap:wrap;line-height:1.3}
 .stop-star{color:#7AB800;font-size:12px}
 .stop-desc{font-size:11px;color:#666;margin-top:3px;line-height:1.5}
+.stop-desc.editable-note{cursor:text;border-radius:5px;padding:2px 4px;margin-left:-4px;outline:none;border:1px dashed transparent}
+.stop-desc.editable-note:hover{border-color:#C8C8B8}
+.stop-desc.editable-note:focus{border-color:var(--neon);background:#FAFAF2}
+.stop-desc.editable-note:empty:before{content:attr(data-placeholder);color:#AAA;font-style:italic}
 .stop-links{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
 .lb{font-size:10px;padding:3px 9px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:3px;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;font-weight:600}
 .lb-m{background:#E8F0FA;color:#1A5FAF;border:1px solid #B0C8E8}
@@ -387,6 +391,7 @@ const ITINERARY = [
 {day:2, city:"Tokio", title:"Asakusa + Odaiba + teamLab", sub:"Viernes 11 Sep", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
   {t:"07:30", ic:"🚇", name:"Salida hacia Asakusa", desc:"Metro vía Higashi-Shinjuku / conexión según tráfico.", maps:"https://maps.google.com/?q=Asakusa+Tokyo"},
   {t:"08:30–11:00", ic:"⛩️", name:"Senso-ji + Nakamise + Kaminarimon", desc:"Templo temprano, calle comercial y paseo junto al río Sumida.", cost:0, maps:"https://maps.google.com/?q=Senso-ji+Temple", star:true},
+  {t:"11:00", ic:"🏯", name:"Centro de Información Turística de Asakusa", desc:"Cruzar frente a Kaminarimon — mirador gratuito en el piso de arriba y una caligrafía.", cost:0, maps:"https://maps.google.com/?q=Asakusa+Culture+Tourist+Information+Center", star:true},
   {t:"11:15", ic:"🍜", name:"Comida temprana en Asakusa", desc:"", maps:"https://maps.google.com/?q=Asakusa+restaurants"},
   {t:"12:30–14:00", ic:"⛴️", name:"Ferry/Water Bus a Odaiba", desc:"Si el horario del día encaja; si no, metro/Yurikamome (≈50-70 min). Reconfirmar 7-10 días antes.", maps:"https://maps.google.com/?q=Tokyo+Water+Bus+Asakusa"},
   {t:"14:00–16:10", ic:"🌉", name:"Odaiba: bahía + Rainbow Bridge", desc:"Paseo visual sin intentar abarcar todo.", cost:0, maps:"https://maps.google.com/?q=Odaiba+Tokyo", star:true},
@@ -599,6 +604,7 @@ const PREP_CATS = [
 let STAYS=[];
 let SAVED=[];
 let STOPLINKS={};
+let STOPNOTES={};
 let curStopId=null;
 let curStopName='';
 let curGroup='all';
@@ -614,6 +620,7 @@ function init(){
   loadPrep();
   loadSaved();
   loadStopLinks();
+  loadStopNotes();
   renderItin();
   initConverter();
 }
@@ -734,11 +741,12 @@ function renderDayI(idx){
       extra,
       `<button class="lb lb-add" type="button" onclick="openStopLinkModal('${stopId}','${esc(s.name).replace(/'/g,"\\'")}')">+ link</button>`,
     ].filter(Boolean).join('');
+    const descText = STOPNOTES[stopId]!==undefined ? STOPNOTES[stopId] : (s.desc||'');
     return`<div class="stop">
       <div class="stop-left"><div class="stop-ico">${s.ic}</div>${s.t?`<div class="stop-time">${s.t}</div>`:''}</div>
       <div>
         <div class="stop-name">${s.star?'<span class="stop-star">⭐</span>':''}${s.name}</div>
-        <div class="stop-desc">${s.desc}</div>
+        <div class="stop-desc editable-note" contenteditable="true" data-stopid="${stopId}" data-placeholder="Toca para agregar una nota..." onblur="saveStopNote(this)" onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur();}">${esc(descText)}</div>
         <div class="stop-links">${links}</div>
       </div>
       ${costHtml}
@@ -943,6 +951,17 @@ function removeStopLinkEntry(stopId,idx){
   persistStopLinks();
   document.getElementById('MCONT').innerHTML=stopLinkModalBody(stopId,curStopName);
   renderDayI(curDay);
+}
+
+// ════════ NOTAS EDITABLES POR PARADA ════════
+function loadStopNotes(){
+  STOPNOTES=JSON.parse(localStorage.getItem('jd_jp_stopnotes')||'{}');
+}
+function saveStopNote(el){
+  const stopId=el.dataset.stopid;
+  const text=el.textContent.trim();
+  STOPNOTES[stopId]=text;
+  localStorage.setItem('jd_jp_stopnotes',JSON.stringify(STOPNOTES));
 }
 
 // ════════ PREP ════════
