@@ -144,6 +144,12 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
 /* ── EMPTY STATE ── */
 .empty-card{background:var(--card);border:1px dashed #C8C8B8;border-radius:14px;padding:2rem 1rem;text-align:center;color:#666;font-size:12px;line-height:1.8}
 
+/* ── TRANSIT BANNER ── */
+.transit-banner{background:#E5EEF8;border:1.5px solid #1A5FAF;border-radius:10px;padding:10px 12px;margin-bottom:.9rem;font-size:12px;color:#0A3A6B}
+.transit-banner b{color:#0A3A6B}
+.transit-time{font-size:10px;font-weight:700;background:#1A5FAF;color:#fff;border-radius:6px;padding:1px 7px;margin-left:6px}
+.transit-note{font-size:11px;color:#1A5FAF;margin-top:4px;line-height:1.5}
+
 /* ── TIPS ── */
 .tip-box{background:#141400;border:1px solid #3A3000;border-radius:10px;padding:10px 12px;margin-top:10px;font-size:11px;color:var(--gold);line-height:1.7}
 .tip-box b{color:#7A5000}
@@ -410,19 +416,23 @@ const ITINERARY = [
   {t:"15:00–16:30", ic:"⚡", name:"Harry Potter Cafe Akasaka", desc:"Reservar si el sistema lo exige.", maps:"https://maps.google.com/?q=Harry+Potter+Cafe+Akasaka", star:true},
   {t:"17:00", ic:"⛩️", name:"Zojo-ji Temple", desc:"El pagoda con la Tokyo Tower de fondo — de las fotos más icónicas de Tokio. Justo al lado de la torre.", cost:0, maps:"https://maps.google.com/?q=Zojo-ji+Temple", star:true},
   {t:"17:30–19:00", ic:"🗼", name:"Tokyo Tower al atardecer/noche", desc:"Funciona mejor desde hora azul a noche.", cost:null, maps:"https://maps.google.com/?q=Tokyo+Tower", ticket:"https://en.tokyotower.co.jp/ticket/", star:true},
-  {t:"19:15", ic:"🍽️", name:"Cena en Daimon/Hamamatsucho", desc:"O regreso a Shinjuku.", maps:"https://maps.google.com/?q=Daimon+Tokyo"},
-], route:["Ryogoku","→","Kuramae","→","Akasaka","→","Zojo-ji","→","Tokyo Tower","→","Shinjuku"],
+  {t:"19:15", ic:"🍸", name:"The Peak Lounge & Bar (Hyatt)", desc:"Vistas nocturnas con coctel — buen cierre para la noche de Tokyo Tower.", maps:"https://maps.app.goo.gl/yvy9ezFBgZ4hm2Ty6", star:true},
+  {t:"20:30", ic:"🍽️", name:"Cena en Daimon/Hamamatsucho", desc:"O regreso a Shinjuku.", maps:"https://maps.google.com/?q=Daimon+Tokyo"},
+], route:["Ryogoku","→","Kuramae","→","Akasaka","→","Zojo-ji","→","Tokyo Tower","→","Peak Lounge","→","Shinjuku"],
   tips:[{label:"Compra",text:"Kuramae recibe un bloque real de tiempo; no se trata como parada rápida."},{label:"Foto",text:"Tokyo Tower funciona mejor desde hora azul a noche."},{label:"Ritmo",text:"Si Kuramae resulta especialmente bueno para compras, acortar Ryogoku."}]},
 
-{day:4, city:"Tokio", title:"Kichijoji: café 2D + festival + Musashino Hachimangu", sub:"Domingo 13 Sep · Ueno/Akihabara opcional", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
-  {t:"11:00", ic:"☕", name:"Café 2D", desc:"Llegar cerca de las 11am para evitar filas.", maps:"https://maps.google.com/?q=Kichijoji+Tokyo"},
-  {t:"12:00–13:30", ic:"🌳", name:"Inokashira Park", desc:"El parque y el lago de Kichijoji — paseo tranquilo, botes de remo si hay tiempo.", cost:0, maps:"https://maps.google.com/?q=Inokashira+Park", star:true},
-  {t:"13:30–15:00", ic:"🎏", name:"Festival Kichijoji · mikoshi", desc:"Procesión de mikoshi por las calles de Kichijoji.", cost:0, maps:"https://maps.google.com/?q=Kichijoji+Tokyo", star:true},
-  {t:"15:15–16:00", ic:"⛩️", name:"Santuario Musashino Hachimangu", desc:"Santuario tranquilo, a poca distancia de la zona del festival.", cost:0, maps:"https://maps.google.com/?q=Musashino+Hachimangu"},
-  {t:"17:00–18:30", ic:"🌸", name:"Parque Ueno", desc:"Se acomoda según el tiempo que quede del día.", cost:0, maps:"https://maps.google.com/?q=Ueno+Park+Tokyo", star:true},
-  {t:"19:00", ic:"🎮", name:"Akihabara (opcional)", desc:"Si queda energía — tiendas de electrónica, anime y arcades.", maps:"https://maps.google.com/?q=Akihabara+Tokyo"},
-], route:["Café 2D","→","Inokashira Park","→","Festival Kichijoji","→","Musashino Hachimangu","→","Ueno","→","Akihabara (opcional)"],
-  tips:[{label:"Filas",text:"Café 2D cerca de las 11am para evitar fila."},{label:"Ritmo",text:"Ueno y Akihabara están lejos de Kichijoji (zona oeste vs. centro-este) — van al final del día según energía, no son obligatorios."}]},
+{day:4, city:"Tokio", title:"Hanazono Market + café 2D + Kichijoji", sub:"Domingo 13 Sep · Ueno/Akihabara opcional", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
+  {t:"08:00–10:00", ic:"🏮", name:"Hanazono Shrine Antique Market", desc:"Mercado de antigüedades solo domingos — aquí podemos encontrar kimonos reciclados/de segunda mano.", cost:0, maps:"https://maps.google.com/?q=Hanazono+Shrine+Tokyo", ticket:"https://tokyocheapo.com/events/hanazono-antique-market/", star:true},
+  {t:"10:15", ic:"🚶", name:"Traslado a Hyakunincho (Café 2D)", desc:"Café 2D está en Hyakunincho, Shinjuku — a poca distancia de Hanazono.", maps:"https://maps.app.goo.gl/SFDSu81H2mbf53UG6"},
+  {t:"11:00", ic:"☕", name:"Café 2D", desc:"Llegar cerca de las 11am para evitar filas. Dirección: 1 Chome-7-5 Hyakunincho, Shinjuku.", maps:"https://maps.app.goo.gl/SFDSu81H2mbf53UG6"},
+  {t:"12:15", ic:"🚆", name:"Traslado a Kichijoji", desc:"Chuo Line directo desde Shinjuku, ≈15-20 min.", maps:"https://maps.google.com/?q=Kichijoji+Station"},
+  {t:"13:00–14:30", ic:"🌳", name:"Inokashira Park", desc:"El parque y el lago de Kichijoji — paseo tranquilo, botes de remo si hay tiempo.", cost:0, maps:"https://maps.google.com/?q=Inokashira+Park", star:true},
+  {t:"14:30–16:00", ic:"🎏", name:"Festival Kichijoji · mikoshi", desc:"Procesión de mikoshi por las calles de Kichijoji.", cost:0, maps:"https://maps.google.com/?q=Kichijoji+Tokyo", star:true},
+  {t:"16:15–17:00", ic:"⛩️", name:"Santuario Musashino Hachimangu", desc:"Santuario tranquilo, a poca distancia de la zona del festival.", cost:0, maps:"https://maps.google.com/?q=Musashino+Hachimangu"},
+  {t:"17:30–19:00", ic:"🌸", name:"Parque Ueno", desc:"Se acomoda según el tiempo que quede del día.", cost:0, maps:"https://maps.google.com/?q=Ueno+Park+Tokyo", star:true},
+  {t:"19:30", ic:"🎮", name:"Akihabara (opcional)", desc:"Si queda energía — tiendas de electrónica, anime y arcades.", maps:"https://maps.google.com/?q=Akihabara+Tokyo"},
+], route:["Hanazono Market","→","Café 2D (Hyakunincho)","→","Kichijoji","→","Inokashira Park","→","Festival Kichijoji","→","Musashino Hachimangu","→","Ueno","→","Akihabara (opcional)"],
+  tips:[{label:"Kimonos",text:"En el mercado de antigüedades de Hanazono se pueden encontrar kimonos reciclados/de segunda mano a buen precio."},{label:"Filas",text:"Café 2D cerca de las 11am para evitar fila."},{label:"Ritmo",text:"Ueno y Akihabara quedan lejos de Kichijoji (zona oeste vs. centro-este) — van al final del día según energía, no son obligatorios."}]},
 
 {day:5, city:"Kamakura", title:"Kamakura completo", sub:"Lunes 14 Sep · dinero, Buda, bambú y festival", stay:{name:"Shinjuku Granbell Hotel", maps:"https://maps.google.com/?q=Shinjuku+Granbell+Hotel", link:"https://en.granbellhotel.jp/shinjuku/"}, stops:[
   {t:"06:30", ic:"🚆", name:"Salida hacia Kamakura", desc:"JR Shonan-Shinjuku Line; directo ≈60-70 min cuando coincida.", maps:"https://maps.google.com/?q=Kamakura+Station"},
@@ -435,24 +445,27 @@ const ITINERARY = [
   {t:"16:00–18:45", ic:"⛩️", name:"Tsurugaoka Hachimangu + ceremonia Yomiya-sai", desc:"Esperar la ceremonia de las 18:00. El yabusame es otro día.", cost:0, maps:"https://maps.google.com/?q=Tsurugaoka+Hachimangu", ticket:"https://www.hachimangu.or.jp/en/", star:true},
   {t:"19:00", ic:"🚆", name:"Regreso Kamakura → Shinjuku", desc:"≈65-75 min.", maps:"https://maps.google.com/?q=Kamakura+Station"},
 ], route:["Zeniarai Benten","→","Kotoku-in (Gran Buda)","→","Hokoku-ji (bambú)","→","Komachi","→","Tsurugaoka"],
-  tips:[{label:"Prioridad",text:"No añadir Enoshima: haría el día demasiado pesado."},{label:"Taxi",text:"Kotoku-in → Hokoku-ji es el taxi con mejor relación tiempo/esfuerzo del día."},{label:"Foto",text:"Bosque de bambú antes del mediodía; Tsurugaoka con luz de tarde y ceremonia al anochecer."},{icon:"🌙",label:"Mañana",text:"Sales a Hakone — confirma hoy tu asiento reservado del Odakyu Romancecar."}]},
+  tips:[{label:"Prioridad",text:"No añadir Enoshima: haría el día demasiado pesado."},{label:"Taxi",text:"Kotoku-in → Hokoku-ji es el taxi con mejor relación tiempo/esfuerzo del día."},{label:"Foto",text:"Bosque de bambú antes del mediodía; Tsurugaoka con luz de tarde y ceremonia al anochecer."},{icon:"🌙",label:"Mañana",text:"Sales a Hakone — confirma hoy tu asiento reservado del Odakyu Romancecar."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del Granbell hacia Hakone."}]},
 
-{day:6, city:"Hakone", title:"Hakone: circuito panorámico + ryokan", sub:"Martes 15 Sep", stay:{name:"Ichinoyu Honkan (ryokan)", maps:"https://maps.google.com/?q=Ichinoyu+Honkan+Hakone", link:"https://www.hakonenavi.jp/international/en/spot/272"}, stops:[
+{day:6, city:"Hakone", title:"Hakone: circuito panorámico + ryokan", sub:"Martes 15 Sep", stay:{name:"Ichinoyu Honkan (ryokan)", maps:"https://maps.google.com/?q=Ichinoyu+Honkan+Hakone", link:"https://www.hakonenavi.jp/international/en/spot/272"}, transit:{from:"Tokio (Shinjuku)", to:"Hakone", time:"~2h", note:"Romancecar + tren local. Viajas con equipaje completo — se deja en la estación de Hakone-Yumoto antes del circuito."}, stops:[
   {t:"07:15", ic:"🧳", name:"Check-out Granbell", desc:"Traslado a Shinjuku Station.", maps:"https://maps.google.com/?q=Shinjuku+Station"},
   {t:"08:00", ic:"🚆", name:"Romancecar Sagami 91 · Shinjuku → Odawara", desc:"Confirmado: vagón Observation Deck, coche 1, asientos 2C y 2D. Desde Odawara, tren local a Hakone-Yumoto.", cost:null, maps:"https://maps.google.com/?q=Odawara+Station", ticket:"https://www.web-odakyu.com/e-romancecar/?language=en", star:true},
   {t:"09:45", ic:"🎒", name:"Enviar/dejar equipaje", desc:"Para no cargarlo durante el circuito.", maps:"https://maps.google.com/?q=Hakone-Yumoto+Station"},
-  {t:"10:15–12:00", ic:"🚡", name:"Hakone-Yumoto → Gora → Sounzan", desc:"≈1h45 con conexiones.", maps:"https://maps.google.com/?q=Sounzan+Station+Hakone"},
-  {t:"12:00–13:00", ic:"♨️", name:"Owakudani", desc:"Mirador, paseo corto, comida/snack (huevos negros).", maps:"https://maps.google.com/?q=Owakudani+Hakone", star:true},
-  {t:"13:15–14:00", ic:"🚡", name:"Ropeway a Togendai", desc:"", cost:null, maps:"https://maps.google.com/?q=Togendai+Hakone", ticket:"https://www.hakonenavi.jp/hakone-ropeway/"},
-  {t:"14:00–14:45", ic:"⛴️", name:"Crucero por el Lago Ashi", desc:"Hacia Motohakone/Hakone-machi.", cost:null, maps:"https://maps.google.com/?q=Lake+Ashi+Hakone", ticket:"https://www.hakonenavi.jp/international/en/transportation/hakone-kankosen", star:true},
-  {t:"15:00–16:00", ic:"⛩️", name:"Hakone Shrine + torii en el lago", desc:"Según fila y energía.", cost:0, maps:"https://maps.google.com/?q=Hakone+Shrine", star:true},
-  {t:"16:15–17:00", ic:"🚕", name:"Bus/taxi a Ichinoyu Honkan", desc:"Check-in, onsen, yukata.", maps:"https://maps.google.com/?q=Ichinoyu+Honkan+Hakone", ticket:"https://www.hakonenavi.jp/international/en/spot/272"},
+  {t:"10:15–10:45", ic:"🚡", name:"Hakone-Yumoto → Chokoku-no-Mori", desc:"Tren Hakone Tozan hacia el Open-Air Museum.", maps:"https://maps.google.com/?q=Chokoku+no+Mori+Station+Hakone"},
+  {t:"10:45–12:00", ic:"🖼️", name:"Hakone Open-Air Museum", desc:"Museo al aire libre con esculturas y el pabellón de Picasso — de los favoritos de Hakone.", cost:null, maps:"https://maps.google.com/?q=Hakone+Open-Air+Museum", ticket:"https://www.hakone-oam.or.jp/en/", star:true},
+  {t:"12:00–12:30", ic:"🚡", name:"Chokoku-no-Mori → Gora → Sounzan", desc:"Continuar hacia el cable car de Sounzan.", maps:"https://maps.google.com/?q=Sounzan+Station+Hakone"},
+  {t:"12:30–13:15", ic:"♨️", name:"Owakudani", desc:"Mirador, paseo corto, comida/snack (huevos negros).", maps:"https://maps.google.com/?q=Owakudani+Hakone", star:true},
+  {t:"13:30–14:15", ic:"🚡", name:"Ropeway a Togendai", desc:"", cost:null, maps:"https://maps.google.com/?q=Togendai+Hakone", ticket:"https://www.hakonenavi.jp/hakone-ropeway/"},
+  {t:"14:15–15:00", ic:"⛴️", name:"Crucero por el Lago Ashi", desc:"Hacia Motohakone/Hakone-machi.", cost:null, maps:"https://maps.google.com/?q=Lake+Ashi+Hakone", ticket:"https://www.hakonenavi.jp/international/en/transportation/hakone-kankosen", star:true},
+  {t:"15:15–16:15", ic:"⛩️", name:"Hakone Shrine + torii en el lago", desc:"Según fila y energía.", cost:0, maps:"https://maps.google.com/?q=Hakone+Shrine", star:true},
+  {t:"16:30–17:15", ic:"🚕", name:"Bus/taxi a Ichinoyu Honkan", desc:"Check-in, onsen, yukata.", maps:"https://maps.google.com/?q=Ichinoyu+Honkan+Hakone", ticket:"https://www.hakonenavi.jp/international/en/spot/272"},
   {t:"18:00+", ic:"🍽️", name:"Cena y noche de ryokan", desc:""},
-], route:["Shinjuku","→","Hakone-Yumoto","→","Gora/Sounzan","→","Owakudani","→","Lago Ashi","→","Ichinoyu Honkan"],
-  tips:[{label:"Equipaje",text:"Prioridad: no hacer el circuito con maletas."},{label:"Clima",text:"Si ropeway o crucero se suspende por clima, hacer Hakone Open-Air Museum + ryokan temprano."},{label:"Ritmo",text:"No perseguir todos los miradores; elegir paisaje + experiencia de ryokan."},{icon:"🌙",label:"Mañana",text:"Hakone → Kioto. Ojo: desde Odawara usa Hikari/Kodama — el Nozomi no para ahí."}]},
+], route:["Shinjuku","→","Hakone-Yumoto","→","Open-Air Museum","→","Gora/Sounzan","→","Owakudani","→","Lago Ashi","→","Hakone Shrine","→","Ichinoyu Honkan"],
+  tips:[{label:"Equipaje",text:"Prioridad: no hacer el circuito con maletas."},{label:"Clima",text:"Si ropeway o crucero se suspende por clima, hacer Hakone Open-Air Museum + ryokan temprano."},{label:"Ritmo",text:"No perseguir todos los miradores; elegir paisaje + experiencia de ryokan."},{icon:"🌙",label:"Mañana",text:"Hakone → Kioto. Ojo: desde Odawara usa Hikari/Kodama — el Nozomi no para ahí."},{icon:"🧳",label:"Maleta",text:"Prepara todo esta noche — mañana hay check-out del ryokan hacia Kioto."}]},
 
-{day:7, city:"Kioto", title:"Hakone → Kioto + primera tarde en Gion", sub:"Miércoles 16 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, stops:[
+{day:7, city:"Kioto", title:"Hakone → Kioto + primera tarde en Gion", sub:"Miércoles 16 Sep", stay:{name:"Kioto — hotel por confirmar (SUI agotado, ver 4 opciones en Alojamientos)", maps:"", link:""}, transit:{from:"Hakone", to:"Kioto", time:"~2h30", note:"Tren local a Odawara + Shinkansen (Hikari/Kodama, no Nozomi). Reservar asiento con espacio de equipaje."}, stops:[
   {t:"08:00", ic:"🍳", name:"Desayuno y mañana tranquila en ryokan", desc:""},
+  {t:"08:30–09:15", ic:"⛩️", name:"Hakone Shrine + torii en el lago (por si no se hizo ayer)", desc:"Fallback del día 6 — solo si no alcanzaron a verlo. Si ya lo vieron, saltar directo a la salida.", cost:0, maps:"https://maps.google.com/?q=Hakone+Shrine"},
   {t:"09:30", ic:"🚕", name:"Salida hacia Hakone-Yumoto / Odawara", desc:"", maps:"https://maps.google.com/?q=Odawara+Station"},
   {t:"10:45–11:30", ic:"🚄", name:"Hikari 637 · Odawara → Kyoto", desc:"Confirmado: coche 12, asientos 1D y 1E. Nozomi no para en Odawara.", cost:null, maps:"https://maps.google.com/?q=Kyoto+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
   {t:"13:00–14:00", ic:"🏨", name:"Llegada a Kioto + check-in Hotel SUI", desc:"Dejar equipaje.", cost:0, maps:"https://maps.google.com/?q=Hotel+SUI+Kyoto+Kiyomizu", ticket:"https://hotel-sui.com/kyoto/en/"},
@@ -529,9 +542,9 @@ const ITINERARY = [
   {t:"18:00–19:45", ic:"🥩", name:"Cena en Hozenji Yokocho", desc:"Prioridad: Matsusaka beef/yakiniku o cocina de Osaka.", maps:"https://maps.google.com/?q=Hozenji+Yokocho", star:true},
   {t:"20:00", ic:"🚆", name:"Regreso a Kioto", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
 ], route:["Osaka Castle","→","Kuromon","→","Shinsekai","→","Dotonbori","→","Hozenji Yokocho","→","Kyoto"],
-  tips:[{label:"Imprescindible",text:"Hozenji Yokocho al final del día, con faroles y cena."},{label:"Cena",text:"Reservar si eliges un restaurante popular de Matsusaka beef."},{label:"Mejora",text:"No añadir Umeda Sky Building: haría zigzag y quitaría tiempo a Hozenji/Dotonbori."},{icon:"🌙",label:"Mañana",text:"Te vas a Hiroshima — cambia la reserva del Shinkansen para que salga desde Kyoto Station, no Shin-Osaka."}]},
+  tips:[{label:"Imprescindible",text:"Hozenji Yokocho al final del día, con faroles y cena."},{label:"Cena",text:"Reservar si eliges un restaurante popular de Matsusaka beef."},{label:"Mejora",text:"No añadir Umeda Sky Building: haría zigzag y quitaría tiempo a Hozenji/Dotonbori."},{icon:"🌙",label:"Mañana",text:"Te vas a Hiroshima — cambia la reserva del Shinkansen para que salga desde Kyoto Station, no Shin-Osaka."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Kioto. Considera enviar la maleta grande a Shibuya/Narita y llevar una pequeña a Hiroshima."}]},
 
-{day:13, city:"Hiroshima", title:"Kioto → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stay:{name:"Hotel de Hiroshima (por confirmar)", maps:"", link:""}, stops:[
+{day:13, city:"Hiroshima", title:"Kioto → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stay:{name:"Hotel de Hiroshima (por confirmar)", maps:"", link:""}, transit:{from:"Kioto", to:"Hiroshima", time:"~1h40", note:"Shinkansen Nozomi directo desde Kyoto Station. Considera enviar la maleta grande a Shibuya/Narita y viajar ligero."}, stops:[
   {t:"07:30", ic:"🧳", name:"Desayuno y check-out Hotel SUI", desc:""},
   {t:"08:15", ic:"🚶", name:"Traslado a Kyoto Station", desc:"", maps:"https://maps.google.com/?q=Kyoto+Station"},
   {t:"09:00", ic:"🚄", name:"Nozomi Kyoto → Hiroshima", desc:"Asiento reservado. Modificar el Shinkansen para salir desde Kyoto, no Shin-Osaka.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
@@ -554,9 +567,9 @@ const ITINERARY = [
   {t:"16:00", ic:"⛴️", name:"Ferry de regreso + tren a Hiroshima", desc:"", maps:"https://maps.google.com/?q=Hiroshima+Station"},
   {t:"17:15–18:30", ic:"🛌", name:"Pendientes de Hiroshima / descanso", desc:""},
 ], route:["Hiroshima","→","Miyajimaguchi","→","ferry","→","Miyajima","→","Hiroshima"],
-  tips:[{label:"Torii",text:"La experiencia cambia con la marea; revisar tabla de mareas para ajustar el orden dentro de la isla."},{label:"Ritmo",text:"Mt. Misen es opcional; no sacrificar Itsukushima/Daisho-in por subir con prisa."},{label:"Foto",text:"Mañana temprano para menos gente; segunda oportunidad al regresar hacia el ferry."},{icon:"🌙",label:"Mañana",text:"Vuelo Hiroshima → Haneda a las 10:30 — sal con margen del hotel."}]},
+  tips:[{label:"Torii",text:"La experiencia cambia con la marea; revisar tabla de mareas para ajustar el orden dentro de la isla."},{label:"Ritmo",text:"Mt. Misen es opcional; no sacrificar Itsukushima/Daisho-in por subir con prisa."},{label:"Foto",text:"Mañana temprano para menos gente; segunda oportunidad al regresar hacia el ferry."},{icon:"🌙",label:"Mañana",text:"Vuelo Hiroshima → Haneda a las 10:30 — sal con margen del hotel."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Hiroshima antes del vuelo."}]},
 
-{day:15, city:"Tokio", title:"Vuelo a Haneda + tarde de compras en Shibuya", sub:"Jueves 24 Sep", stay:{name:"Shibuya Granbell Hotel", maps:"https://maps.google.com/?q=Shibuya+Granbell+Hotel", link:"https://en.granbellhotel.jp/shibuya/"}, stops:[
+{day:15, city:"Tokio", title:"Vuelo a Haneda + tarde de compras en Shibuya", sub:"Jueves 24 Sep", stay:{name:"Shibuya Granbell Hotel", maps:"https://maps.google.com/?q=Shibuya+Granbell+Hotel", link:"https://en.granbellhotel.jp/shibuya/"}, transit:{from:"Hiroshima", to:"Tokio (Shibuya)", time:"~1h20 de vuelo + traslados", note:"Vuelo reserva fija 10:30. Sal con margen (60-90 min) hacia el aeropuerto de Hiroshima."}, stops:[
   {t:"07:30", ic:"🧳", name:"Check-out / traslado al aeropuerto de Hiroshima", desc:"Con margen (60-90 min según hotel).", maps:"https://maps.google.com/?q=Hiroshima+Airport"},
   {t:"10:30", ic:"✈️", name:"Vuelo Hiroshima → Haneda", desc:"Reserva fija. ≈1h20–1h30.", maps:"https://maps.google.com/?q=Haneda+Airport"},
   {t:"12:00–13:30", ic:"🚆", name:"Llegada, equipaje y traslado a Shibuya", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
@@ -580,7 +593,7 @@ const ITINERARY = [
 ], route:["Shibuya","→","Nezu","→","Yanaka","→","Kagurazaka","→","Shibuya"],
   tips:[{label:"Foto",text:"Nezu temprano: mejor para el corredor de torii."},{label:"Mejora",text:"No mezclar Nezu con Harajuku: están en lados distintos de Tokio."},{label:"Flex",text:"Si Kuramae quedó pendiente el 12, puede sustituir parte de Yanaka."},{icon:"🌙",label:"Mañana",text:"Último día — traslado a Narita por la tarde. Agrupa compras y pesa maletas hoy."}]},
 
-{day:17, city:"Tokio → Narita", title:"Harajuku/Omotesando + traslado a Narita", sub:"Sábado 26 Sep · último día", stay:{name:"Narita Tobu Hotel Airport", maps:"https://maps.google.com/?q=Narita+Tobu+Hotel+Airport", link:"https://www.tobuhotel.co.jp/narita/en/index.html"}, stops:[
+{day:17, city:"Tokio → Narita", title:"Harajuku/Omotesando + traslado a Narita", sub:"Sábado 26 Sep · último día", stay:{name:"Narita Tobu Hotel Airport", maps:"https://maps.google.com/?q=Narita+Tobu+Hotel+Airport", link:"https://www.tobuhotel.co.jp/narita/en/index.html"}, transit:{from:"Tokio (Shibuya)", to:"Narita", time:"~1h30", note:"Preferir tren reservado (N'EX). Último traslado del viaje — agrupa compras y pesa maletas antes de salir de Shibuya."}, stops:[
   {t:"08:30", ic:"🧳", name:"Check-out Shibuya Granbell", desc:"Dejar equipaje."},
   {t:"09:00–10:00", ic:"⛩️", name:"Meiji Jingu temprano", desc:"", cost:0, maps:"https://maps.google.com/?q=Meiji+Jingu", ticket:"https://www.meijijingu.or.jp/en/", star:true},
   {t:"10:15–11:30", ic:"🛍️", name:"Takeshita Street", desc:"Al comenzar a abrir tiendas.", maps:"https://maps.google.com/?q=Takeshita+Street+Harajuku", star:true},
@@ -769,6 +782,7 @@ function renderDayI(idx){
       </div>
       <div></div>
     </div>`:'';
+  const transitBanner=d.transit?`<div class="transit-banner">🚚 <b>Cambio de ciudad:</b> ${esc(d.transit.from)} → ${esc(d.transit.to)} <span class="transit-time">${esc(d.transit.time)}</span><div class="transit-note">${esc(d.transit.note)}</div></div>`:'';
   dv.innerHTML=`<div class="day-card">
     <div class="day-head">
       <div class="day-badge"><div class="day-num">${d.day}</div><div class="day-lbl">DÍA</div></div>
@@ -778,6 +792,7 @@ function renderDayI(idx){
       </div>
       <div style="text-align:right"><div style="font-size:9px;color:#666">${free} gratis</div><div style="font-size:16px;font-weight:700;color:#FFA040">¥${tot.toLocaleString()}</div></div>
     </div>
+    ${transitBanner}
     ${stayStop}
     ${stops}
     ${tips}
