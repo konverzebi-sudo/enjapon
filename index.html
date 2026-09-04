@@ -553,9 +553,9 @@ const ITINERARY = [
   tips:[{label:"Opciones",text:"Elige según energía: 'Osaka tranqui' es más ligera; 'Nara Express' recupera Nara pero es más pesado."},{icon:"🌙",label:"Mañana",text:"Te vas a Hiroshima — el Shinkansen ahora sale desde Shin-Osaka, no Kyoto."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Osaka."}]},
 
 {day:13, city:"Hiroshima", title:"Osaka → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stay:{name:"APA Hotel Hiroshima-Ekimae Ohashi", maps:"https://maps.app.goo.gl/eX6oXq9ny4QSA4LU7", link:"https://maps.app.goo.gl/eX6oXq9ny4QSA4LU7"}, transit:{from:"Osaka", to:"Hiroshima", time:"~1h20", note:"Shinkansen Nozomi directo desde Shin-Osaka. Considera enviar la maleta grande a Shibuya/Narita y viajar ligero."}, stops:[
-  {t:"06:30", ic:"🧳", name:"Desayuno y check-out Hotel Forza", desc:""},
+  {t:"06:30", ic:"🧳", name:"Check-out Hotel Forza", desc:"Desayuno se hace en el tren, no aquí.", maps:"https://maps.app.goo.gl/MkHbYKyxiMr5HUBH9"},
   {t:"07:00", ic:"🚶", name:"Traslado a Shin-Osaka Station", desc:"", maps:"https://maps.google.com/?q=Shin-Osaka+Station"},
-  {t:"08:00–09:30", ic:"🚄", name:"Nozomi Osaka → Hiroshima", desc:"Asiento reservado.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
+  {t:"08:00–09:30", ic:"🚄", name:"Nozomi Osaka → Hiroshima · desayuno en el tren", desc:"Asiento reservado. Aprovechar el trayecto para desayunar (bento de estación / eki-ben).", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
   {t:"10:00", ic:"🕊️", name:"Orizuru Tower · mirador 360° + grulla", desc:"Vistas de la ciudad y del A-Bomb Dome; dobla tu propia grulla de origami en el mirador.", cost:null, maps:"https://maps.google.com/?q=Orizuru+Tower", ticket:"https://www.orizurutower.com/en/", star:true},
   {t:"11:00–13:00", ic:"🕊️", name:"Peace Memorial Park + Museo + A-Bomb Dome", desc:"Ir a esta hora para fila más baja. Ritmo tranquilo — puede ser intenso emocionalmente.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Peace+Memorial+Park", ticket:"https://hpmmuseum.jp/", star:true},
   {t:"13:00–14:30", ic:"🦪", name:"Okonomiyaki en Nagataya", desc:"Ostras #1 — de los mejores okonomiyaki de Hiroshima.", maps:"https://maps.google.com/?q=Okonomiyaki+Nagataya+Hiroshima", star:true},
@@ -606,14 +606,13 @@ const ITINERARY = [
   {t:"07:00–08:00", ic:"🔪", name:"Kappabashi-dori · compra de cuchillos", desc:"Desvío hacia Asakusa antes de volver a Shibuya — la calle de utensilios de cocina de Tokio, famosa por sus cuchillos japoneses.", maps:"https://maps.google.com/?q=Kappabashi+Street+Tokyo", star:true},
   {t:"08:45", ic:"🧳", name:"Check-out Shibuya Granbell", desc:"Dejar equipaje."},
   {t:"09:15–10:15", ic:"⛩️", name:"Meiji Jingu temprano", desc:"", cost:0, maps:"https://maps.google.com/?q=Meiji+Jingu", ticket:"https://www.meijijingu.or.jp/en/", star:true},
-  {t:"10:15–11:30", ic:"🛍️", name:"Takeshita Street", desc:"Al comenzar a abrir tiendas.", maps:"https://maps.google.com/?q=Takeshita+Street+Harajuku", star:true},
-  {t:"11:30–13:30", ic:"🛍️", name:"Omotesando + Cat Street", desc:"", maps:"https://maps.google.com/?q=Omotesando+Tokyo", star:true},
+  {t:"10:30–13:30", ic:"🛍️", name:"Omotesando + Cat Street", desc:"Takeshita Street ya se hizo el día 25 — más tiempo libre aquí.", maps:"https://maps.google.com/?q=Omotesando+Tokyo", star:true},
   {t:"13:30–14:30", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Omotesando+restaurants"},
   {t:"14:30–16:00", ic:"🛒", name:"Últimas compras en Shibuya / recoger equipaje", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
   {t:"16:00–17:30", ic:"🚆", name:"Traslado Shibuya → Narita", desc:"Preferir tren reservado (N'EX).", cost:null, maps:"https://maps.google.com/?q=Narita+Airport", ticket:"https://www.jreast.co.jp/en/multi/nex/tickets/", star:true},
   {t:"18:00", ic:"🏨", name:"Check-in Narita Tobu Hotel Airport", desc:"Cena y preparar vuelo.", cost:0, maps:"https://maps.google.com/?q=Narita+Tobu+Hotel+Airport", ticket:"https://www.tobuhotel.co.jp/narita/en/index.html"},
-], route:["Kappabashi","→","Shibuya","→","Meiji Jingu","→","Takeshita","→","Omotesando","→","Shibuya","→","Narita"],
-  tips:[{label:"Nocturno",text:"Nada importante por la noche: la meta es dormir ya junto a Narita."},{label:"Equipaje",text:"Agrupar compras y pesar maletas antes de salir de Shibuya si es posible."},{label:"Vuelo 27",text:"Usar shuttle del hotel al aeropuerto según terminal y horario confirmado."},{label:"⚠️ Ojo",text:"Kappabashi está lejos de Shibuya/Harajuku — el día queda más apretado. Considera saltar Kappabashi si vas justa de tiempo, ya que Takeshita ahora también está el día 25."}]},
+], route:["Kappabashi","→","Shibuya","→","Meiji Jingu","→","Omotesando","→","Shibuya","→","Narita"],
+  tips:[{label:"Nocturno",text:"Nada importante por la noche: la meta es dormir ya junto a Narita."},{label:"Equipaje",text:"Agrupar compras y pesar maletas antes de salir de Shibuya si es posible."},{label:"Vuelo 27",text:"Usar shuttle del hotel al aeropuerto según terminal y horario confirmado."},{label:"Ritmo",text:"Takeshita ya se hizo el día 25, así que el día queda más holgado a pesar del desvío a Kappabashi."}]},
 ];
 
 // ════════ PREP DATA (ajustado a Japón) ════════
