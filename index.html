@@ -290,7 +290,6 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
   <div class="section-hdr">📝 Qué falta confirmar</div>
   <div class="ref-card">
     <div class="ref-row"><div class="ref-label">Kimono · 17 Sep</div><div class="ref-text">Nombre de la tienda y hora/política de devolución (sugerencia sin confirmar: Okamoto Higashiyama).</div></div>
-    <div class="ref-row"><div class="ref-label">Hiroshima</div><div class="ref-text">Nombre del hotel 22-24 para rutas puerta a puerta y hora exacta de salida al aeropuerto.</div></div>
     <div class="ref-row"><div class="ref-label">Ferry · 11 Sep</div><div class="ref-text">Horario exacto Asakusa → Odaiba del 11 de septiembre.</div></div>
     <div class="ref-row"><div class="ref-label">Hanazono · 13 Sep</div><div class="ref-text">Confirmación de flea market ese domingo.</div></div>
     <div class="ref-row"><div class="ref-label">Kishiwada</div><div class="ref-text">Zona/asiento de observación si decides comprarlo.</div></div>
@@ -553,30 +552,30 @@ const ITINERARY = [
   ],
   tips:[{label:"Opciones",text:"Elige según energía: 'Osaka tranqui' es más ligera; 'Nara Express' recupera Nara pero es más pesado."},{icon:"🌙",label:"Mañana",text:"Te vas a Hiroshima — el Shinkansen ahora sale desde Shin-Osaka, no Kyoto."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Osaka."}]},
 
-{day:13, city:"Hiroshima", title:"Osaka → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stay:{name:"Hotel de Hiroshima (por confirmar)", maps:"", link:""}, transit:{from:"Osaka", to:"Hiroshima", time:"~1h20", note:"Shinkansen Nozomi directo desde Shin-Osaka. Considera enviar la maleta grande a Shibuya/Narita y viajar ligero."}, stops:[
-  {t:"07:30", ic:"🧳", name:"Desayuno y check-out Hotel Forza", desc:""},
-  {t:"08:15", ic:"🚶", name:"Traslado a Shin-Osaka Station", desc:"", maps:"https://maps.google.com/?q=Shin-Osaka+Station"},
-  {t:"09:00", ic:"🚄", name:"Nozomi Shin-Osaka → Hiroshima", desc:"Asiento reservado.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
-  {t:"10:20–11:00", ic:"🏨", name:"Llegada; dejar equipaje en hotel/locker", desc:""},
-  {t:"12:00–13:00", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Hiroshima+restaurants"},
-  {t:"13:15–16:30", ic:"🕊️", name:"Peace Memorial Park + A-Bomb Dome + museo", desc:"Ritmo tranquilo — puede ser intenso emocionalmente.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Peace+Memorial+Park", ticket:"https://hpmmuseum.jp/", star:true},
-  {t:"16:45–17:45", ic:"🏯", name:"Hiroshima Castle / Gokoku Shrine", desc:"Si hay energía; si no, paseo junto al río.", maps:"https://maps.google.com/?q=Hiroshima+Castle"},
-  {t:"18:30", ic:"🍽️", name:"Cena de okonomiyaki estilo Hiroshima", desc:"", maps:"https://maps.google.com/?q=okonomiyaki+Hiroshima", star:true},
-], route:["Shin-Osaka Station","→","Hiroshima Station","→","Peace Park","→","centro"],
+{day:13, city:"Hiroshima", title:"Osaka → Hiroshima + memoria histórica", sub:"Martes 22 Sep", stay:{name:"APA Hotel Hiroshima-Ekimae Ohashi", maps:"https://maps.app.goo.gl/eX6oXq9ny4QSA4LU7", link:"https://maps.app.goo.gl/eX6oXq9ny4QSA4LU7"}, transit:{from:"Osaka", to:"Hiroshima", time:"~1h20", note:"Shinkansen Nozomi directo desde Shin-Osaka. Considera enviar la maleta grande a Shibuya/Narita y viajar ligero."}, stops:[
+  {t:"06:30", ic:"🧳", name:"Desayuno y check-out Hotel Forza", desc:""},
+  {t:"07:00", ic:"🚶", name:"Traslado a Shin-Osaka Station", desc:"", maps:"https://maps.google.com/?q=Shin-Osaka+Station"},
+  {t:"08:00–09:30", ic:"🚄", name:"Nozomi Osaka → Hiroshima", desc:"Asiento reservado.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Station", ticket:"https://smart-ex.jp/en/lp/app/", star:true},
+  {t:"10:00", ic:"🕊️", name:"Orizuru Tower · mirador 360° + grulla", desc:"Vistas de la ciudad y del A-Bomb Dome; dobla tu propia grulla de origami en el mirador.", cost:null, maps:"https://maps.google.com/?q=Orizuru+Tower", ticket:"https://www.orizurutower.com/en/", star:true},
+  {t:"11:00–13:00", ic:"🕊️", name:"Peace Memorial Park + Museo + A-Bomb Dome", desc:"Ir a esta hora para fila más baja. Ritmo tranquilo — puede ser intenso emocionalmente.", cost:null, maps:"https://maps.google.com/?q=Hiroshima+Peace+Memorial+Park", ticket:"https://hpmmuseum.jp/", star:true},
+  {t:"13:00–14:30", ic:"🦪", name:"Okonomiyaki en Nagataya", desc:"Ostras #1 — de los mejores okonomiyaki de Hiroshima.", maps:"https://maps.google.com/?q=Okonomiyaki+Nagataya+Hiroshima", star:true},
+  {t:"15:00–16:00", ic:"🍵", name:"Shukkeien Garden · té matcha", desc:"", cost:null, maps:"https://maps.google.com/?q=Shukkeien+Garden", star:true},
+  {t:"16:30–17:45", ic:"💚", name:"Mitaki-dera · joya secreta", desc:"Templo escondido en el bosque con 3 cascadas cubiertas de musgo — la sorpresa del día, reemplaza al Castillo de Hiroshima.", cost:0, maps:"https://maps.google.com/?q=Mitaki-dera+Temple", star:true},
+  {t:"19:00", ic:"🍶", name:"Hondori + Nagarekawa · sake", desc:"Calle comercial Hondori y la zona de bares de Nagarekawa para cerrar la noche.", maps:"https://maps.google.com/?q=Hondori+Street+Hiroshima", star:true},
+], route:["Shin-Osaka","→","Hiroshima (Nozomi)","→","Orizuru Tower","→","Peace Memorial Park","→","Nagataya","→","Shukkeien Garden","→","Mitaki-dera","→","Hondori/Nagarekawa"],
   tips:[{label:"Cambio de boleto",text:"El Shinkansen ahora sale desde Shin-Osaka, ya no desde Kyoto."},{label:"Equipaje",text:"Considerar enviar maleta grande desde Osaka a Shibuya/Narita y viajar ligero a Hiroshima."},{label:"Ritmo emocional",text:"El museo puede ser intenso; no programar una noche cargada después."},{icon:"🌙",label:"Mañana",text:"Excursión a Miyajima — sales temprano hacia Hiroshima Station."}]},
 
-{day:14, city:"Miyajima", title:"Miyajima / Itsukushima", sub:"Miércoles 23 Sep", stay:{name:"Hotel de Hiroshima (por confirmar)", maps:"", link:""}, stops:[
-  {t:"07:15", ic:"🚶", name:"Salida hacia Hiroshima Station", desc:""},
-  {t:"07:45", ic:"🚆", name:"JR Sanyo Line → Miyajimaguchi", desc:"", maps:"https://maps.google.com/?q=Miyajimaguchi+Station"},
-  {t:"08:20", ic:"⛴️", name:"Ferry a Miyajima", desc:"", maps:"https://maps.google.com/?q=Miyajima+Ferry"},
-  {t:"08:45–10:15", ic:"⛩️", name:"Itsukushima Shrine + gran torii", desc:"La experiencia cambia con la marea; revisar tabla de mareas.", cost:null, maps:"https://maps.google.com/?q=Itsukushima+Shrine", ticket:"https://www.itsukushimajinja.jp/en/", star:true},
-  {t:"10:30–12:00", ic:"🏯", name:"Daisho-in y calles tradicionales", desc:"", cost:0, maps:"https://maps.google.com/?q=Daisho-in+Miyajima", star:true},
-  {t:"12:00–13:00", ic:"🍽️", name:"Comida", desc:"Prueba el anago (anguila) o las ostras de Miyajima.", maps:"https://maps.google.com/?q=Miyajima+restaurants"},
-  {t:"13:15–15:30", ic:"🚡", name:"Omotesando / paseo costero", desc:"Ropeway a Mt. Misen solo si clima y energía son buenos (opcional).", maps:"https://maps.google.com/?q=Miyajima+Ropeway"},
-  {t:"16:00", ic:"⛴️", name:"Ferry de regreso + tren a Hiroshima", desc:"", maps:"https://maps.google.com/?q=Hiroshima+Station"},
-  {t:"17:15–18:30", ic:"🛌", name:"Pendientes de Hiroshima / descanso", desc:""},
-], route:["Hiroshima","→","Miyajimaguchi","→","ferry","→","Miyajima","→","Hiroshima"],
-  tips:[{label:"Torii",text:"La experiencia cambia con la marea; revisar tabla de mareas para ajustar el orden dentro de la isla."},{label:"Ritmo",text:"Mt. Misen es opcional; no sacrificar Itsukushima/Daisho-in por subir con prisa."},{label:"Foto",text:"Mañana temprano para menos gente; segunda oportunidad al regresar hacia el ferry."},{icon:"🌙",label:"Mañana",text:"Vuelo Hiroshima → Haneda a las 10:30 — sal con margen del hotel."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Hiroshima antes del vuelo."}]},
+{day:14, city:"Miyajima", title:"Miyajima / Itsukushima", sub:"Miércoles 23 Sep", stay:{name:"APA Hotel Hiroshima-Ekimae Ohashi", maps:"https://maps.app.goo.gl/eX6oXq9ny4QSA4LU7", link:"https://maps.app.goo.gl/eX6oXq9ny4QSA4LU7"}, stops:[
+  {t:"06:30", ic:"🚶", name:"Salida hacia Hiroshima Station", desc:""},
+  {t:"07:00", ic:"⛴️", name:"Ferry temprano · marea alta garantizada", desc:"Tomar el ferry temprano asegura ver el torii realmente flotando a las 08:30 — revisado contra tabla de mareas.", maps:"https://maps.google.com/?q=Miyajima+Ferry", star:true},
+  {t:"08:45", ic:"⛩️", name:"Itsukushima Shrine flotante · sin gente", desc:"A esta hora casi no hay turistas.", cost:null, maps:"https://maps.google.com/?q=Itsukushima+Shrine", ticket:"https://www.itsukushimajinja.jp/en/", star:true},
+  {t:"09:30", ic:"🧢", name:"Daisho-in · 500 gorritos", desc:"Los 500 rakan con gorritos rojos tejidos a mano.", cost:0, maps:"https://maps.google.com/?q=Daisho-in+Miyajima", star:true},
+  {t:"11:00", ic:"🚡", name:"Mt. Misen · ropeway + Mar de Seto", desc:"Vistas del Mar Interior de Seto desde arriba.", maps:"https://maps.google.com/?q=Mount+Misen+Ropeway", star:true},
+  {t:"12:30", ic:"🍽️", name:"Anago meshi en Ueno + ostras en Kakiya", desc:"Dos especialidades de Miyajima en dos paradas.", maps:"https://maps.google.com/?q=Miyajima+restaurants", star:true},
+  {t:"14:00", ic:"🦌", name:"Momijidani Park · ciervos", desc:"", cost:0, maps:"https://maps.google.com/?q=Momijidani+Park+Miyajima", star:true},
+  {t:"15:30", ic:"⛴️", name:"Regreso a Hiroshima", desc:"", maps:"https://maps.google.com/?q=Hiroshima+Station"},
+], route:["Hiroshima","→","Ferry (marea alta)","→","Itsukushima","→","Daisho-in","→","Mt. Misen","→","Ueno/Kakiya","→","Momijidani","→","Hiroshima"],
+  tips:[{label:"Marea",text:"Ferry temprano = marea alta garantizada = el torii realmente flotando. Confirmar tabla de mareas 7-10 días antes."},{label:"Sin gente",text:"Llegar apenas abre para tener Itsukushima casi sola."},{icon:"🌙",label:"Mañana",text:"Vuelo Hiroshima → Haneda a las 10:30 — sal con margen del hotel."},{icon:"🧳",label:"Maleta",text:"Haz la maleta esta noche — mañana hay check-out del hotel de Hiroshima antes del vuelo."}]},
 
 {day:15, city:"Tokio", title:"Vuelo a Haneda + tarde de compras en Shibuya", sub:"Jueves 24 Sep", stay:{name:"Shibuya Granbell Hotel", maps:"https://maps.google.com/?q=Shibuya+Granbell+Hotel", link:"https://en.granbellhotel.jp/shibuya/"}, transit:{from:"Hiroshima", to:"Tokio (Shibuya)", time:"~1h20 de vuelo + traslados", note:"Vuelo reserva fija 10:30. Sal con margen (60-90 min) hacia el aeropuerto de Hiroshima."}, stops:[
   {t:"07:30", ic:"🧳", name:"Check-out / traslado al aeropuerto de Hiroshima", desc:"Con margen (60-90 min según hotel).", maps:"https://maps.google.com/?q=Hiroshima+Airport"},
@@ -587,32 +586,34 @@ const ITINERARY = [
   {t:"16:00–18:00", ic:"🔌", name:"Tokyu Hands + Bic Camera", desc:"Electrónica y artículos de hogar.", maps:"https://maps.google.com/?q=Bic+Camera+Shibuya"},
   {t:"18:00–19:00", ic:"🍽️", name:"Cena corta", desc:"", maps:"https://maps.google.com/?q=Shibuya+restaurants"},
   {t:"19:00–21:30", ic:"🛒", name:"Uniqlo / Matsumoto Kiyoshi / Don Quijote", desc:"Compras finales — Mega Don Quijote al final.", maps:"https://maps.google.com/?q=Don+Quijote+Shibuya", star:true},
-], route:["Hiroshima Airport","→","Haneda","→","Shibuya"],
+  {t:"21:30", ic:"🍱", name:"Depachika Tokyu", desc:"El sótano gastronómico de los grandes almacenes Tokyu — bentos, dulces y regalos de comida.", maps:"https://maps.google.com/?q=Shibuya+Tokyu+Department+Store", star:true},
+  {t:"22:00", ic:"🌃", name:"Shibuya Sky (opcional)", desc:"Mirador nocturno sobre el cruce de Shibuya — solo si queda energía.", cost:null, maps:"https://maps.google.com/?q=Shibuya+Sky", ticket:"https://www.shibuya-scramble-square.com/sky/en/"},
+], route:["Hiroshima Airport","→","Haneda","→","Shibuya","→","Depachika Tokyu","→","Shibuya Sky (opcional)"],
   tips:[{label:"Estrategia",text:"Comprar primero lo específico; Don Quijote al final para no cargar todo el día."},{label:"Equipaje",text:"Si ya enviamos maleta desde Kioto, recogerla en Shibuya este día o al 25 según entrega."},{label:"Ritmo",text:"No añadir turismo importante: compras son la prioridad real del 24."}]},
 
-{day:16, city:"Tokio", title:"Nezu + Yanaka + Kagurazaka", sub:"Viernes 25 Sep · Tokio tradicional", stay:{name:"Shibuya Granbell Hotel", maps:"https://maps.google.com/?q=Shibuya+Granbell+Hotel", link:"https://en.granbellhotel.jp/shibuya/"}, stops:[
-  {t:"07:00", ic:"🚇", name:"Salida de Shibuya", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
-  {t:"08:00–09:15", ic:"⛩️", name:"Nezu Shrine", desc:"Corredor de torii rojos y Otome Inari. Temprano: mejor para el corredor de torii.", cost:0, maps:"https://maps.google.com/?q=Nezu+Shrine", star:true},
-  {t:"09:30–11:30", ic:"🏘️", name:"Yanaka", desc:"Calles tranquilas, cementerio/templos según interés.", cost:0, maps:"https://maps.google.com/?q=Yanaka+Tokyo", star:true},
-  {t:"11:45–12:45", ic:"🍡", name:"Yanaka Ginza / comida", desc:"", maps:"https://maps.google.com/?q=Yanaka+Ginza"},
-  {t:"13:15–14:00", ic:"🚕", name:"Traslado a Kagurazaka", desc:"", maps:"https://maps.google.com/?q=Kagurazaka"},
-  {t:"14:00–16:30", ic:"🏮", name:"Kagurazaka", desc:"Callejones, cafés y ambiente tradicional.", cost:0, maps:"https://maps.google.com/?q=Kagurazaka", star:true},
-  {t:"17:00", ic:"🚇", name:"Regreso a Shibuya; descanso", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
-  {t:"19:00", ic:"🍽️", name:"Cena o compras pendientes cerca del hotel", desc:""},
-], route:["Shibuya","→","Nezu","→","Yanaka","→","Kagurazaka","→","Shibuya"],
-  tips:[{label:"Foto",text:"Nezu temprano: mejor para el corredor de torii."},{label:"Mejora",text:"No mezclar Nezu con Harajuku: están en lados distintos de Tokio."},{label:"Flex",text:"Si Kuramae quedó pendiente el 12, puede sustituir parte de Yanaka."},{icon:"🌙",label:"Mañana",text:"Último día — traslado a Narita por la tarde. Agrupa compras y pesa maletas hoy."}]},
+{day:16, city:"Tokio", title:"Cafés + Takeshita + Nezu/Yanaka + Kagurazaka + Shinjuku", sub:"Viernes 25 Sep · Tokio tradicional y de compras", stay:{name:"Shibuya Granbell Hotel", maps:"https://maps.google.com/?q=Shibuya+Granbell+Hotel", link:"https://en.granbellhotel.jp/shibuya/"}, stops:[
+  {t:"09:30", ic:"☕", name:"Reissue · latte 3D", desc:"Café con arte latte en 3D.", maps:"https://maps.google.com/?q=Reissue+Cafe+Tokyo", star:true},
+  {t:"10:20", ic:"🕹️", name:"Ru-ru · retro Showa", desc:"A 200m de Reissue — café con ambiente retro de la era Showa.", maps:"https://maps.google.com/?q=Ru-ru+Cafe+Tokyo", star:true},
+  {t:"11:00–13:30", ic:"🛍️", name:"Takeshita Street", desc:"2.5 h de tiendas y snacks de Harajuku.", maps:"https://maps.google.com/?q=Takeshita+Street+Harajuku", star:true},
+  {t:"13:45–14:30", ic:"⛩️", name:"Nezu Shrine", desc:"Corredor de torii rojos y Otome Inari.", cost:0, maps:"https://maps.google.com/?q=Nezu+Shrine", star:true},
+  {t:"14:45–16:00", ic:"👘", name:"Yanaka + kimono bebé", desc:"Calles tranquilas de Yanaka y sesión de kimono para bebé.", cost:0, maps:"https://maps.google.com/?q=Yanaka+Tokyo", star:true},
+  {t:"16:15–17:30", ic:"🏮", name:"Kagurazaka", desc:"Barrio antiguo — callejones, cafés y ambiente tradicional.", cost:0, maps:"https://maps.google.com/?q=Kagurazaka", star:true},
+  {t:"17:45–20:45", ic:"🛒", name:"Shinjuku: Bic Camera + Uniqlo flagship + Depachika Isetan", desc:"3 h de compras finales — Bic Camera, el Uniqlo insignia y el sótano gastronómico #1 de Japón en Isetan.", maps:"https://maps.google.com/?q=Bic+Camera+Shinjuku", star:true},
+], route:["Reissue","→","Ru-ru","→","Takeshita","→","Nezu Shrine","→","Yanaka","→","Kagurazaka","→","Shinjuku (Bic/Uniqlo/Isetan)"],
+  tips:[{label:"Cafés",text:"Reissue y Ru-ru están a solo 200m entre sí — se hacen seguidos por la mañana."},{label:"Flex",text:"Si Kuramae quedó pendiente el 12, puede sustituir parte de Yanaka."},{icon:"🌙",label:"Mañana",text:"Último día — traslado a Narita por la tarde. Agrupa compras y pesa maletas hoy."}]},
 
 {day:17, city:"Tokio → Narita", title:"Harajuku/Omotesando + traslado a Narita", sub:"Sábado 26 Sep · último día", stay:{name:"Narita Tobu Hotel Airport", maps:"https://maps.google.com/?q=Narita+Tobu+Hotel+Airport", link:"https://www.tobuhotel.co.jp/narita/en/index.html"}, transit:{from:"Tokio (Shibuya)", to:"Narita", time:"~1h30", note:"Preferir tren reservado (N'EX). Último traslado del viaje — agrupa compras y pesa maletas antes de salir de Shibuya."}, stops:[
-  {t:"08:30", ic:"🧳", name:"Check-out Shibuya Granbell", desc:"Dejar equipaje."},
-  {t:"09:00–10:00", ic:"⛩️", name:"Meiji Jingu temprano", desc:"", cost:0, maps:"https://maps.google.com/?q=Meiji+Jingu", ticket:"https://www.meijijingu.or.jp/en/", star:true},
+  {t:"07:00–08:00", ic:"🔪", name:"Kappabashi-dori · compra de cuchillos", desc:"Desvío hacia Asakusa antes de volver a Shibuya — la calle de utensilios de cocina de Tokio, famosa por sus cuchillos japoneses.", maps:"https://maps.google.com/?q=Kappabashi+Street+Tokyo", star:true},
+  {t:"08:45", ic:"🧳", name:"Check-out Shibuya Granbell", desc:"Dejar equipaje."},
+  {t:"09:15–10:15", ic:"⛩️", name:"Meiji Jingu temprano", desc:"", cost:0, maps:"https://maps.google.com/?q=Meiji+Jingu", ticket:"https://www.meijijingu.or.jp/en/", star:true},
   {t:"10:15–11:30", ic:"🛍️", name:"Takeshita Street", desc:"Al comenzar a abrir tiendas.", maps:"https://maps.google.com/?q=Takeshita+Street+Harajuku", star:true},
   {t:"11:30–13:30", ic:"🛍️", name:"Omotesando + Cat Street", desc:"", maps:"https://maps.google.com/?q=Omotesando+Tokyo", star:true},
   {t:"13:30–14:30", ic:"🍽️", name:"Comida", desc:"", maps:"https://maps.google.com/?q=Omotesando+restaurants"},
   {t:"14:30–16:00", ic:"🛒", name:"Últimas compras en Shibuya / recoger equipaje", desc:"", maps:"https://maps.google.com/?q=Shibuya+Station"},
   {t:"16:00–17:30", ic:"🚆", name:"Traslado Shibuya → Narita", desc:"Preferir tren reservado (N'EX).", cost:null, maps:"https://maps.google.com/?q=Narita+Airport", ticket:"https://www.jreast.co.jp/en/multi/nex/tickets/", star:true},
   {t:"18:00", ic:"🏨", name:"Check-in Narita Tobu Hotel Airport", desc:"Cena y preparar vuelo.", cost:0, maps:"https://maps.google.com/?q=Narita+Tobu+Hotel+Airport", ticket:"https://www.tobuhotel.co.jp/narita/en/index.html"},
-], route:["Meiji Jingu","→","Takeshita","→","Omotesando","→","Shibuya","→","Narita"],
-  tips:[{label:"Nocturno",text:"Nada importante por la noche: la meta es dormir ya junto a Narita."},{label:"Equipaje",text:"Agrupar compras y pesar maletas antes de salir de Shibuya si es posible."},{label:"Vuelo 27",text:"Usar shuttle del hotel al aeropuerto según terminal y horario confirmado."}]},
+], route:["Kappabashi","→","Shibuya","→","Meiji Jingu","→","Takeshita","→","Omotesando","→","Shibuya","→","Narita"],
+  tips:[{label:"Nocturno",text:"Nada importante por la noche: la meta es dormir ya junto a Narita."},{label:"Equipaje",text:"Agrupar compras y pesar maletas antes de salir de Shibuya si es posible."},{label:"Vuelo 27",text:"Usar shuttle del hotel al aeropuerto según terminal y horario confirmado."},{label:"⚠️ Ojo",text:"Kappabashi está lejos de Shibuya/Harajuku — el día queda más apretado. Considera saltar Kappabashi si vas justa de tiempo, ya que Takeshita ahora también está el día 25."}]},
 ];
 
 // ════════ PREP DATA (ajustado a Japón) ════════
@@ -666,7 +667,7 @@ const DEFAULT_STAYS=[
   {city:"Kioto · opción B", title:"Granbell Hotel Kyoto (Gion-Shijo)", sub:"2 min a pie de Gion-Shijo · mismo grupo que Shinjuku/Shibuya Granbell · baño público con patio", link:"https://en.granbellhotel.jp/kyoto/"},
   {city:"Kioto · opción C", title:"Hotel The Celestine Kyoto Gion", sub:"9.2/10 · en pleno Higashiyama, cerca de Yasaka Shrine y Gion Corner", link:"https://www.celestinehotels.jp/en/kyoto-gion/"},
   {city:"Kioto · opción D", title:"The Hotel Higashiyama Kyoto Tokyu (Pan Pacific)", sub:"Marca internacional Pan Pacific · Higashiyama · buena valoración", link:"https://www.tokyuhotels.co.jp/en/higashiyama-h/index.html"},
-  {city:"Hiroshima (22–24 Sep)", title:"(Por confirmar)", sub:"2 noches · pendiente elegir y reservar", link:""},
+  {city:"Hiroshima (22–24 Sep)", title:"APA Hotel Hiroshima-Ekimae Ohashi", sub:"2 noches · confirmado · Minami-ku, Kyobashicho 2-26", link:"https://maps.app.goo.gl/eX6oXq9ny4QSA4LU7"},
   {city:"Tokio · Shibuya (24–26 Sep)", title:"Shibuya Granbell Hotel", sub:"2 noches · zona de compras", link:"https://en.granbellhotel.jp/shibuya/"},
   {city:"Narita (26 Sep)", title:"Narita Tobu Hotel Airport", sub:"1 noche junto al aeropuerto antes del vuelo", link:"https://www.tobuhotel.co.jp/narita/en/index.html"},
 ];
