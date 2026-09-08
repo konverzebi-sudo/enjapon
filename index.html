@@ -19,6 +19,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Japón — Jany Dávila ✦</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇯🇵</text></svg>">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
 :root{
@@ -124,6 +125,12 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--txt,#1A1A1A);font-
 .stop-cost{font-size:12px;font-weight:700;white-space:nowrap;padding-top:2px}
 .stop-cost.free{color:var(--neon)}
 .stop-cost.paid{color:#FFA040}
+.stop-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.stop-check{background:transparent;border:none;cursor:pointer;font-size:17px;line-height:1;padding:2px;opacity:.55;transition:opacity .15s,transform .15s}
+.stop-check:hover{opacity:1}
+.stop-check.on{opacity:1}
+.stop.done{opacity:.55}
+.stop.done .stop-name{text-decoration:line-through}
 
 /* ── ROUTE BOX ── */
 .route-box{background:#F0F0E8;border:1px solid #C8C8B8;border-radius:10px;padding:9px 12px;margin-top:10px}
@@ -627,6 +634,7 @@ let STAYS=[];
 let SAVED=[];
 let STOPLINKS={};
 let STOPNOTES={};
+let STOPDONE={};
 let curStopId=null;
 let curStopName='';
 let curGroup='all';
@@ -643,6 +651,7 @@ function init(){
   loadSaved();
   loadStopLinks();
   loadStopNotes();
+  loadStopDone();
   renderItin();
   initConverter();
 }
@@ -773,14 +782,18 @@ function renderDayI(idx){
       `<button class="lb lb-add" type="button" onclick="openStopLinkModal('${stopId}','${esc(s.name).replace(/'/g,"\\'")}')">+ link</button>`,
     ].filter(Boolean).join('');
     const descText = STOPNOTES[stopId]!==undefined ? STOPNOTES[stopId] : (s.desc||'');
-    return`<div class="stop">
+    const done=!!STOPDONE[stopId];
+    return`<div class="stop ${done?'done':''}">
       <div class="stop-left"><div class="stop-ico">${s.ic}</div>${s.t?`<div class="stop-time">${s.t}</div>`:''}</div>
       <div>
         <div class="stop-name">${s.star?'<span class="stop-star">⭐</span>':''}${s.name}</div>
         <div class="stop-desc editable-note" contenteditable="true" data-stopid="${stopId}" data-placeholder="Toca para agregar una nota..." onblur="saveStopNote(this)" onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur();}">${esc(descText)}</div>
         <div class="stop-links">${links}</div>
       </div>
-      ${costHtml}
+      <div class="stop-right">
+        ${costHtml}
+        <button class="stop-check ${done?'on':''}" type="button" onclick="toggleStopDone('${stopId}')" title="Marcar como hecho">${done?'✅':'⬜'}</button>
+      </div>
     </div>`;
   }).join('');
   const route=curRoute?`<div class="route-box"><div class="route-label">🗺️ Ruta del día</div><div class="route-steps">${curRoute.map(r=>r==='→'?`<span class="rta">→</span>`:`<span class="rts">${r}</span>`).join('')}</div></div>`:'';
@@ -1000,6 +1013,17 @@ function saveStopNote(el){
   const text=el.textContent.trim();
   STOPNOTES[stopId]=text;
   localStorage.setItem('jd_jp_stopnotes',JSON.stringify(STOPNOTES));
+}
+
+// ════════ HECHO POR PARADA ════════
+function loadStopDone(){
+  STOPDONE=JSON.parse(localStorage.getItem('jd_jp_stopdone')||'{}');
+}
+function toggleStopDone(stopId){
+  STOPDONE[stopId]=!STOPDONE[stopId];
+  if(!STOPDONE[stopId])delete STOPDONE[stopId];
+  localStorage.setItem('jd_jp_stopdone',JSON.stringify(STOPDONE));
+  renderDayI(curDay);
 }
 
 // ════════ PREP ════════
