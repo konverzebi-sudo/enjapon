@@ -697,22 +697,31 @@ let TRANSITDONE={};
 function loadTransitDone(){
   TRANSITDONE=JSON.parse(localStorage.getItem('jd_jp_transitdone')||'{}');
 }
+let TRANSIT_PEEK={};
 function renderTransitKey(){
   const wrap=document.getElementById('transitCardWrap');
   if(!wrap)return;
   wrap.innerHTML=TRANSIT_KEY.map(t=>{
     const done=!!TRANSITDONE[t.id];
+    const expanded=!done || !!TRANSIT_PEEK[t.id];
     const stepsHtml=t.steps.map((s,i)=>`<div class="transit-step"><span class="transit-step-num">${i+1}</span><span>${esc(s)}</span></div>`).join('');
+    const body = expanded
+      ? `<div class="transit-steps">${stepsHtml}</div>`
+      : `<button class="mini-btn" type="button" onclick="peekTransit('${t.id}')" style="margin-top:4px">▸ ver pasos de nuevo</button>`;
     return `<div class="ref-row ${done?'transit-done':''}" id="estacion-${t.id}">
       <div style="display:flex;align-items:flex-start;gap:8px">
         <button class="stop-check ${done?'on':''}" type="button" style="flex-shrink:0;margin-top:1px" onclick="toggleTransitDone('${t.id}')" title="Marcar como hecho">${done?'✅':'⬜'}</button>
         <div style="flex:1">
           <div class="ref-label">${esc(t.label)} <span class="ref-day">${esc(t.day)}</span></div>
-          <div class="transit-steps">${stepsHtml}</div>
+          ${body}
         </div>
       </div>
     </div>`;
   }).join('');
+}
+function peekTransit(id){
+  TRANSIT_PEEK[id]=true;
+  renderTransitKey();
 }
 function toggleTransitDone(id){
   TRANSITDONE[id]=!TRANSITDONE[id];
